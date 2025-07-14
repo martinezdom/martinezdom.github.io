@@ -36,7 +36,7 @@ Este es mi portfolio personal desarrollado con [Astro](https://astro.build/) y [
 
 Puedes contactarme desde el formulario del portfolio o a través de mis redes sociales:
 
-- ✉️ Email: <a href="mailto:miguelangelmardom8@gmail.com" target="_blank" rel="noopener noreferrer">miguelangelmardom8@gmail.com</a>  
+- ✉️ <a href="mailto:miguelangelmardom8@gmail.com" target="_blank" rel="noopener noreferrer">miguelangelmardom8@gmail.com</a>  
 - 💼 <a href="https://www.linkedin.com/in/martinezdom" target="_blank" rel="noopener noreferrer">LinkedIn</a>  
 - 💻 <a href="https://github.com/martinezdom" target="_blank" rel="noopener noreferrer">GitHub</a>  
 
