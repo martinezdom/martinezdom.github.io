@@ -1,0 +1,23 @@
+---
+const sections: { label: string; href: string }[] = [
+  { label: "Experiencia", href: "/" },
+  { label: "Proyectos", href: "/proyectos/" },
+  { label: "Sobre mí", href: "/sobre-mi/" },
+  { label: "Contacto", href: "/contacto/" },
+];
+---
+
+<nav>
+  <div>
+    <a href="/" class="inline-flex md:hidden">
+      <img src="/logo.png" alt="Logo" class="size-32"/>
+    </a>
+    <ul class="flex space-x-4">
+      {sections.map((section) => (
+        <li>
+          <a href={section.href}>{section.label}</a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</nav>
