@@ -1,23 +1,31 @@
 ---
-const sections: { label: string; href: string }[] = [
-  { label: "Experiencia", href: "/" },
-  { label: "Proyectos", href: "/proyectos/" },
-  { label: "Sobre mí", href: "/sobre-mi/" },
-  { label: "Contacto", href: "/contacto/" },
+
+import ThemeToggle from "./ThemeToggle.astro";
+const { language } = Astro.props;
+
+const prefix = language.prefix === 'es' ? '' : `/${language.prefix}`;
+
+const sections = [
+  language.nav.home,
+  language.nav.experience,
+  language.nav.projects,
+  language.nav.about,
+  language.nav.contact,
 ];
 ---
 
 <nav>
   <div>
-    <a href="/" class="inline-flex md:hidden">
-      <img src="/logo.png" alt="Logo" class="size-32"/>
+    <a href={`${prefix}/${language.nav.home.href}`} class="inline-flex items-center">
+      <img src="/logo.png" alt="Logo martinezdom" class="size-16"/>
     </a>
     <ul class="flex space-x-4">
       {sections.map((section) => (
         <li>
-          <a href={section.href}>{section.label}</a>
+          <a href={`${prefix}/${section.href}`}>{section.title}</a>
         </li>
       ))}
     </ul>
   </div>
+  <ThemeToggle />
 </nav>
