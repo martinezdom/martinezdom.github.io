@@ -9,7 +9,7 @@ const es: Translation = {
     about: { title: "Sobre mí", href: "#sobre-mi" },
     contact: { title: "Contacto", href: "#contacto" },
   },
-  castilian: "Español",
+  castilian: "Castellano",
   english: "Inglés",
   valencian: "Valenciano",
 };

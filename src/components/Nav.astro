@@ -1,6 +1,7 @@
 ---
 
 import ThemeToggle from "./ThemeToggle.astro";
+import LanguageSelector from "./LanguageSelector.astro";
 const { language } = Astro.props;
 
 const prefix = language.prefix === 'es' ? '' : `/${language.prefix}`;
@@ -26,6 +27,7 @@ const sections = [
         </li>
       ))}
     </ul>
+    <LanguageSelector language={language} />
   </div>
   <ThemeToggle />
 </nav>
