@@ -1,0 +1,19 @@
+<!DOCTYPE html><html lang="[object Object]"> <head><meta charset="UTF-8"><meta name="description" content="Portfolio de martinezdom, desarrollador web junior."><meta name="viewport" content="width=device-width"><meta name="generator" content="Astro v5.10.0"><link rel="icon" type="image/svg+xml" href="/favicon.ico"><title>Portfolio de martinezdom | Desarrollador web</title><script>
+  const stored = localStorage.getItem("theme");
+  const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  const theme = stored || (prefersDark ? "dark" : "light");
+
+  document.documentElement.classList.toggle("dark", theme === "dark");
+</script><link rel="stylesheet" href="/_astro/index.TxIha5ev.css"></head> <body class="min-h-screen bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-black text-gray-900 dark:text-gray-100 relative transition-colors duration-300 ease-in-out"> <nav> <div> <a href="/va/#inici" class="inline-flex items-center"> <img src="/logo.png" alt="Logo martinezdom" class="size-16"> </a> <ul class="flex space-x-4"> <li> <a href="/va/#inici">Inici</a> </li><li> <a href="/va/#experiencia">Experiència</a> </li><li> <a href="/va/#projectes">Projectes</a> </li><li> <a href="/va/#sobre-mi">Sobre mi</a> </li><li> <a href="/va/#contacte">Contacte</a> </li> </ul> <select name="language" id="language" class="bg-gray-700 text-white border dark:bg-white dark:text-black border-gray-300 rounded px-3 py-1 text-sm"> <option value="en">Anglès</option> <option value="es">Castellà</option> <option value="va" selected>Valencià</option> </select> <script type="module">const n=document.getElementById("language");n&&n.addEventListener("change",t=>{const e=t.target.value;e==="es"?window.location.href="/":window.location.href=`/${e}`});</script> </div> <button id="theme-toggle-button" class="flex items-center gap-2 px-3 py-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-600 transition"> <span class="sr-only">Cambiar tema</span> <span class="block dark:hidden">🌙</span> <span class="hidden dark:block">🌞</span> </button> <script>
+  const button = document.getElementById("theme-toggle-button");
+  if (button) {
+    button.addEventListener("click", () => {
+      const html = document.documentElement;
+      html.classList.toggle("dark");
+      localStorage.setItem(
+        "theme",
+        html.classList.contains("dark") ? "dark" : "light"
+      );
+    });
+  }
+</script> </nav>  <main> <h1></h1> <p></p> <a href="miguelangelmardom8@gmail.com"></a> </main>  <footer>&copy; martinezdom</footer> </body></html>
