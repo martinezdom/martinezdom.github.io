@@ -36,4 +36,5 @@ jobs:
           publish_dir: ./dist
           publish_branch: gh-pages
           force_orphan: true
+          nojekyll: true
           commit_message: "Deploy site ${{ env.DATE }}"
