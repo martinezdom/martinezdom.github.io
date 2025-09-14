@@ -1,0 +1,22 @@
+<button
+  id="theme-toggle-button"
+  class="flex items-center gap-2 px-3 py-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-600 transition"
+>
+  <span class="sr-only">Cambiar tema</span>
+  <span class="block dark:hidden">🌙</span>
+  <span class="hidden dark:block">🌞</span>
+</button>
+
+<script is:inline>
+  const button = document.getElementById("theme-toggle-button");
+  if (button) {
+    button.addEventListener("click", () => {
+      const html = document.documentElement;
+      html.classList.toggle("dark");
+      localStorage.setItem(
+        "theme",
+        html.classList.contains("dark") ? "dark" : "light"
+      );
+    });
+  }
+</script>

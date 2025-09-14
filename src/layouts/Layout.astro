@@ -1,0 +1,21 @@
+---
+import MainHead from "@/components/MainHead.astro";
+import Nav from "@/components/Nav.astro";
+import "../styles/global.css";
+const { language } = Astro.props;
+---
+
+<!doctype html>
+<html lang={language}>
+  <head>
+    <MainHead />
+  </head>
+  <body
+    class="min-h-screen bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-black text-gray-900 dark:text-gray-100 relative transition-colors duration-300 ease-in-out">
+    <Nav
+    language={language}
+  />
+    <slot />
+    <footer>&copy; martinezdom</footer>
+  </body>
+</html>
