@@ -17,7 +17,8 @@ const va: Translation = {
     dark: "Fosc",
     system: "Sistema",
     selectorText: "Seleccionar tema"
-  }
+  },
+  downloadCurriculum: "Descarregar CV"
 };
 
 export default va;

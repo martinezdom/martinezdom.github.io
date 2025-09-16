@@ -17,7 +17,8 @@ const es: Translation = {
     dark: "Oscuro",
     system: "Sistema",
     selectorText: "Seleccionar tema"
-  }
+  },
+  downloadCurriculum: "Descargar CV"
 };
 
 export default es;

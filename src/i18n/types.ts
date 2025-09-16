@@ -16,4 +16,5 @@ export interface Translation {
     system: string;
     selectorText: string;
   };
+  downloadCurriculum: string;
 }
