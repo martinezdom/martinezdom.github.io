@@ -12,6 +12,12 @@ const es: Translation = {
   castilian: "Castellano",
   english: "Inglés",
   valencian: "Valenciano",
+    themes: {
+    light: "Claro",
+    dark: "Oscuro",
+    system: "Sistema",
+    selectorText: "Seleccionar tema"
+  }
 };
 
 export default es;

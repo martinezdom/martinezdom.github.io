@@ -12,6 +12,12 @@ const va: Translation = {
   castilian: "Castellà",
   english: "Anglès",
   valencian: "Valencià",
+  themes: {
+    light: "Clar",
+    dark: "Fosc",
+    system: "Sistema",
+    selectorText: "Seleccionar tema"
+  }
 };
 
 export default va;

@@ -10,4 +10,10 @@ export interface Translation {
   castilian: string;
   english: string;
   valencian: string;
+  themes: {
+    light: string;
+    dark: string;
+    system: string;
+    selectorText: string;
+  };
 }
