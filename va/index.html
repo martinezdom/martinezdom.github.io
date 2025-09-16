@@ -1,0 +1,56 @@
+<!DOCTYPE html><html lang="[object Object]"> <head><meta charset="UTF-8"><meta name="description" content="Portfolio de martinezdom, desarrollador web junior."><meta name="viewport" content="width=device-width"><meta name="generator" content="Astro v5.10.0"><link rel="icon" type="image/svg+xml" href="/favicon.ico"><title>Portfolio de martinezdom | Desarrollador web</title><script>
+  const stored = localStorage.getItem("theme");
+  const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  const theme = stored || (prefersDark ? "dark" : "light");
+
+  document.documentElement.classList.toggle("dark", theme === "dark");
+</script><link rel="stylesheet" href="/_astro/index.BbL8JTvV.css"></head> <body class="min-h-screen w-full bg-gradient-to-b from-white to-gray-400 dark:from-gray-900 dark:to-black text-gray-900 dark:text-gray-100 relative transition-colors duration-300 ease-in-out"> <nav> <div> <a href="/va/#inici" class="inline-flex items-center"> <img src="/logo.png" alt="Logo martinezdom" class="size-16"> </a> <ul class="flex space-x-4"> <li> <a href="/va/#inici">Inici</a> </li><li> <a href="/va/#experiencia">Experiència</a> </li><li> <a href="/va/#projectes">Projectes</a> </li><li> <a href="/va/#sobre-mi">Sobre mi</a> </li><li> <a href="/va/#contacte">Contacte</a> </li> </ul> <select name="language" id="language" class="bg-gray-700 text-white border dark:bg-white dark:text-black border-gray-300 rounded px-3 py-1 text-sm"> <option value="en">Anglès</option> <option value="es">Castellà</option> <option value="va" selected>Valencià</option> </select> <script type="module">const n=document.getElementById("language");n&&n.addEventListener("change",t=>{const e=t.target.value;e==="es"?window.location.href="/":window.location.href=`/${e}`});</script> </div> <div class="relative ml-1 mr-1"> <button id="theme-toggle-btn" class="flex items-center appearance-none border-none relative hover:scale-110 transition-transform"> <span class="sr-only">Seleccionar tema</span> <svg id="light" class="theme-toggle-icon w-5 h-5 transition-transform" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"> <path stroke="none" d="M0 0h24v24H0z" fill="none"></path> <path d="M12 12m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0"></path> <path d="M3 12h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7"></path> </svg> <svg id="dark" class="theme-toggle-icon absolute w-5 h-5 transition-transform" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"> <path stroke="none" d="M0 0h24v24H0z" fill="none"></path> <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z"></path> </svg> <svg id="system" class="theme-toggle-icon absolute w-5 h-5 transition-transform" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"> <path stroke="none" d="M0 0h24v24H0z" fill="none"></path> <path d="M3 5a1 1 0 0 1 1 -1h16a1 1 0 0 1 1 1v10a1 1 0 0 1 -1 1h-16a1 1 0 0 1 -1 -1v-10z"></path> <path d="M7 20h10"></path> <path d="M9 16v4"></path> <path d="M15 16v4"></path> </svg> </button> <div id="themes-menu" class="absolute top-8 right-0 hidden scale-95 p-1 min-w-[8rem] rounded-md border border-gray-100 bg-white/90 dark:bg-gray-900/90 dark:border-gray-500/20 shadow-md backdrop-blur-sm transition-transform duration-150 origin-top-right"> <ul> <li class="themes-menu-option px-2 py-1.5 cursor-pointer rounded-sm hover:bg-gray-200/50 dark:hover:bg-gray-500/50" data-theme="light"> Clar </li><li class="themes-menu-option px-2 py-1.5 cursor-pointer rounded-sm hover:bg-gray-200/50 dark:hover:bg-gray-500/50" data-theme="dark"> Fosc </li><li class="themes-menu-option px-2 py-1.5 cursor-pointer rounded-sm hover:bg-gray-200/50 dark:hover:bg-gray-500/50" data-theme="system"> Sistema </li> </ul> </div> </div> <script>
+const matchMedia = window.matchMedia("(prefers-color-scheme: dark)");
+const btn = document.getElementById("theme-toggle-btn");
+const menu = document.getElementById("themes-menu");
+
+const getTheme = () => localStorage.getItem("theme") || "system";
+
+const updateIcon = (theme) => {
+  document.querySelectorAll(".theme-toggle-icon").forEach((el) => {
+    el.style.transform = el.id === theme ? "scale(1)" : "scale(0)";
+  });
+};
+
+const applyTheme = () => {
+  const theme = getTheme();
+  const isDark = theme === "dark" || (theme === "system" && matchMedia.matches);
+  document.documentElement.classList[isDark ? "add" : "remove"]("dark");
+  updateIcon(theme);
+};
+
+applyTheme();
+
+matchMedia.addEventListener("change", applyTheme);
+
+btn.addEventListener("click", (e) => {
+  e.stopPropagation();
+  menu.classList.toggle("hidden");
+  menu.classList.toggle("scale-100");
+});
+
+document.addEventListener("click", () => {
+  menu.classList.add("hidden");
+  menu.classList.remove("scale-100");
+});
+
+document.querySelectorAll(".themes-menu-option").forEach((el) => {
+  el.addEventListener("click", (e) => {
+    const theme = e.currentTarget.dataset.theme;
+    localStorage.setItem("theme", theme);
+    applyTheme();
+  });
+});
+
+document.addEventListener("astro:after-swap", () => {
+  applyTheme();
+  window.scrollTo({ left: 0, top: 0, behavior: "instant" });
+});
+</script> </nav>  <main> <nav class="flex flex-wrap gap-4 mt-8"> <a href="mailto:martinezdom@gmail.com" target="_blank" rel="noopener noreferrer" role="link" class="inline-flex items-center justify-center gap-2 px-4 py-1 text-gray-800 transition bg-gray-100 border border-gray-300 rounded-full dark:bg-gray-800 dark:border-gray-600 dark:text-white focus-visible:ring-yellow-500/80 text-md hover:bg-gray-900 hover:border-gray-700 hover:text-white dark:hover:bg-gray-100 dark:hover:border-gray-300 dark:hover:text-black group max-w-fit focus:outline-none focus-visible:outline-none focus-visible:ring focus-visible:ring-white focus-visible:ring-offset-2 active:bg-black">  <svg class="size-4" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-mail-forward" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M12 18h-7a2 2 0 0 1 -2 -2v-10a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v7.5"></path><path d="M3 6l9 6l9 -6"></path><path d="M15 18h6"></path><path d="M18 15l3 3l-3 3"></path></svg> Contacta&#39;m </a> <a href="https://www.linkedin.com/in/martinezdom/" target="_blank" rel="noopener noreferrer" role="link" class="inline-flex items-center justify-center gap-2 px-4 py-1 text-gray-800 transition bg-gray-100 border border-gray-300 rounded-full dark:bg-gray-800 dark:border-gray-600 dark:text-white focus-visible:ring-yellow-500/80 text-md hover:bg-gray-900 hover:border-gray-700 hover:text-white dark:hover:bg-gray-100 dark:hover:border-gray-300 dark:hover:text-black group max-w-fit focus:outline-none focus-visible:outline-none focus-visible:ring focus-visible:ring-white focus-visible:ring-offset-2 active:bg-black">  <svg class="size-4" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-linkedin" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z"></path><path d="M8 11l0 5"></path><path d="M8 8l0 .01"></path><path d="M12 16l0 -5"></path><path d="M16 16v-3a2 2 0 0 0 -4 0"></path></svg>
+LinkedIn
+ </a> <a href="/CV-VA.pdf" target="_blank" rel="noopener noreferrer" role="link" class="inline-flex items-center justify-center gap-2 px-4 py-1 text-gray-800 transition bg-gray-100 border border-gray-300 rounded-full dark:bg-gray-800 dark:border-gray-600 dark:text-white focus-visible:ring-yellow-500/80 text-md hover:bg-gray-900 hover:border-gray-700 hover:text-white dark:hover:bg-gray-100 dark:hover:border-gray-300 dark:hover:text-black group max-w-fit focus:outline-none focus-visible:outline-none focus-visible:ring focus-visible:ring-white focus-visible:ring-offset-2 active:bg-black">  <svg class="size-4" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"> <path stroke="none" d="M0 0h24v24H0z" fill="none"></path> <path d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z"></path> </svg> Descarregar CV </a> </nav> </main>  <footer>&copy; 2025 <a href="https://github.com/martinezdom" target="_blank">martinezdom</a>.</footer> </body></html>
