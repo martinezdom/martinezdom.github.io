@@ -18,7 +18,8 @@ const va: Translation = {
     system: "Sistema",
     selectorText: "Seleccionar tema"
   },
-  downloadCurriculum: "Descarregar CV"
+  downloadCurriculum: "Descarregar CV",
+  contactMe: "Contacta'm"
 };
 
 export default va;

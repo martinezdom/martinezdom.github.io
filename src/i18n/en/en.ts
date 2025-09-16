@@ -18,7 +18,8 @@ const en: Translation = {
     system: "System",
     selectorText: "Select Theme"
   },
-  downloadCurriculum: "Download CV"
+  downloadCurriculum: "Download CV",
+  contactMe: "Contact me"
 };
 
 export default en;
