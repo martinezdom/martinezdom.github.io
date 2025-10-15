@@ -1,10 +1,9 @@
 ---
-
 import ThemeToggle from "./ThemeToggle.astro";
 import LanguageSelector from "./LanguageSelector.astro";
 const { language } = Astro.props;
 
-const prefix = language.prefix === 'es' ? '' : `/${language.prefix}`;
+const prefix = language.prefix === "es" ? "" : `/${language.prefix}`;
 
 const sections = [
   language.nav.home,
@@ -16,18 +15,18 @@ const sections = [
 ---
 
 <nav>
-  <div>
-    <a href={`${prefix}/${language.nav.home.href}`} class="inline-flex items-center">
+  <!--<a href={`${prefix}/${language.nav.home.href}`} class="inline-flex items-center">
       <img src="/logo.png" alt="Logo martinezdom" class="size-16"/>
-    </a>
-    <ul class="flex space-x-4">
-      {sections.map((section) => (
+    </a>-->
+  <ul class="flex space-x-4">
+    {
+      sections.map((section) => (
         <li>
           <a href={`${prefix}/${section.href}`}>{section.title}</a>
         </li>
-      ))}
-    </ul>
-    <LanguageSelector language={language} />
-  </div>
+      ))
+    }
+  </ul>
+  <LanguageSelector language={language} />
   <ThemeToggle language={language} />
 </nav>

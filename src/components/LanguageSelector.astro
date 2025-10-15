@@ -1,11 +1,22 @@
 ---
 const { language } = Astro.props;
 ---
-<select name="language" id="language" class="bg-gray-700 text-white border dark:bg-white dark:text-black border-gray-300 rounded px-3 py-1 text-sm">
-  <option value="en" selected={language.prefix === 'en'}>{language.english}</option>
-  <option value="es" selected={language.prefix === 'es'}>{language.castilian}</option>
-  <option value="va" selected={language.prefix === 'va'}>{language.valencian}</option>
+<select
+  name="language"
+  id="language"
+  class=" rounded-md px-3 py-1 text-sm bg-white text-black border border-black dark:bg-gray-800 dark:text-white dark:border-white"
+>
+  <option value="en" selected={language.prefix === 'en'}>
+    {language.english}
+  </option>
+  <option value="es" selected={language.prefix === 'es'}>
+    {language.castilian}
+  </option>
+  <option value="va" selected={language.prefix === 'va'}>
+    {language.valencian}
+  </option>
 </select>
+
 
 <script>
   const selectElement = document.getElementById('language') as HTMLSelectElement;
