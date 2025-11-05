@@ -11,20 +11,20 @@ const THEMES = [
 ];
 ---
 
-<div class="relative ml-1 mr-1">
+<div class="mx-1">
   <button
     id="theme-toggle-btn"
-    class="flex items-center appearance-none border-none relative hover:scale-110 transition-transform"
+    class="hover:scale-110 transition-transform"
   >
     <span class="sr-only">{language.themes.selectorText}</span>
-    <SunIcon id="light" class="theme-toggle-icon w-5 h-5 transition-transform" />
-    <MoonIcon id="dark" class="theme-toggle-icon absolute w-5 h-5 transition-transform" />
-    <SystemIcon id="system" class="theme-toggle-icon absolute w-5 h-5 transition-transform" />
+    <SunIcon id="light" class="theme-toggle-icon transition-transform" />
+    <MoonIcon id="dark" class="theme-toggle-icon transition-transform" />
+    <SystemIcon id="system" class="theme-toggle-icon transition-transform" />
   </button>
 
   <div
     id="themes-menu"
-    class="absolute top-8 right-0 hidden scale-95 p-1 min-w-[8rem] rounded-md border border-gray-100 bg-white/90 dark:bg-gray-900/90 dark:border-gray-500/20 shadow-md backdrop-blur-sm transition-transform duration-150 origin-top-right"
+    class="hidden p-1 rounded-md border border-black bg-white dark:bg-gray-800 dark:border-white transition-transform duration-150"
   >
     <ul>
       {THEMES.map((theme) => (
