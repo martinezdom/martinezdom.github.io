@@ -14,23 +14,26 @@ const THEMES = [
 <div class="mx-1">
   <button
     id="theme-toggle-btn"
-    class="hover:scale-110 transition-transform"
+    class="hover:scale-110 transition-transform w-8 h-8 flex items-center justify-center relative"
   >
     <span class="sr-only">{language.themes.selectorText}</span>
-    <SunIcon id="light" class="theme-toggle-icon transition-transform" />
-    <MoonIcon id="dark" class="theme-toggle-icon transition-transform" />
-    <SystemIcon id="system" class="theme-toggle-icon transition-transform" />
+    <SunIcon id="light" class="theme-toggle-icon absolute m-auto transition-all duration-300" />
+    <MoonIcon id="dark" class="theme-toggle-icon absolute m-auto transition-all duration-300" />
+    <SystemIcon id="system" class="theme-toggle-icon absolute m-auto transition-all duration-300" />
   </button>
 
   <div
     id="themes-menu"
-    class="hidden p-1 rounded-md border border-black bg-white dark:bg-gray-800 dark:border-white transition-transform duration-150"
+    class="hidden max-w-32 p-1 rounded-md border border-gray-900 bg-gray-100 dark:bg-gray-800 dark:border-gray-100 shadow-lg"
+    role="menu"
+    aria-labelledby="theme-toggle-btn"
   >
     <ul>
       {THEMES.map((theme) => (
         <li
-          class="themes-menu-option px-2 py-1.5 cursor-pointer rounded-sm hover:bg-gray-200/50 dark:hover:bg-gray-500/50"
+          class="themes-menu-option px-2 py-1.5 cursor-pointer rounded-sm hover:bg-gray-200/50 dark:hover:bg-gray-500/50 text-sm"
           data-theme={theme.value}
+          role="menuitem"
         >
           {theme.label}
         </li>
@@ -44,11 +47,20 @@ const matchMedia = window.matchMedia("(prefers-color-scheme: dark)");
 const btn = document.getElementById("theme-toggle-btn");
 const menu = document.getElementById("themes-menu");
 
-const getTheme = () => localStorage.getItem("theme") || "system";
+const getTheme = () => {
+  const stored = localStorage.getItem("theme");
+  return stored && ['light', 'dark', 'system'].includes(stored) ? stored : "system";
+};
 
 const updateIcon = (theme) => {
   document.querySelectorAll(".theme-toggle-icon").forEach((el) => {
-    el.style.transform = el.id === theme ? "scale(1)" : "scale(0)";
+    if (el.id === theme) {
+      el.style.opacity = "1";
+      el.style.transform = "scale(1)";
+    } else {
+      el.style.opacity = "0";
+      el.style.transform = "scale(0)";
+    }
   });
 };
 
@@ -59,19 +71,24 @@ const applyTheme = () => {
   updateIcon(theme);
 };
 
+// Inicializar
 applyTheme();
 
+// Event listeners
 matchMedia.addEventListener("change", applyTheme);
 
 btn.addEventListener("click", (e) => {
   e.stopPropagation();
-  menu.classList.toggle("hidden");
-  menu.classList.toggle("scale-100");
+  const isExpanded = btn.getAttribute("aria-expanded") === "true";
+  menu.classList.toggle("hidden", isExpanded);
+  btn.setAttribute("aria-expanded", !isExpanded);
 });
 
-document.addEventListener("click", () => {
-  menu.classList.add("hidden");
-  menu.classList.remove("scale-100");
+document.addEventListener("click", (e) => {
+  if (!btn.contains(e.target) && !menu.contains(e.target)) {
+    menu.classList.add("hidden");
+    btn.setAttribute("aria-expanded", "false");
+  }
 });
 
 document.querySelectorAll(".themes-menu-option").forEach((el) => {
@@ -79,6 +96,8 @@ document.querySelectorAll(".themes-menu-option").forEach((el) => {
     const theme = e.currentTarget.dataset.theme;
     localStorage.setItem("theme", theme);
     applyTheme();
+    menu.classList.add("hidden");
+    btn.setAttribute("aria-expanded", "false");
   });
 });
 
