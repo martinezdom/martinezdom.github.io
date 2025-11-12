@@ -7,7 +7,7 @@ const { language } = Astro.props;
 ---
 
 <!doctype html>
-<html lang={language}>
+<html lang={`"${language.prefix}"`}>
   <head>
     <MainHead />
   </head>

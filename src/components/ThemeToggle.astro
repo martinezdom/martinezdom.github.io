@@ -5,104 +5,117 @@ import SystemIcon from "./icons/System.astro";
 const { language } = Astro.props;
 
 const THEMES = [
-  { label: language.themes.light, value: 'light' },
-  { label: language.themes.dark, value: 'dark' },
-  { label: language.themes.system, value: 'system' }
+  { label: language.themes.light, value: "light" },
+  { label: language.themes.dark, value: "dark" },
+  { label: language.themes.system, value: "system" },
 ];
 ---
 
-<div class="mx-1">
+<div class="relative inline-flex">
   <button
     id="theme-toggle-btn"
-    class="hover:scale-110 transition-transform w-8 h-8 flex items-center justify-center relative"
+    aria-expanded="false"
+    class="rounded-full bg-gray-900 dark:bg-white hover:scale-110 transition-transform w-8 h-8 flex items-center justify-center relative duration-300"
   >
     <span class="sr-only">{language.themes.selectorText}</span>
-    <SunIcon id="light" class="theme-toggle-icon absolute m-auto transition-all duration-300" />
-    <MoonIcon id="dark" class="theme-toggle-icon absolute m-auto transition-all duration-300" />
-    <SystemIcon id="system" class="theme-toggle-icon absolute m-auto transition-all duration-300" />
+    <SunIcon
+      id="light"
+      class="theme-toggle-icon absolute m-auto text-white dark:text-gray-900"
+    />
+    <MoonIcon
+      id="dark"
+      class="theme-toggle-icon absolute m-auto text-white dark:text-gray-900"
+    />
+    <SystemIcon
+      id="system"
+      class="theme-toggle-icon absolute m-auto text-white dark:text-gray-900"
+    />
   </button>
 
   <div
     id="themes-menu"
-    class="hidden max-w-32 p-1 rounded-md border border-gray-900 bg-gray-100 dark:bg-gray-800 dark:border-gray-100 shadow-lg"
+    class="hidden absolute mt-10 w-32 p-1 rounded-md border border-gray-900 bg-gray-100 dark:bg-gray-800 dark:border-gray-100"
     role="menu"
     aria-labelledby="theme-toggle-btn"
   >
     <ul>
-      {THEMES.map((theme) => (
-        <li
-          class="themes-menu-option px-2 py-1.5 cursor-pointer rounded-sm hover:bg-gray-200/50 dark:hover:bg-gray-500/50 text-sm"
-          data-theme={theme.value}
-          role="menuitem"
-        >
-          {theme.label}
-        </li>
-      ))}
+      {
+        THEMES.map((theme) => (
+          <li
+            class="themes-menu-option px-2 py-1.5 cursor-pointer rounded-sm text-sm"
+            data-theme={theme.value}
+            role="menuitem"
+          >
+            {theme.label}
+          </li>
+        ))
+      }
     </ul>
   </div>
 </div>
 
 <script is:inline>
-const matchMedia = window.matchMedia("(prefers-color-scheme: dark)");
-const btn = document.getElementById("theme-toggle-btn");
-const menu = document.getElementById("themes-menu");
+  const matchMedia = window.matchMedia("(prefers-color-scheme: dark)");
+  const btn = document.getElementById("theme-toggle-btn");
+  const menu = document.getElementById("themes-menu");
 
-const getTheme = () => {
-  const stored = localStorage.getItem("theme");
-  return stored && ['light', 'dark', 'system'].includes(stored) ? stored : "system";
-};
+  const getTheme = () => {
+    const stored = localStorage.getItem("theme");
+    return stored && ["light", "dark", "system"].includes(stored)
+      ? stored
+      : "system";
+  };
 
-const updateIcon = (theme) => {
-  document.querySelectorAll(".theme-toggle-icon").forEach((el) => {
-    if (el.id === theme) {
-      el.style.opacity = "1";
-      el.style.transform = "scale(1)";
-    } else {
-      el.style.opacity = "0";
-      el.style.transform = "scale(0)";
+  const updateIcon = (theme) => {
+    document.querySelectorAll(".theme-toggle-icon").forEach((el) => {
+      if (el.id === theme) {
+        el.style.opacity = "1";
+        el.style.transform = "scale(1)";
+      } else {
+        el.style.opacity = "0";
+        el.style.transform = "scale(0)";
+      }
+    });
+  };
+
+  const applyTheme = () => {
+    const theme = getTheme();
+    const isDark =
+      theme === "dark" || (theme === "system" && matchMedia.matches);
+    document.documentElement.classList[isDark ? "add" : "remove"]("dark");
+    updateIcon(theme);
+  };
+
+  applyTheme();
+
+  matchMedia.addEventListener("change", applyTheme);
+
+  btn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    const isExpanded = btn.getAttribute("aria-expanded") === "true";
+    menu.classList.toggle("hidden", isExpanded);
+    btn.setAttribute("aria-expanded", !isExpanded);
+  });
+
+  document.addEventListener("click", (e) => {
+    if (!btn.contains(e.target) && !menu.contains(e.target)) {
+      menu.classList.add("hidden");
+      btn.setAttribute("aria-expanded", "false");
     }
   });
-};
 
-const applyTheme = () => {
-  const theme = getTheme();
-  const isDark = theme === "dark" || (theme === "system" && matchMedia.matches);
-  document.documentElement.classList[isDark ? "add" : "remove"]("dark");
-  updateIcon(theme);
-};
-
-// Inicializar
-applyTheme();
-
-// Event listeners
-matchMedia.addEventListener("change", applyTheme);
-
-btn.addEventListener("click", (e) => {
-  e.stopPropagation();
-  const isExpanded = btn.getAttribute("aria-expanded") === "true";
-  menu.classList.toggle("hidden", isExpanded);
-  btn.setAttribute("aria-expanded", !isExpanded);
-});
-
-document.addEventListener("click", (e) => {
-  if (!btn.contains(e.target) && !menu.contains(e.target)) {
-    menu.classList.add("hidden");
-    btn.setAttribute("aria-expanded", "false");
-  }
-});
-
-document.querySelectorAll(".themes-menu-option").forEach((el) => {
-  el.addEventListener("click", (e) => {
-    const theme = e.currentTarget.dataset.theme;
-    localStorage.setItem("theme", theme);
-    applyTheme();
-    menu.classList.add("hidden");
-    btn.setAttribute("aria-expanded", "false");
+  document.querySelectorAll(".themes-menu-option").forEach((el) => {
+    el.addEventListener("click", (e) => {
+      const theme = e.currentTarget.dataset.theme;
+      localStorage.setItem("theme", theme);
+      applyTheme();
+      menu.classList.add("hidden");
+      btn.setAttribute("aria-expanded", "false");
+    });
   });
-});
 
-document.addEventListener("astro:after-swap", () => {
-  applyTheme();
-  window.scrollTo({ left: 0, top: 0, behavior: "instant" });
-});
+  document.addEventListener("astro:after-swap", () => {
+    applyTheme();
+    window.scrollTo({ left: 0, top: 0, behavior: "instant" });
+  });
 </script>

@@ -14,7 +14,7 @@ const sections = [
 ];
 ---
 
-<nav>
+<nav class="flex h-12 my-3 w-full items-center justify-center">
   <!--<a href={`${prefix}/${language.nav.home.href}`} class="inline-flex items-center">
       <img src="/logo.png" alt="Logo martinezdom" class="size-16"/>
     </a>-->
@@ -26,7 +26,7 @@ const sections = [
         </li>
       ))
     }
+    <li><LanguageSelector language={language} /></li>
+    <li><ThemeToggle language={language} /></li>
   </ul>
-  <LanguageSelector language={language} />
-  <ThemeToggle language={language} />
 </nav>
