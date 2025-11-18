@@ -2,55 +2,56 @@
 import SunIcon from "./icons/Sun.astro";
 import MoonIcon from "./icons/Moon.astro";
 import SystemIcon from "./icons/System.astro";
+import Icon from "./ThemeIcon.astro";
 const { language } = Astro.props;
 
 const THEMES = [
-  { label: language.themes.light, value: "light" },
-  { label: language.themes.dark, value: "dark" },
-  { label: language.themes.system, value: "system" },
+  { label: language.themes.light, value: "light", icon: SunIcon },
+  { label: language.themes.dark, value: "dark", icon: MoonIcon },
+  { label: language.themes.system, value: "system", icon: SystemIcon },
 ];
 ---
 
-<div class="relative inline-flex">
+<div class="fixed bottom-8 right-10">
   <button
     id="theme-toggle-btn"
     aria-expanded="false"
-    class="rounded-full bg-gray-900 dark:bg-white hover:scale-110 transition-transform w-8 h-8 flex items-center justify-center relative duration-300"
+    class="theme-toggle-btn relative rounded-full flex items-center justify-center size-12 border-3 border-gray-900 dark:border-white text-gray-900 dark:text-white bg-white dark:bg-gray-900 hover:bg-gray-900 hover:text-white hover:dark:bg-white hover:dark:text-gray-900 transition-all duration-300 shadow-lg"
   >
     <span class="sr-only">{language.themes.selectorText}</span>
-    <SunIcon
-      id="light"
-      class="theme-toggle-icon absolute m-auto text-white dark:text-gray-900"
-    />
-    <MoonIcon
-      id="dark"
-      class="theme-toggle-icon absolute m-auto text-white dark:text-gray-900"
-    />
-    <SystemIcon
-      id="system"
-      class="theme-toggle-icon absolute m-auto text-white dark:text-gray-900"
-    />
+    <Icon id="light">
+      <SunIcon />
+    </Icon>
+    <Icon id="dark">
+      <MoonIcon />
+    </Icon>
+    <Icon id="system">
+      <SystemIcon />
+    </Icon>
   </button>
 
   <div
     id="themes-menu"
-    class="hidden absolute mt-10 w-32 p-1 rounded-md border border-gray-900 bg-gray-100 dark:bg-gray-800 dark:border-gray-100"
+    class="hidden absolute bottom-full right-0 mb-1.5 flex-col space-y-1.5"
     role="menu"
     aria-labelledby="theme-toggle-btn"
   >
-    <ul>
-      {
-        THEMES.map((theme) => (
-          <li
-            class="themes-menu-option px-2 py-1.5 cursor-pointer rounded-sm text-sm"
-            data-theme={theme.value}
-            role="menuitem"
-          >
-            {theme.label}
-          </li>
-        ))
-      }
-    </ul>
+    {
+      THEMES.map((theme) => (
+        <button
+          class="theme-option-btn rounded-full flex items-center justify-center size-12 border-3 border-gray-900 dark:border-white text-gray-900 dark:text-white bg-white dark:bg-gray-900 hover:bg-gray-900 hover:text-white hover:dark:bg-white hover:dark:text-gray-900 transition-all duration-300 shadow-lg"
+          data-theme={theme.value}
+          role="menuitem"
+          aria-label={theme.label}
+          title={theme.label}
+        >
+          <span class="sr-only">{theme.label}</span>
+          <Icon id={theme.value}>
+            <theme.icon />
+          </Icon>
+        </button>
+      ))
+    }
   </div>
 </div>
 
@@ -66,17 +67,17 @@ const THEMES = [
       : "system";
   };
 
-  const updateIcon = (theme) => {
-    document.querySelectorAll(".theme-toggle-icon").forEach((el) => {
-      if (el.id === theme) {
-        el.style.opacity = "1";
-        el.style.transform = "scale(1)";
-      } else {
-        el.style.opacity = "0";
-        el.style.transform = "scale(0)";
-      }
-    });
-  };
+const updateIcon = (theme) => {
+  document.querySelectorAll("#theme-toggle-btn .theme-toggle-icon").forEach((el) => {
+    if (el.id === theme) {
+      el.classList.remove("opacity-0");
+      el.classList.add("opacity-100");
+    } else {
+      el.classList.remove("opacity-100");
+      el.classList.add("opacity-0");
+    }
+  });
+};
 
   const applyTheme = () => {
     const theme = getTheme();
@@ -84,6 +85,17 @@ const THEMES = [
       theme === "dark" || (theme === "system" && matchMedia.matches);
     document.documentElement.classList[isDark ? "add" : "remove"]("dark");
     updateIcon(theme);
+  };
+
+  const toggleButtonActiveState = (isActive) => {
+    if (isActive) {
+      btn.classList.add("bg-gray-900", "text-white", "dark:bg-white", "dark:text-gray-900");
+      btn.classList.remove("bg-white", "text-gray-900", "dark:bg-gray-900", "dark:text-white");
+    } else {
+      // Estado normal
+      btn.classList.add("bg-white", "text-gray-900", "dark:bg-gray-900", "dark:text-white");
+      btn.classList.remove("bg-gray-900", "text-white", "dark:bg-white", "dark:text-gray-900");
+    }
   };
 
   applyTheme();
@@ -95,27 +107,30 @@ const THEMES = [
     const isExpanded = btn.getAttribute("aria-expanded") === "true";
     menu.classList.toggle("hidden", isExpanded);
     btn.setAttribute("aria-expanded", !isExpanded);
+    
+    toggleButtonActiveState(!isExpanded);
   });
 
   document.addEventListener("click", (e) => {
     if (!btn.contains(e.target) && !menu.contains(e.target)) {
       menu.classList.add("hidden");
       btn.setAttribute("aria-expanded", "false");
+      toggleButtonActiveState(false);
     }
   });
 
-  document.querySelectorAll(".themes-menu-option").forEach((el) => {
+  document.querySelectorAll(".theme-option-btn").forEach((el) => {
     el.addEventListener("click", (e) => {
       const theme = e.currentTarget.dataset.theme;
       localStorage.setItem("theme", theme);
       applyTheme();
       menu.classList.add("hidden");
       btn.setAttribute("aria-expanded", "false");
+      toggleButtonActiveState(false);
     });
   });
 
   document.addEventListener("astro:after-swap", () => {
     applyTheme();
-    window.scrollTo({ left: 0, top: 0, behavior: "instant" });
   });
 </script>
