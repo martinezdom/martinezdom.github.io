@@ -1,6 +1,6 @@
-# 🌐 Portfolio Web – Miguel Ángel Martínez
+# 🌐 Portafolio Web – Miguel Ángel Martínez
 
-Este es mi portfolio personal desarrollado con [Astro](https://astro.build/) y [Tailwind CSS](https://tailwindcss.com/). Aquí presento quién soy, mis habilidades como desarrollador web y algunos de los proyectos que he realizado.
+Este es mi portafolio personal desarrollado con [Astro](https://astro.build/) y [Tailwind CSS](https://tailwindcss.com/). Aquí presento quién soy, mis habilidades como desarrollador web y algunos de los proyectos que he realizado.
 
 ---
 
@@ -34,7 +34,7 @@ Este es mi portfolio personal desarrollado con [Astro](https://astro.build/) y [
 
 ## 📫 Contacto
 
-Puedes contactarme desde el formulario del portfolio o a través de mis redes sociales:
+Puedes contactarme desde el formulario del portafolio o a través de mis redes sociales:
 
 - ✉️ <a href="mailto:miguelangelmardom8@gmail.com" target="_blank" rel="noopener noreferrer">miguelangelmardom8@gmail.com</a>  
 - 💼 <a href="https://www.linkedin.com/in/martinezdom" target="_blank" rel="noopener noreferrer">LinkedIn</a>  
@@ -42,4 +42,4 @@ Puedes contactarme desde el formulario del portfolio o a través de mis redes so
 
 ---
 
-Gracias por visitar mi portfolio 😊
+Gracias por visitar mi portafolio 😊

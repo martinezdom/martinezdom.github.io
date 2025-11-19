@@ -2,7 +2,6 @@
 import SunIcon from "./icons/Sun.astro";
 import MoonIcon from "./icons/Moon.astro";
 import SystemIcon from "./icons/System.astro";
-import Icon from "./ThemeIcon.astro";
 const { language } = Astro.props;
 
 const THEMES = [
@@ -10,127 +9,130 @@ const THEMES = [
   { label: language.themes.dark, value: "dark", icon: MoonIcon },
   { label: language.themes.system, value: "system", icon: SystemIcon },
 ];
+
+const buttonClasses = "rounded-full flex items-center justify-center size-11 border-3 border-gray-900 dark:border-white text-gray-900 dark:text-white bg-white dark:bg-gray-900 hover:bg-gray-900 hover:text-white hover:dark:bg-white hover:dark:text-gray-900 transition-all duration-300 shadow-lg";
 ---
 
 <div class="fixed bottom-8 right-10">
   <button
-    id="theme-toggle-btn"
+    id="theme-toggle"
     aria-expanded="false"
-    class="theme-toggle-btn relative rounded-full flex items-center justify-center size-12 border-3 border-gray-900 dark:border-white text-gray-900 dark:text-white bg-white dark:bg-gray-900 hover:bg-gray-900 hover:text-white hover:dark:bg-white hover:dark:text-gray-900 transition-all duration-300 shadow-lg"
+    class=`${buttonClasses} relative`
   >
     <span class="sr-only">{language.themes.selectorText}</span>
-    <Icon id="light">
+    
+    <span id="light" class="theme-main-icon absolute">
       <SunIcon />
-    </Icon>
-    <Icon id="dark">
+    </span>
+    <span id="dark" class="theme-main-icon absolute">
       <MoonIcon />
-    </Icon>
-    <Icon id="system">
+    </span>
+    <span id="system" class="theme-main-icon absolute">
       <SystemIcon />
-    </Icon>
+    </span>
   </button>
 
   <div
-    id="themes-menu"
+    id="theme-menu"
     class="hidden absolute bottom-full right-0 mb-1.5 flex-col space-y-1.5"
     role="menu"
-    aria-labelledby="theme-toggle-btn"
+    aria-labelledby="theme-toggle"
   >
-    {
-      THEMES.map((theme) => (
-        <button
-          class="theme-option-btn rounded-full flex items-center justify-center size-12 border-3 border-gray-900 dark:border-white text-gray-900 dark:text-white bg-white dark:bg-gray-900 hover:bg-gray-900 hover:text-white hover:dark:bg-white hover:dark:text-gray-900 transition-all duration-300 shadow-lg"
-          data-theme={theme.value}
-          role="menuitem"
-          aria-label={theme.label}
-          title={theme.label}
-        >
-          <span class="sr-only">{theme.label}</span>
-          <Icon id={theme.value}>
-            <theme.icon />
-          </Icon>
-        </button>
-      ))
-    }
+    {THEMES.map((theme) => (
+      <button
+        class=`theme-option ${buttonClasses}`
+        data-theme={theme.value}
+        role="menuitem"
+        aria-label={theme.label}
+        title={theme.label}
+      >
+        <span class="sr-only">{theme.label}</span>
+        <span class="size-6">
+          <theme.icon />
+        </span>
+      </button>
+    ))}
   </div>
 </div>
 
 <script is:inline>
-  const matchMedia = window.matchMedia("(prefers-color-scheme: dark)");
-  const btn = document.getElementById("theme-toggle-btn");
-  const menu = document.getElementById("themes-menu");
+  const themeToggle = document.getElementById('theme-toggle');
+  const themeMenu = document.getElementById('theme-menu');
+  const themeIcons = document.querySelectorAll('.theme-main-icon');
+  const themeOptions = document.querySelectorAll('.theme-option');
+  const colorScheme = window.matchMedia('(prefers-color-scheme: dark)');
 
-  const getTheme = () => {
-    const stored = localStorage.getItem("theme");
-    return stored && ["light", "dark", "system"].includes(stored)
-      ? stored
-      : "system";
+  const getSavedTheme = () => {
+    const saved = localStorage.getItem('theme');
+    return ['light', 'dark', 'system'].includes(saved) ? saved : 'system';
   };
 
-const updateIcon = (theme) => {
-  document.querySelectorAll("#theme-toggle-btn .theme-toggle-icon").forEach((el) => {
-    if (el.id === theme) {
-      el.classList.remove("opacity-0");
-      el.classList.add("opacity-100");
-    } else {
-      el.classList.remove("opacity-100");
-      el.classList.add("opacity-0");
-    }
-  });
-};
+  const updateActiveIcon = (theme) => {
+    themeIcons.forEach(icon => {
+      const isActive = icon.id === theme;
+      icon.classList.toggle('opacity-100', isActive);
+      icon.classList.toggle('opacity-0', !isActive);
+    });
+  };
 
   const applyTheme = () => {
-    const theme = getTheme();
-    const isDark =
-      theme === "dark" || (theme === "system" && matchMedia.matches);
-    document.documentElement.classList[isDark ? "add" : "remove"]("dark");
-    updateIcon(theme);
-  };
-
-  const toggleButtonActiveState = (isActive) => {
-    if (isActive) {
-      btn.classList.add("bg-gray-900", "text-white", "dark:bg-white", "dark:text-gray-900");
-      btn.classList.remove("bg-white", "text-gray-900", "dark:bg-gray-900", "dark:text-white");
-    } else {
-      // Estado normal
-      btn.classList.add("bg-white", "text-gray-900", "dark:bg-gray-900", "dark:text-white");
-      btn.classList.remove("bg-gray-900", "text-white", "dark:bg-white", "dark:text-gray-900");
-    }
-  };
-
-  applyTheme();
-
-  matchMedia.addEventListener("change", applyTheme);
-
-  btn.addEventListener("click", (e) => {
-    e.stopPropagation();
-    const isExpanded = btn.getAttribute("aria-expanded") === "true";
-    menu.classList.toggle("hidden", isExpanded);
-    btn.setAttribute("aria-expanded", !isExpanded);
+    const theme = getSavedTheme();
+    const isDark = theme === 'dark' || (theme === 'system' && colorScheme.matches);
     
-    toggleButtonActiveState(!isExpanded);
+    document.documentElement.classList.toggle('dark', isDark);
+    updateActiveIcon(theme);
+  };
+
+  const setToggleState = (isActive) => {
+    themeToggle.classList.toggle('bg-gray-900', isActive);
+    themeToggle.classList.toggle('text-white', isActive);
+    themeToggle.classList.toggle('dark:bg-white', isActive);
+    themeToggle.classList.toggle('dark:text-gray-900', isActive);
+    themeToggle.classList.toggle('bg-white', !isActive);
+    themeToggle.classList.toggle('text-gray-900', !isActive);
+    themeToggle.classList.toggle('dark:bg-gray-900', !isActive);
+    themeToggle.classList.toggle('dark:text-white', !isActive);
+  };
+
+  const toggleMenu = () => {
+    const isOpen = themeToggle.getAttribute('aria-expanded') === 'true';
+    
+    themeMenu.classList.toggle('hidden', isOpen);
+    themeToggle.setAttribute('aria-expanded', !isOpen);
+    setToggleState(!isOpen);
+  };
+
+  const closeMenu = () => {
+    themeMenu.classList.add('hidden');
+    themeToggle.setAttribute('aria-expanded', 'false');
+    setToggleState(false);
+  };
+
+  const changeTheme = (theme) => {
+    localStorage.setItem('theme', theme);
+    applyTheme();
+    closeMenu();
+  };
+
+  themeToggle.addEventListener('click', (e) => {
+    e.stopPropagation();
+    toggleMenu();
   });
 
-  document.addEventListener("click", (e) => {
-    if (!btn.contains(e.target) && !menu.contains(e.target)) {
-      menu.classList.add("hidden");
-      btn.setAttribute("aria-expanded", "false");
-      toggleButtonActiveState(false);
+  document.addEventListener('click', (e) => {
+    if (!themeToggle.contains(e.target) && !themeMenu.contains(e.target)) {
+      closeMenu();
     }
   });
 
-  document.querySelectorAll(".theme-option-btn").forEach((el) => {
-    el.addEventListener("click", (e) => {
-      const theme = e.currentTarget.dataset.theme;
-      localStorage.setItem("theme", theme);
-      applyTheme();
-      menu.classList.add("hidden");
-      btn.setAttribute("aria-expanded", "false");
-      toggleButtonActiveState(false);
+  themeOptions.forEach(option => {
+    option.addEventListener('click', () => {
+      changeTheme(option.dataset.theme);
     });
   });
 
-  document.addEventListener("astro:after-swap", () => {
-    applyTheme();
-  });
+  colorScheme.addEventListener('change', applyTheme);
+  document.addEventListener('astro:after-swap', applyTheme);
+
+  applyTheme();
 </script>
