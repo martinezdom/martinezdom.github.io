@@ -1,5 +1,10 @@
 ---
+import LanguageSelector from "./LanguageSelector.astro";
+const { language } = Astro.props;
 const currentYear = new Date().getFullYear()
 ---
 
-<footer>&copy; {currentYear} <a href="https://github.com/martinezdom" target="_blank">martinezdom</a>.</footer>
+<footer>
+  &copy; {currentYear} <a href="https://github.com/martinezdom" target="_blank">martinezdom</a>.
+  <LanguageSelector />
+</footer>
