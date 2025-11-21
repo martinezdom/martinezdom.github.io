@@ -27,26 +27,3 @@ const sections = [
     </ul>
   </nav>
 </header>
-
-<script>
-  const nav = document.getElementById("main-nav");
-  if (!nav) return;
-
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 50) {
-      nav.classList.add(
-        "backdrop-blur-md",
-        "bg-white/70",
-        "dark:bg-gray-900/70",
-        "shadow-md"
-      );
-    } else {
-      nav.classList.remove(
-        "backdrop-blur-md",
-        "bg-white/70",
-        "dark:bg-gray-900/70",
-        "shadow-md"
-      );
-    }
-  });
-</script>
