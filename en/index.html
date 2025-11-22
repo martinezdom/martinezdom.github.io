@@ -1,0 +1,93 @@
+<!DOCTYPE html><html lang="&#34;en&#34;"> <head><meta charset="UTF-8"><meta name="description" content="Portafolio de martinezdom, desarrollador web junior."><meta name="viewport" content="width=device-width"><meta name="generator" content="Astro v5.16.0"><link rel="icon" type="image/svg+xml" href="/favicon.ico"><title>Portafolio de martinezdom | Desarrollador web</title><script>
+  const stored = localStorage.getItem("theme");
+  const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  const theme = stored || (prefersDark ? "dark" : "light");
+
+  document.documentElement.classList.toggle("dark", theme === "dark");
+</script><link rel="stylesheet" href="/_astro/index.CBKd20cW.css"></head> <body class="min-h-screen w-full bg-gradient-to-b from-white to-gray-400 dark:from-gray-900 dark:to-black text-gray-900 dark:text-gray-100 relative transition-colors duration-300 ease-in-out"> <header class="fixed top-0 z-10 flex items-center justify-center w-full mx-auto mt-3"> <nav class="flex px-3 text-sm font-medium rounded-full"> <!--<a href={`${prefix}/${language.nav.home.href}`} class="inline-flex items-center">
+      <img src="/logo.png" alt="Logo martinezdom" class="size-16"/>
+    </a>--> <ul class="flex space-x-4"> <li> <a href="/en/#experience">Experience</a> </li><li> <a href="/en/#projects">Projects</a> </li><li> <a href="/en/#about-me">About me</a> </li><li> <a href="/en/#contact">Contact</a> </li> </ul> </nav> </header>  <main> <nav class="flex flex-wrap gap-4 mt-8"> <a href="mailto:martinezdom@gmail.com" target="_blank" rel="noopener noreferrer" role="link" class="inline-flex items-center justify-center gap-2 px-4 py-1 border border-gray-900 rounded-full bg-gray-100 text-gray-900 transition hover:bg-gray-900 hover:border-gray-700 hover:text-white group dark:bg-gray-800 dark:border-gray-100 dark:text-gray-100 dark:hover:bg-gray-100 dark:hover:border-gray-100 dark:hover:text-gray-900">  <svg class="size-4" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-mail-forward" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M12 18h-7a2 2 0 0 1 -2 -2v-10a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v7.5"></path><path d="M3 6l9 6l9 -6"></path><path d="M15 18h6"></path><path d="M18 15l3 3l-3 3"></path></svg> Contact me </a> <a href="https://www.linkedin.com/in/martinezdom/" target="_blank" rel="noopener noreferrer" role="link" class="inline-flex items-center justify-center gap-2 px-4 py-1 border border-gray-900 rounded-full bg-gray-100 text-gray-900 transition hover:bg-gray-900 hover:border-gray-700 hover:text-white group dark:bg-gray-800 dark:border-gray-100 dark:text-gray-100 dark:hover:bg-gray-100 dark:hover:border-gray-100 dark:hover:text-gray-900">  <svg class="size-4" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-linkedin" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z"></path><path d="M8 11l0 5"></path><path d="M8 8l0 .01"></path><path d="M12 16l0 -5"></path><path d="M16 16v-3a2 2 0 0 0 -4 0"></path></svg>
+LinkedIn
+ </a> <a href="/CV-EN.pdf" target="_blank" rel="noopener noreferrer" role="link" class="inline-flex items-center justify-center gap-2 px-4 py-1 border border-gray-900 rounded-full bg-gray-100 text-gray-900 transition hover:bg-gray-900 hover:border-gray-700 hover:text-white group dark:bg-gray-800 dark:border-gray-100 dark:text-gray-100 dark:hover:bg-gray-100 dark:hover:border-gray-100 dark:hover:text-gray-900">  <svg class="size-4" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"> <path stroke="none" d="M0 0h24v24H0z" fill="none"></path> <path d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z"></path> </svg> Download CV </a> </nav> <div class="fixed bottom-8 right-10"> <button id="theme-toggle" aria-expanded="false" class="rounded-full flex items-center justify-center size-11 border-2 border-gray-900 dark:border-white text-gray-900 dark:text-white bg-white dark:bg-gray-900 hover:bg-gray-900 hover:text-white hover:dark:bg-white hover:dark:text-gray-900 transition-all duration-300 cursor-pointer relative ThemeToggleButtonShadow"> <span class="sr-only">Select Theme</span> <span id="light" class="theme-main-icon absolute"> <svg width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"> <path stroke="none" d="M0 0h24v24H0z" fill="none"></path> <path d="M12 12m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0"></path> <path d="M3 12h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7"></path> </svg> </span> <span id="dark" class="theme-main-icon absolute"> <svg width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"> <path stroke="none" d="M0 0h24v24H0z" fill="none"></path> <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z"></path> </svg> </span> <span id="system" class="theme-main-icon absolute"> <svg width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"> <path stroke="none" d="M0 0h24v24H0z" fill="none"></path> <path d="M3 5a1 1 0 0 1 1 -1h16a1 1 0 0 1 1 1v10a1 1 0 0 1 -1 1h-16a1 1 0 0 1 -1 -1v-10z"></path> <path d="M7 20h10"></path> <path d="M9 16v4"></path> <path d="M15 16v4"></path> </svg> </span> </button> <div id="theme-menu" class="hidden absolute bottom-full right-0 mb-1.5 flex-col space-y-1.5" role="menu" aria-labelledby="theme-toggle"> <button class="theme-option rounded-full flex items-center justify-center size-11 border-2 border-gray-900 dark:border-white text-gray-900 dark:text-white bg-white dark:bg-gray-900 hover:bg-gray-900 hover:text-white hover:dark:bg-white hover:dark:text-gray-900 transition-all duration-300 cursor-pointer" data-theme="light" role="menuitem" aria-label="Light" title="Light"> <span class="sr-only">Light</span> <span class="size-6"> <svg width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"> <path stroke="none" d="M0 0h24v24H0z" fill="none"></path> <path d="M12 12m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0"></path> <path d="M3 12h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7"></path> </svg> </span> </button><button class="theme-option rounded-full flex items-center justify-center size-11 border-2 border-gray-900 dark:border-white text-gray-900 dark:text-white bg-white dark:bg-gray-900 hover:bg-gray-900 hover:text-white hover:dark:bg-white hover:dark:text-gray-900 transition-all duration-300 cursor-pointer" data-theme="dark" role="menuitem" aria-label="Dark" title="Dark"> <span class="sr-only">Dark</span> <span class="size-6"> <svg width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"> <path stroke="none" d="M0 0h24v24H0z" fill="none"></path> <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z"></path> </svg> </span> </button><button class="theme-option rounded-full flex items-center justify-center size-11 border-2 border-gray-900 dark:border-white text-gray-900 dark:text-white bg-white dark:bg-gray-900 hover:bg-gray-900 hover:text-white hover:dark:bg-white hover:dark:text-gray-900 transition-all duration-300 cursor-pointer" data-theme="system" role="menuitem" aria-label="System" title="System"> <span class="sr-only">System</span> <span class="size-6"> <svg width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"> <path stroke="none" d="M0 0h24v24H0z" fill="none"></path> <path d="M3 5a1 1 0 0 1 1 -1h16a1 1 0 0 1 1 1v10a1 1 0 0 1 -1 1h-16a1 1 0 0 1 -1 -1v-10z"></path> <path d="M7 20h10"></path> <path d="M9 16v4"></path> <path d="M15 16v4"></path> </svg> </span> </button> </div> </div> <script>
+  const themeToggle = document.getElementById('theme-toggle');
+  const themeMenu = document.getElementById('theme-menu');
+  const themeIcons = document.querySelectorAll('.theme-main-icon');
+  const themeOptions = document.querySelectorAll('.theme-option');
+  const colorScheme = window.matchMedia('(prefers-color-scheme: dark)');
+
+  const getSavedTheme = () => {
+    const saved = localStorage.getItem('theme');
+    return ['light', 'dark', 'system'].includes(saved) ? saved : 'system';
+  };
+
+  const updateActiveIcon = (theme) => {
+    themeIcons.forEach(icon => {
+      const isActive = icon.id === theme;
+      icon.classList.toggle('opacity-100', isActive);
+      icon.classList.toggle('opacity-0', !isActive);
+    });
+  };
+
+  const applyTheme = () => {
+    const theme = getSavedTheme();
+    const isDark = theme === 'dark' || (theme === 'system' && colorScheme.matches);
+    
+    document.documentElement.classList.toggle('dark', isDark);
+    updateActiveIcon(theme);
+  };
+
+  const setToggleState = (isActive) => {
+    themeToggle.classList.toggle('bg-gray-900', isActive);
+    themeToggle.classList.toggle('text-white', isActive);
+    themeToggle.classList.toggle('dark:bg-white', isActive);
+    themeToggle.classList.toggle('dark:text-gray-900', isActive);
+    themeToggle.classList.toggle('bg-white', !isActive);
+    themeToggle.classList.toggle('text-gray-900', !isActive);
+    themeToggle.classList.toggle('dark:bg-gray-900', !isActive);
+    themeToggle.classList.toggle('dark:text-white', !isActive);
+  };
+
+  const toggleMenu = () => {
+    const isOpen = themeToggle.getAttribute('aria-expanded') === 'true';
+    
+    themeMenu.classList.toggle('hidden', isOpen);
+    themeToggle.setAttribute('aria-expanded', !isOpen);
+    setToggleState(!isOpen);
+  };
+
+  const closeMenu = () => {
+    themeMenu.classList.add('hidden');
+    themeToggle.setAttribute('aria-expanded', 'false');
+    setToggleState(false);
+  };
+
+  const changeTheme = (theme) => {
+    localStorage.setItem('theme', theme);
+    applyTheme();
+    closeMenu();
+  };
+
+  themeToggle.addEventListener('click', (e) => {
+    e.stopPropagation();
+    toggleMenu();
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!themeToggle.contains(e.target) && !themeMenu.contains(e.target)) {
+      closeMenu();
+    }
+  });
+
+  themeOptions.forEach(option => {
+    option.addEventListener('click', () => {
+      changeTheme(option.dataset.theme);
+    });
+  });
+
+  colorScheme.addEventListener('change', applyTheme);
+  document.addEventListener('astro:after-swap', applyTheme);
+
+  applyTheme();
+</script> </main>  <footer>
+&copy; 2025 <a href="https://github.com/martinezdom" target="_blank">martinezdom</a>.
+<select name="language" id="language" class="rounded-md px-3 py-1 text-sm bg-white text-gray-900 border border-gray-900 dark:bg-gray-800 dark:text-white dark:border-white"> <option value="en" selected> English </option> <option value="es"> Castilian </option> <option value="va"> Valencian </option> </select> <script type="module">const n=document.getElementById("language");n&&n.addEventListener("change",t=>{const e=t.target.value;e==="es"?window.location.href="/":window.location.href=`/${e}`});</script> </footer> </body></html>
