@@ -10,14 +10,14 @@ const THEMES = [
   { label: language.themes.system, value: "system", icon: SystemIcon },
 ];
 
-const buttonClasses = "rounded-full flex items-center justify-center size-11 border-3 border-gray-900 dark:border-white text-gray-900 dark:text-white bg-white dark:bg-gray-900 hover:bg-gray-900 hover:text-white hover:dark:bg-white hover:dark:text-gray-900 transition-all duration-300 cursor-pointer";
+const buttonClasses = "rounded-full flex items-center justify-center size-11 border-2 border-gray-900 dark:border-white text-gray-900 dark:text-white bg-white dark:bg-gray-900 hover:bg-gray-900 hover:text-white hover:dark:bg-white hover:dark:text-gray-900 transition-all duration-300 cursor-pointer";
 ---
 
 <div class="fixed bottom-8 right-10">
   <button
     id="theme-toggle"
     aria-expanded="false"
-    class=`${buttonClasses} relative shadow-lg shadow-gray-900/50 dark:shadow-white/50`
+    class=`${buttonClasses} relative ThemeToggleButtonShadow`
   >
     <span class="sr-only">{language.themes.selectorText}</span>
     

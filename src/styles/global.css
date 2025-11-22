@@ -1,3 +1,23 @@
 @import "tailwindcss";
-
+@plugin "@midudev/tailwind-animations";
 @custom-variant dark (&:where(.dark, .dark *));
+
+@font-face {
+  font-family: "Roboto";
+  src: url("roboto.woff2") format("woff2");
+  font-weight: 100 700;
+  font-display: swap;
+  font-style: normal;
+}
+
+@theme {
+  --font-sans: "Roboto", system-ui, sans-serif;
+}
+
+.ThemeToggleButtonShadow {
+  box-shadow: 0 0 8px 3px rgb(28, 29, 40);
+}
+
+.dark .ThemeToggleButtonShadow {
+  box-shadow: 0 0 8px 3px rgb(255, 255, 255);
+}
