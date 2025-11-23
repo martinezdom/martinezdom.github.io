@@ -11,11 +11,8 @@ const { language } = Astro.props;
   <head>
     <MainHead />
   </head>
-  <body
-    class="min-h-screen w-full bg-gradient-to-b from-white to-gray-400 dark:from-gray-900 dark:to-black text-gray-900 dark:text-gray-100 relative transition-colors duration-300 ease-in-out">
-    <Header
-    language={language}
-  />
+  <body class="min-h-screen w-full text-violet-950 dark:text-fuchsia-100 relative pattern-background-light pattern-background-dark">
+    <Header language={language} />
     <slot />
     <Footer language={language} />
   </body>

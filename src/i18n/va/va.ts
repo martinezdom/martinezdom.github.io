@@ -17,7 +17,7 @@ const va: Translation = {
     system: "Sistema",
     selectorText: "Seleccionar tema"
   },
-  downloadCurriculum: "Descarregar CV",
+  curriculum: "Currículum",
   contactMe: "Contacta'm"
 };
 

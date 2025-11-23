@@ -17,7 +17,7 @@ const es: Translation = {
     system: "Sistema",
     selectorText: "Seleccionar tema"
   },
-  downloadCurriculum: "Descargar CV",
+  curriculum: "Currículum",
   contactMe: "Contáctame"
 };
 

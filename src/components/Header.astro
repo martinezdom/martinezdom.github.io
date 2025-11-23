@@ -11,8 +11,10 @@ const sections = [
 ];
 ---
 
-<header class="fixed top-0 z-10 flex items-center justify-center w-full mx-auto mt-3">
-  <nav class="flex px-3 text-sm font-medium rounded-full">
+<header
+  class="fixed top-0 z-10 flex items-center justify-center w-full mx-auto mt-2"
+>
+  <nav id="main-nav" class="flex px-4 py-2 text-sm font-medium rounded-full">
     <!--<a href={`${prefix}/${language.nav.home.href}`} class="inline-flex items-center">
       <img src="/logo.png" alt="Logo martinezdom" class="size-16"/>
     </a>-->
@@ -20,10 +22,35 @@ const sections = [
       {
         sections.map((section) => (
           <li>
-            <a href={`${prefix}/${section.href}`}>{section.title}</a>
+            <a href={`${prefix}/${section.href}`} class="hover:text-fuchsia-500 dark:hover:text-violet-500 transition-colors duration-200">{section.title}</a>
           </li>
         ))
       }
     </ul>
   </nav>
 </header>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const navBar = document.getElementById("main-nav");
+    if (!navBar) return;
+
+    const scrolledClasses = ["bg-violet-950", "text-fuchsia-100", "dark:bg-fuchsia-100", "dark:text-violet-950", "backdrop-blur-md", "glitter"];
+    const transparentClass = "bg-transparent";
+
+    const toggleHeaderBackground = () => {
+      if (window.scrollY > 50) {
+        
+        navBar.classList.remove(transparentClass, "text-violet-950");
+        navBar.classList.add(...scrolledClasses);
+      } else {
+        navBar.classList.remove(...scrolledClasses);
+        navBar.classList.add(transparentClass);
+      }
+    };
+
+    toggleHeaderBackground();
+
+    window.addEventListener("scroll", toggleHeaderBackground);
+  });
+</script>
