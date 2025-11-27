@@ -11,45 +11,48 @@ const sections = [
 ];
 ---
 
-<header
-  class="fixed top-0 z-10 flex items-center justify-center w-full mx-auto mt-2"
->
-  <nav id="main-nav" class="flex px-4 py-2 text-sm font-medium rounded-full">
-    <!--<a href={`${prefix}/${language.nav.home.href}`} class="inline-flex items-center">
-      <img src="/logo.png" alt="Logo martinezdom" class="size-16"/>
-    </a>-->
+<header id="header" class="fixed top-0 z-20 flex flex-col items-center w-full pt-2 space-y-3">
+  <h1 id="signature" class="signature text-2xl font-bold">martinezdom</h1>
+
+  <nav
+    id="main-nav"
+    class="flex px-4 py-2 text-sm font-medium bg-white dark:bg-blue-950 glitter rounded-full"
+  >
     <ul class="flex space-x-4">
       {
         sections.map((section) => (
           <li>
-            <a href={`${prefix}/${section.href}`} class="text-blue-950 hover:text-white hover:underline underline-offset-4 dark:text-sky-500 dark:hover:text-white transition-colors duration-200">{section.title}</a>
+            <a
+              href={`${prefix}/${section.href}`}
+              class="text-sky-500 hover:text-blue-950 hover:underline underline-offset-4 dark:text-white dark:hover:text-sky-500 transition-colors duration-200"
+            >
+              {section.title}
+            </a>
           </li>
         ))
       }
     </ul>
   </nav>
-</header>
+</headerclass=>
 
 <script is:inline>
   document.addEventListener("DOMContentLoaded", () => {
-    const navBar = document.getElementById("main-nav");
-    if (!navBar) return;
+    const signature = document.getElementById("signature");
+    const header = document.getElementById("header");
+    window.addEventListener("scroll", () => {
+      const scrollY = window.scrollY;
+      const scale = Math.max(1 - scrollY / 600, 0.8);
+      signature.style.transform = `scale(${scale})`;
+      if (scrollY > 100) {
+        signature.style.opacity = "0.7";
+        if (scrollY > 200) {
+          signature.style.opacity = "0";
+          header.classList.remove = "space-y-3";
 
-    const scrolledClasses = ["bg-white", "text-white", "dark:bg-black", "dark:text-black", "glitter"];
-    const transparentClass = "bg-transparent";
-
-    const toggleHeaderBackground = () => {
-      if (window.scrollY > 50) {
-        navBar.classList.remove(transparentClass, "text-blue-950", "dark:text-sky-500");
-        navBar.classList.add(...scrolledClasses);
+        }
       } else {
-        navBar.classList.remove(...scrolledClasses);
-        navBar.classList.add(transparentClass);
+        signature.style.opacity = "1";
       }
-    };
-
-    toggleHeaderBackground();
-
-    window.addEventListener("scroll", toggleHeaderBackground);
+    });
   });
 </script>
