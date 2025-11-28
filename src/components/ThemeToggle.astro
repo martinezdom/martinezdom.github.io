@@ -10,14 +10,14 @@ const THEMES = [
   { label: language.themes.system, value: "system", icon: SystemIcon },
 ];
 
-const buttonClasses = "rounded-full flex items-center justify-center size-11 border-2 border-white dark:border-black text-white dark:text-black bg-blue-950 dark:bg-sky-500 hover:border-blue-950 hover:bg-sky-500 hover:text-blue-950 hover:dark:bg-blue-950 hover:dark:text-sky-500 hover:dark:border-sky-500 cursor-pointer transition-all duration-300 ";
+const buttonClasses = "rounded-full flex items-center justify-center size-11 border-2 border-sky-500 dark:border-fuchsia-400 text-sky-500 dark:text-fuchsia-400 bg-gray-200 dark:bg-zinc-900 hover:border-blue-950 hover:bg-blue-950 hover:text-white hover:dark:bg-fuchsia-950 hover:dark:text-white hover:dark:border-white cursor-pointer transition-all duration-300";
 ---
 
 <div class="fixed bottom-8 right-10">
   <button
     id="theme-toggle"
     aria-expanded="false"
-    class=`${buttonClasses} relative`
+    class=`${buttonClasses} relative glitter`
   >
     <span class="sr-only">{language.themes.selectorText}</span>
     
@@ -84,18 +84,18 @@ const buttonClasses = "rounded-full flex items-center justify-center size-11 bor
   };
 
   const setToggleState = (isActive) => {
-    themeToggle.classList.toggle('bg-sky-500', isActive);
-    themeToggle.classList.toggle('text-blue-950', isActive);
+    themeToggle.classList.toggle('bg-blue-950', isActive);
+    themeToggle.classList.toggle('text-white', isActive);
     themeToggle.classList.toggle('border-blue-950', isActive);
-    themeToggle.classList.toggle('dark:bg-blue-950', isActive);
-    themeToggle.classList.toggle('dark:text-sky-500', isActive);
-      themeToggle.classList.toggle('dark:border-sky-500', isActive);
-    themeToggle.classList.toggle('bg-blue-950', !isActive);
-    themeToggle.classList.toggle('text-white', !isActive);
-    themeToggle.classList.toggle('border-white', !isActive);
-    themeToggle.classList.toggle('dark:bg-sky-500', !isActive);
-    themeToggle.classList.toggle('dark:text-black', !isActive);
-    themeToggle.classList.toggle('dark:border-black', !isActive);
+    themeToggle.classList.toggle('dark:bg-fuchsia-950', isActive);
+    themeToggle.classList.toggle('dark:text-white', isActive);
+      themeToggle.classList.toggle('dark:border-white', isActive);
+    themeToggle.classList.toggle('bg-gray-200', !isActive);
+    themeToggle.classList.toggle('text-sky-500', !isActive);
+    themeToggle.classList.toggle('border-sky-500', !isActive);
+    themeToggle.classList.toggle('dark:bg-zinc-900', !isActive);
+    themeToggle.classList.toggle('dark:text-fuchsia-400', !isActive);
+    themeToggle.classList.toggle('dark:border-fuchsia-400', !isActive);
   };
   const toggleMenu = () => {
     const isOpen = themeToggle.getAttribute('aria-expanded') === 'true';
