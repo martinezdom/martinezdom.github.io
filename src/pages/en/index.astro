@@ -1,13 +1,13 @@
 ---
 import Layout from "@/layouts/Layout.astro";
-import language from "@/i18n/es/es.ts";
+import language from "@/i18n/en/en.ts";
 import Hero from "@/components/Hero.astro";
 import ThemeToggle from "@/components/ThemeToggle.astro";
 import SectionContainer from "@/components/SectionContainer.astro";
 ---
 
 <Layout language={language}>
-  <main>
+  <main class="flex-1 pt-28">
     <SectionContainer id="hero">
       <Hero language={language} />
     </SectionContainer>

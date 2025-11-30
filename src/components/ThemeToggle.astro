@@ -10,7 +10,7 @@ const THEMES = [
   { label: language.themes.system, value: "system", icon: SystemIcon },
 ];
 
-const buttonClasses = "rounded-full flex items-center justify-center size-11 border-2 border-sky-500 dark:border-yellow-300 text-sky-500 dark:text-yellow-300 bg-gray-200 dark:bg-zinc-900 hover:border-blue-950 hover:bg-blue-950 hover:text-white hover:dark:bg-yellow-300 hover:dark:text-zinc-900 hover:dark:border-zinc-900 cursor-pointer transition-all duration-300";
+const buttonClasses = "rounded-full flex items-center justify-center size-11 border-2 border-indigo-500 dark:border-indigo-400 text-indigo-500 dark:text-indigo-400 bg-slate-200 dark:bg-slate-900 hover:border-indigo-950 hover:bg-indigo-950 hover:text-white hover:dark:bg-indigo-400 hover:dark:text-slate-900 hover:dark:border-slate-900 cursor-pointer transition-all duration-300";
 ---
 
 <div class="fixed bottom-8 right-10">
@@ -84,19 +84,20 @@ const buttonClasses = "rounded-full flex items-center justify-center size-11 bor
   };
 
   const setToggleState = (isActive) => {
-    themeToggle.classList.toggle('bg-blue-950', isActive);
+    themeToggle.classList.toggle('bg-indigo-950', isActive);
     themeToggle.classList.toggle('text-white', isActive);
-    themeToggle.classList.toggle('border-blue-950', isActive);
-    themeToggle.classList.toggle('dark:bg-yellow-300', isActive);
-    themeToggle.classList.toggle('dark:text-zinc-900', isActive);
-      themeToggle.classList.toggle('dark:border-zinc-900', isActive);
-    themeToggle.classList.toggle('bg-gray-200', !isActive);
-    themeToggle.classList.toggle('text-sky-500', !isActive);
-    themeToggle.classList.toggle('border-sky-500', !isActive);
-    themeToggle.classList.toggle('dark:bg-zinc-900', !isActive);
-    themeToggle.classList.toggle('dark:text-yellow-300', !isActive);
-    themeToggle.classList.toggle('dark:border-yellow-300', !isActive);
+    themeToggle.classList.toggle('border-indigo-950', isActive);
+    themeToggle.classList.toggle('dark:bg-indigo-400', isActive);
+    themeToggle.classList.toggle('dark:text-slate-900', isActive);
+      themeToggle.classList.toggle('dark:border-slate-900', isActive);
+    themeToggle.classList.toggle('bg-slate-200', !isActive);
+    themeToggle.classList.toggle('text-indigo-500', !isActive);
+    themeToggle.classList.toggle('border-indigo-500', !isActive);
+    themeToggle.classList.toggle('dark:bg-slate-900', !isActive);
+    themeToggle.classList.toggle('dark:text-indigo-400', !isActive);
+    themeToggle.classList.toggle('dark:border-indigo-400', !isActive);
   };
+
   const toggleMenu = () => {
     const isOpen = themeToggle.getAttribute('aria-expanded') === 'true';
     

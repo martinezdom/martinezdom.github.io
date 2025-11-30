@@ -11,11 +11,11 @@ const { language } = Astro.props;
   <head>
     <MainHead />
   </head>
-  <body class="flex flex-col min-h-screen relative text-black dark:text-white">
-    <div class="absolute inset-0 -z-10 h-full w-full [background:radial-gradient(125%_125%_at_50%_10%,#fff_40%,var(--color-purple)_100%)] dark:[background:radial-gradient(125%_125%_at_50%_10%,#18181b_40%,var(--color-purple)_100%)]">
+  <body class="flex flex-col min-h-screen relative text-slate-900 dark:text-slate-50">
+    <div class="absolute inset-0 -z-10 h-full w-full [background:radial-gradient(125%_125%_at_50%_10%,#f8fafc_40%,#a5b4fc_100%)] dark:[background:radial-gradient(125%_125%_at_50%_10%,#0f172a_40%,#312e81_100%)]">
 </div>
     <Header language={language} />
     <slot />
-    <Footer language={language} />
+    <Footer />
   </body>
 </html>

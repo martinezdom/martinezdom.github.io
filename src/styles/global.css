@@ -20,24 +20,22 @@
 
 @theme {
   --font-sans: "Roboto", system-ui, sans-serif;
-  --color-purple: #6633ee;
+  --color-primary: #4f46e5;
 }
 
 .signature {
   font-family: "PermanentMarker", cursive;
-  text-shadow: 0 0 5px rgba(229, 231, 235, 0.7),
-    0 0 10px rgba(229, 231, 235, 0.7);
+  text-shadow: 0 0 5px rgba(97, 95, 255, 0.4),
+    0 0 10px rgba(97, 95, 255, 0.4),
+    0 0 15px rgba(97, 95, 255, 0.4);
 }
 
 .dark .signature {
-  text-shadow: 0 0 5px rgba(237, 107, 255, 0.5),
-    0 0 10px rgba(237, 107, 255, 0.5);
+  text-shadow: 0 0 5px rgba(97, 95, 255, 0.4),
+    0 0 10px rgba(97, 95, 255, 0.4),
+    0 0 15px rgba(97, 95, 255, 0.4);
 }
 
 .glitter {
-  box-shadow: 0 0 8px 3px rgba(229, 231, 235, 0.7);
-}
-
-.dark .glitter {
-  box-shadow: 0 0 8px 3px rgba(255, 223, 32, 0.5);
+  box-shadow: 0 0 8px 3px rgba(97, 95, 255, 0.4);
 }
