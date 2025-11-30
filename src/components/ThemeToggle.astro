@@ -10,7 +10,7 @@ const THEMES = [
   { label: language.themes.system, value: "system", icon: SystemIcon },
 ];
 
-const buttonClasses = "rounded-full flex items-center justify-center size-11 border-2 border-indigo-500 dark:border-indigo-400 text-indigo-500 dark:text-indigo-400 bg-slate-200 dark:bg-slate-900 hover:border-indigo-950 hover:bg-indigo-950 hover:text-white hover:dark:bg-indigo-400 hover:dark:text-slate-900 hover:dark:border-slate-900 cursor-pointer transition-all duration-300";
+const buttonClasses = "rounded-full flex items-center justify-center size-11 border-2 border-violet-400/60 dark:border-violet-500/60 text-violet-600 dark:text-violet-400 bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm hover:border-violet-600 hover:bg-violet-600 hover:text-white hover:scale-110 dark:hover:bg-violet-500 dark:hover:border-violet-500 dark:hover:text-white cursor-pointer transition-all duration-300 shadow-lg hover:shadow-violet-500/50";
 ---
 
 <div class="fixed bottom-8 right-10">
@@ -84,18 +84,19 @@ const buttonClasses = "rounded-full flex items-center justify-center size-11 bor
     };
 
     const setToggleState = (isActive) => {
-      themeToggle.classList.toggle('bg-indigo-950', isActive);
+      themeToggle.classList.toggle('bg-violet-600', isActive);
       themeToggle.classList.toggle('text-white', isActive);
-      themeToggle.classList.toggle('border-indigo-950', isActive);
-      themeToggle.classList.toggle('dark:bg-indigo-400', isActive);
-      themeToggle.classList.toggle('dark:text-slate-900', isActive);
-      themeToggle.classList.toggle('dark:border-slate-900', isActive);
-      themeToggle.classList.toggle('bg-slate-200', !isActive);
-      themeToggle.classList.toggle('text-indigo-500', !isActive);
-      themeToggle.classList.toggle('border-indigo-500', !isActive);
-      themeToggle.classList.toggle('dark:bg-slate-900', !isActive);
-      themeToggle.classList.toggle('dark:text-indigo-400', !isActive);
-      themeToggle.classList.toggle('dark:border-indigo-400', !isActive);
+      themeToggle.classList.toggle('border-violet-600', isActive);
+      themeToggle.classList.toggle('scale-110', isActive);
+      themeToggle.classList.toggle('shadow-violet-500/50', isActive);
+      themeToggle.classList.toggle('dark:bg-violet-500', isActive);
+      themeToggle.classList.toggle('dark:border-violet-500', isActive);
+      themeToggle.classList.toggle('bg-white/80', !isActive);
+      themeToggle.classList.toggle('text-violet-600', !isActive);
+      themeToggle.classList.toggle('border-violet-400/60', !isActive);
+      themeToggle.classList.toggle('dark:bg-slate-800/80', !isActive);
+      themeToggle.classList.toggle('dark:text-violet-400', !isActive);
+      themeToggle.classList.toggle('dark:border-violet-500/60', !isActive);
     };
 
     const toggleThemeMenu = () => {
