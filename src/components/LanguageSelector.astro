@@ -13,7 +13,7 @@ const currentLang = LANGUAGES.find(lang => lang.value === language.prefix) || LA
 <div class="relative inline-block">
   <button
     id="lang-selector"
-    class="px-3 py-1 text-sm font-medium text-slate-900 hover:text-indigo-500 dark:text-white dark:hover:text-indigo-400 transition-colors duration-200 flex items-center gap-1"
+    class="py-1 text-sm font-medium text-slate-900 hover:text-indigo-500 dark:text-white dark:hover:text-indigo-400 transition-colors duration-200 flex items-center gap-1"
     aria-expanded="false"
   >
     <span id="current-lang">{currentLang.code}</span>
@@ -44,14 +44,14 @@ const currentLang = LANGUAGES.find(lang => lang.value === language.prefix) || LA
   const langMenu = document.getElementById('lang-menu');
   const langArrow = document.getElementById('lang-arrow');
 
-  const toggleMenu = () => {
+  const toggleLanguageMenu = () => {
     const isOpen = langSelector.getAttribute('aria-expanded') === 'true';
     langMenu.classList.toggle('hidden', isOpen);
     langSelector.setAttribute('aria-expanded', !isOpen);
     langArrow.style.transform = isOpen ? 'rotate(0deg)' : 'rotate(180deg)';
   };
 
-  const closeMenu = () => {
+  const closeLanguageMenu = () => {
     langMenu.classList.add('hidden');
     langSelector.setAttribute('aria-expanded', 'false');
     langArrow.style.transform = 'rotate(0deg)';
@@ -59,12 +59,12 @@ const currentLang = LANGUAGES.find(lang => lang.value === language.prefix) || LA
 
   langSelector.addEventListener('click', (e) => {
     e.stopPropagation();
-    toggleMenu();
+    toggleLanguageMenu();
   });
 
   document.addEventListener('click', (e) => {
     if (!langSelector.contains(e.target) && !langMenu.contains(e.target)) {
-      closeMenu();
+      closeLanguageMenu();
     }
   });
 </script>

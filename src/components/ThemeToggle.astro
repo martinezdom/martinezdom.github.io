@@ -56,87 +56,87 @@ const buttonClasses = "rounded-full flex items-center justify-center size-11 bor
 </div>
 
 <script is:inline>
-  const themeToggle = document.getElementById('theme-toggle');
-  const themeMenu = document.getElementById('theme-menu');
-  const themeIcons = document.querySelectorAll('.theme-main-icon');
-  const themeOptions = document.querySelectorAll('.theme-option');
-  const colorScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeMenu = document.getElementById('theme-menu');
+    const themeIcons = document.querySelectorAll('.theme-main-icon');
+    const themeOptions = document.querySelectorAll('.theme-option');
+    const colorScheme = window.matchMedia('(prefers-color-scheme: dark)');
 
-  const getSavedTheme = () => {
-    const saved = localStorage.getItem('theme');
-    return ['light', 'dark', 'system'].includes(saved) ? saved : 'system';
-  };
+    const getSavedTheme = () => {
+      const saved = localStorage.getItem('theme');
+      return ['light', 'dark', 'system'].includes(saved) ? saved : 'system';
+    };
 
-  const updateActiveIcon = (theme) => {
-    themeIcons.forEach(icon => {
-      const isActive = icon.id === theme;
-      icon.classList.toggle('opacity-100', isActive);
-      icon.classList.toggle('opacity-0', !isActive);
-    });
-  };
+    const updateActiveIcon = (theme) => {
+      themeIcons.forEach(icon => {
+        const isActive = icon.id === theme;
+        icon.classList.toggle('opacity-100', isActive);
+        icon.classList.toggle('opacity-0', !isActive);
+      });
+    };
 
-  const applyTheme = () => {
-    const theme = getSavedTheme();
-    const isDark = theme === 'dark' || (theme === 'system' && colorScheme.matches);
-    
-    document.documentElement.classList.toggle('dark', isDark);
-    updateActiveIcon(theme);
-  };
+    const applyTheme = () => {
+      const theme = getSavedTheme();
+      const isDark = theme === 'dark' || (theme === 'system' && colorScheme.matches);
+      
+      document.documentElement.classList.toggle('dark', isDark);
+      updateActiveIcon(theme);
+    };
 
-  const setToggleState = (isActive) => {
-    themeToggle.classList.toggle('bg-indigo-950', isActive);
-    themeToggle.classList.toggle('text-white', isActive);
-    themeToggle.classList.toggle('border-indigo-950', isActive);
-    themeToggle.classList.toggle('dark:bg-indigo-400', isActive);
-    themeToggle.classList.toggle('dark:text-slate-900', isActive);
+    const setToggleState = (isActive) => {
+      themeToggle.classList.toggle('bg-indigo-950', isActive);
+      themeToggle.classList.toggle('text-white', isActive);
+      themeToggle.classList.toggle('border-indigo-950', isActive);
+      themeToggle.classList.toggle('dark:bg-indigo-400', isActive);
+      themeToggle.classList.toggle('dark:text-slate-900', isActive);
       themeToggle.classList.toggle('dark:border-slate-900', isActive);
-    themeToggle.classList.toggle('bg-slate-200', !isActive);
-    themeToggle.classList.toggle('text-indigo-500', !isActive);
-    themeToggle.classList.toggle('border-indigo-500', !isActive);
-    themeToggle.classList.toggle('dark:bg-slate-900', !isActive);
-    themeToggle.classList.toggle('dark:text-indigo-400', !isActive);
-    themeToggle.classList.toggle('dark:border-indigo-400', !isActive);
-  };
+      themeToggle.classList.toggle('bg-slate-200', !isActive);
+      themeToggle.classList.toggle('text-indigo-500', !isActive);
+      themeToggle.classList.toggle('border-indigo-500', !isActive);
+      themeToggle.classList.toggle('dark:bg-slate-900', !isActive);
+      themeToggle.classList.toggle('dark:text-indigo-400', !isActive);
+      themeToggle.classList.toggle('dark:border-indigo-400', !isActive);
+    };
 
-  const toggleMenu = () => {
-    const isOpen = themeToggle.getAttribute('aria-expanded') === 'true';
-    
-    themeMenu.classList.toggle('hidden', isOpen);
-    themeToggle.setAttribute('aria-expanded', !isOpen);
-    setToggleState(!isOpen);
-  };
+    const toggleThemeMenu = () => {
+      const isOpen = themeToggle.getAttribute('aria-expanded') === 'true';
+      
+      themeMenu.classList.toggle('hidden', isOpen);
+      themeToggle.setAttribute('aria-expanded', !isOpen);
+      setToggleState(!isOpen);
+    };
 
-  const closeMenu = () => {
-    themeMenu.classList.add('hidden');
-    themeToggle.setAttribute('aria-expanded', 'false');
-    setToggleState(false);
-  };
+    const closeThemeMenu = () => {
+      themeMenu.classList.add('hidden');
+      themeToggle.setAttribute('aria-expanded', 'false');
+      setToggleState(false);
+    };
 
-  const changeTheme = (theme) => {
-    localStorage.setItem('theme', theme);
-    applyTheme();
-    closeMenu();
-  };
+    const changeTheme = (theme) => {
+      localStorage.setItem('theme', theme);
+      applyTheme();
+      closeThemeMenu();
+    };
 
-  themeToggle.addEventListener('click', (e) => {
-    e.stopPropagation();
-    toggleMenu();
-  });
-
-  document.addEventListener('click', (e) => {
-    if (!themeToggle.contains(e.target) && !themeMenu.contains(e.target)) {
-      closeMenu();
-    }
-  });
-
-  themeOptions.forEach(option => {
-    option.addEventListener('click', () => {
-      changeTheme(option.dataset.theme);
+    themeToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      toggleThemeMenu();
     });
-  });
 
-  colorScheme.addEventListener('change', applyTheme);
-  document.addEventListener('astro:after-swap', applyTheme);
+    document.addEventListener('click', (e) => {
+      if (!themeToggle.contains(e.target) && !themeMenu.contains(e.target)) {
+        closeThemeMenu();
+      }
+    });
 
-  applyTheme();
+    themeOptions.forEach(option => {
+      option.addEventListener('click', () => {
+        changeTheme(option.dataset.theme);
+      });
+    });
+
+    colorScheme.addEventListener('change', applyTheme);
+    document.addEventListener('astro:after-swap', applyTheme);
+
+    applyTheme();
 </script>
