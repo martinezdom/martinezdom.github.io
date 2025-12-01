@@ -10,7 +10,7 @@ const THEMES = [
   { label: language.themes.system, value: "system", icon: SystemIcon },
 ];
 
-const buttonClasses = "rounded-full flex items-center justify-center size-11 border-2 border-violet-400/60 dark:border-violet-500/60 text-violet-600 dark:text-violet-400 bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm hover:border-violet-600 hover:bg-violet-600 hover:text-white hover:scale-110 dark:hover:bg-violet-500 dark:hover:border-violet-500 dark:hover:text-white cursor-pointer transition-all duration-300 shadow-lg hover:shadow-violet-500/50";
+const buttonClasses = "rounded-full flex items-center justify-center size-11 border-2 border-violet-400/60 dark:border-violet-500/60 text-violet-600 dark:text-violet-400 bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm hover:border-violet-600 hover:bg-violet-600 hover:text-white hover:scale-110 dark:hover:bg-violet-500 dark:hover:border-violet-500 dark:hover:text-white cursor-pointer transition-all duration-300 shadow-lg hover:shadow-violet-500/50 aria-[expanded=true]:bg-violet-600 aria-[expanded=true]:text-white aria-[expanded=true]:border-violet-600 aria-[expanded=true]:scale-110 aria-[expanded=true]:shadow-violet-500/50 aria-[expanded=true]:dark:bg-violet-500 aria-[expanded=true]:dark:border-violet-500";
 ---
 
 <div class="fixed bottom-8 right-10">
@@ -83,34 +83,16 @@ const buttonClasses = "rounded-full flex items-center justify-center size-11 bor
       updateActiveIcon(theme);
     };
 
-    const setToggleState = (isActive) => {
-      themeToggle.classList.toggle('bg-violet-600', isActive);
-      themeToggle.classList.toggle('text-white', isActive);
-      themeToggle.classList.toggle('border-violet-600', isActive);
-      themeToggle.classList.toggle('scale-110', isActive);
-      themeToggle.classList.toggle('shadow-violet-500/50', isActive);
-      themeToggle.classList.toggle('dark:bg-violet-500', isActive);
-      themeToggle.classList.toggle('dark:border-violet-500', isActive);
-      themeToggle.classList.toggle('bg-white/80', !isActive);
-      themeToggle.classList.toggle('text-violet-600', !isActive);
-      themeToggle.classList.toggle('border-violet-400/60', !isActive);
-      themeToggle.classList.toggle('dark:bg-slate-800/80', !isActive);
-      themeToggle.classList.toggle('dark:text-violet-400', !isActive);
-      themeToggle.classList.toggle('dark:border-violet-500/60', !isActive);
-    };
-
     const toggleThemeMenu = () => {
       const isOpen = themeToggle.getAttribute('aria-expanded') === 'true';
       
       themeMenu.classList.toggle('hidden', isOpen);
       themeToggle.setAttribute('aria-expanded', !isOpen);
-      setToggleState(!isOpen);
     };
 
     const closeThemeMenu = () => {
       themeMenu.classList.add('hidden');
       themeToggle.setAttribute('aria-expanded', 'false');
-      setToggleState(false);
     };
 
     const changeTheme = (theme) => {

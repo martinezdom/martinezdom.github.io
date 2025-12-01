@@ -1,4 +1,6 @@
 ---
+import Arrow from "./icons/Arrow.astro";
+
 const { language } = Astro.props;
 
 const LANGUAGES = [
@@ -10,21 +12,19 @@ const LANGUAGES = [
 const currentLang = LANGUAGES.find(lang => lang.value === language.prefix) || LANGUAGES[0];
 ---
 
-<div class="relative inline-block">
+<div class="relative">
   <button
     id="lang-selector"
     class="py-1 text-sm font-medium text-slate-900 hover:text-indigo-500 dark:text-white dark:hover:text-indigo-400 transition-colors duration-200 flex items-center gap-1"
     aria-expanded="false"
   >
     <span id="current-lang">{currentLang.code}</span>
-    <svg class="w-3 h-3 transition-transform duration-200" id="lang-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-    </svg>
+    <Arrow class="w-3 h-3 transition-transform duration-350" id="lang-arrow" />
   </button>
 
   <div
     id="lang-menu"
-    class="hidden absolute top-full right-0 mt-1 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-md shadow-lg py-1 min-w-[60px]"
+    class="hidden absolute mt-1 left-1/2 -translate-x-1/2 bg-white dark:bg-slate-900 border border-indigo-500/40 rounded-md min-w-[60px] z-10"
     role="menu"
   >
     {LANGUAGES.map((lang) => (
