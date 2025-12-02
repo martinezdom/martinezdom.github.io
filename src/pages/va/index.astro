@@ -1,14 +1,14 @@
 ---
 import Layout from "@/layouts/Layout.astro";
-import language from "@/i18n/va/va.ts";
+import language from "@/i18n/es/es.ts";
 import Hero from "@/components/Hero.astro";
 import ThemeToggle from "@/components/ThemeToggle.astro";
 import SectionContainer from "@/components/SectionContainer.astro";
 ---
 
 <Layout language={language}>
-  <main class="flex-1 pt-28">
-    <SectionContainer id="hero">
+  <main class="px-4">
+    <SectionContainer id="hero" class="py-36 md:py-48">
       <Hero language={language} />
     </SectionContainer>
     <ThemeToggle language={language} />

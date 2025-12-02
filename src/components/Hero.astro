@@ -1,5 +1,6 @@
 ---
 const { language } = Astro.props;
+const personalImageAlt = "Miguel Ángel";
 import SocialPill from "./SocialPill.astro";
 import LinkedInIcon from "./icons/LinkedIn.astro";
 import MailIcon from "./icons/Mail.astro";
@@ -7,21 +8,30 @@ import DocumentIcon from "./icons/Document.astro";
 import GithubIcon from "./icons/Github.astro";
 ---
 
-<nav class="flex flex-wrap gap-4">
-  <SocialPill href="https://www.linkedin.com/in/martinezdom/">
-    <LinkedInIcon class="size-4" />
-    LinkedIn
-  </SocialPill>
-  <SocialPill href="https://github.com/martinezdom">
-    <GithubIcon class="size-4" />
-    GitHub
-  </SocialPill>
-  <SocialPill href={`/CV-${language.prefix.toUpperCase()}.pdf`}>
-    <DocumentIcon class="size-4" />
-    {language.curriculum}
-  </SocialPill>
-  <SocialPill href="mailto:martinezdom@gmail.com">
-    <MailIcon class="size-4" />
-    {language.contactMe}
-  </SocialPill>
-</nav>
+<div>
+  <div>
+    <img
+      class="size-16 rounded-full glitter"
+      src="/hero_picture.png"
+      alt={personalImageAlt}
+    />
+  </div>
+  <nav class="flex flex-wrap gap-4 text-xs font-medium md:text-sm">
+    <SocialPill href="https://www.linkedin.com/in/martinezdom/">
+      <LinkedInIcon class="size-4" />
+      LinkedIn
+    </SocialPill>
+    <SocialPill href="https://github.com/martinezdom">
+      <GithubIcon class="size-4" />
+      GitHub
+    </SocialPill>
+    <SocialPill href={`/CV-${language.prefix.toUpperCase()}.pdf`}>
+      <DocumentIcon class="size-4" />
+      {language.curriculum}
+    </SocialPill>
+    <SocialPill href="mailto:martinezdom@gmail.com">
+      <MailIcon class="size-4" />
+      {language.contactMe}
+    </SocialPill>
+  </nav>
+</div>
