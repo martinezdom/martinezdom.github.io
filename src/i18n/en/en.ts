@@ -1,7 +1,7 @@
-import type { Translation } from '../types.ts';
+import type { Translation } from "../types.ts";
 
 const en: Translation = {
-  prefix: 'en',
+  prefix: "en",
   nav: {
     experience: { title: "Experience", href: "#experience" },
     projects: { title: "Projects", href: "#projects" },
@@ -15,10 +15,10 @@ const en: Translation = {
     light: "Light",
     dark: "Dark",
     system: "System",
-    selectorText: "Select Theme"
+    selectorText: "Select Theme",
   },
   curriculum: "Curriculum",
-  contactMe: "Contact me"
+  contactMe: "Contact me",
 };
 
 export default en;

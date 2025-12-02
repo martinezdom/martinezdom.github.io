@@ -25,13 +25,15 @@
 
 .signature {
   font-family: "PermanentMarker", cursive;
-  text-shadow: 0 0 5px rgba(97, 95, 255, 0.4),
+  text-shadow:
+    0 0 5px rgba(97, 95, 255, 0.4),
     0 0 10px rgba(97, 95, 255, 0.4),
     0 0 15px rgba(97, 95, 255, 0.4);
 }
 
 .dark .signature {
-  text-shadow: 0 0 5px rgba(97, 95, 255, 0.4),
+  text-shadow:
+    0 0 5px rgba(97, 95, 255, 0.4),
     0 0 10px rgba(97, 95, 255, 0.4),
     0 0 15px rgba(97, 95, 255, 0.4);
 }

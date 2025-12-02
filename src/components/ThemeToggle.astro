@@ -10,17 +10,18 @@ const THEMES = [
   { label: language.themes.system, value: "system", icon: SystemIcon },
 ];
 
-const buttonClasses = "rounded-full flex items-center justify-center size-11 border-2 border-violet-400/60 dark:border-violet-500/60 text-violet-600 dark:text-violet-400 bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm hover:border-violet-600 hover:bg-violet-600 hover:text-white hover:scale-110 dark:hover:bg-violet-500 dark:hover:border-violet-500 dark:hover:text-white cursor-pointer transition-all duration-300 shadow-lg hover:shadow-violet-500/50 aria-[expanded=true]:bg-violet-600 aria-[expanded=true]:text-white aria-[expanded=true]:border-violet-600 aria-[expanded=true]:scale-110 aria-[expanded=true]:shadow-violet-500/50 aria-[expanded=true]:dark:bg-violet-500 aria-[expanded=true]:dark:border-violet-500";
+const buttonClasses =
+  "rounded-full flex items-center justify-center size-11 border-2 border-violet-400/60 dark:border-violet-500/60 text-violet-600 dark:text-violet-400 bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm hover:border-violet-600 hover:bg-violet-600 hover:text-white hover:scale-110 dark:hover:bg-violet-500 dark:hover:border-violet-500 dark:hover:text-white cursor-pointer transition-all duration-300 shadow-lg hover:shadow-violet-500/50 aria-[expanded=true]:bg-violet-600 aria-[expanded=true]:text-white aria-[expanded=true]:border-violet-600 aria-[expanded=true]:scale-110 aria-[expanded=true]:shadow-violet-500/50 aria-[expanded=true]:dark:bg-violet-500 aria-[expanded=true]:dark:border-violet-500";
 ---
 
-<div class="fixed bottom-8 right-10">
+<div class="fixed right-10 bottom-8">
   <button
     id="theme-toggle"
     aria-expanded="false"
-    class=`${buttonClasses} relative glitter`
+    class={`${buttonClasses} relative glitter`}
   >
     <span class="sr-only">{language.themes.selectorText}</span>
-    
+
     <span id="light" class="theme-main-icon absolute">
       <SunIcon />
     </span>
@@ -34,92 +35,95 @@ const buttonClasses = "rounded-full flex items-center justify-center size-11 bor
 
   <div
     id="theme-menu"
-    class="hidden absolute bottom-full right-0 mb-1.5 flex-col space-y-1.5"
+    class="absolute right-0 bottom-full mb-1.5 hidden flex-col space-y-1.5"
     role="menu"
     aria-labelledby="theme-toggle"
   >
-    {THEMES.map((theme) => (
-      <button
-        class=`theme-option ${buttonClasses}`
-        data-theme={theme.value}
-        role="menuitem"
-        aria-label={theme.label}
-        title={theme.label}
-      >
-        <span class="sr-only">{theme.label}</span>
-        <span class="size-6">
-          <theme.icon />
-        </span>
-      </button>
-    ))}
+    {
+      THEMES.map((theme) => (
+        <button
+          class={`theme-option ${buttonClasses}`}
+          data-theme={theme.value}
+          role="menuitem"
+          aria-label={theme.label}
+          title={theme.label}
+        >
+          <span class="sr-only">{theme.label}</span>
+          <span class="size-6">
+            <theme.icon />
+          </span>
+        </button>
+      ))
+    }
   </div>
 </div>
 
 <script is:inline>
-    const themeToggle = document.getElementById('theme-toggle');
-    const themeMenu = document.getElementById('theme-menu');
-    const themeIcons = document.querySelectorAll('.theme-main-icon');
-    const themeOptions = document.querySelectorAll('.theme-option');
-    const colorScheme = window.matchMedia('(prefers-color-scheme: dark)');
+  const themeToggle = document.getElementById("theme-toggle");
+  const themeMenu = document.getElementById("theme-menu");
+  const themeIcons = document.querySelectorAll(".theme-main-icon");
+  const themeOptions = document.querySelectorAll(".theme-option");
+  const colorScheme = window.matchMedia("(prefers-color-scheme: dark)");
 
-    const getSavedTheme = () => {
-      const saved = localStorage.getItem('theme');
-      return ['light', 'dark', 'system'].includes(saved) ? saved : 'system';
-    };
+  const getSavedTheme = () => {
+    const saved = localStorage.getItem("theme");
+    return ["light", "dark", "system"].includes(saved) ? saved : "system";
+  };
 
-    const updateActiveIcon = (theme) => {
-      themeIcons.forEach(icon => {
-        const isActive = icon.id === theme;
-        icon.classList.toggle('opacity-100', isActive);
-        icon.classList.toggle('opacity-0', !isActive);
-      });
-    };
-
-    const applyTheme = () => {
-      const theme = getSavedTheme();
-      const isDark = theme === 'dark' || (theme === 'system' && colorScheme.matches);
-      
-      document.documentElement.classList.toggle('dark', isDark);
-      updateActiveIcon(theme);
-    };
-
-    const toggleThemeMenu = () => {
-      const isOpen = themeToggle.getAttribute('aria-expanded') === 'true';
-      
-      themeMenu.classList.toggle('hidden', isOpen);
-      themeToggle.setAttribute('aria-expanded', !isOpen);
-    };
-
-    const closeThemeMenu = () => {
-      themeMenu.classList.add('hidden');
-      themeToggle.setAttribute('aria-expanded', 'false');
-    };
-
-    const changeTheme = (theme) => {
-      localStorage.setItem('theme', theme);
-      applyTheme();
-      closeThemeMenu();
-    };
-
-    themeToggle.addEventListener('click', (e) => {
-      e.stopPropagation();
-      toggleThemeMenu();
+  const updateActiveIcon = (theme) => {
+    themeIcons.forEach((icon) => {
+      const isActive = icon.id === theme;
+      icon.classList.toggle("opacity-100", isActive);
+      icon.classList.toggle("opacity-0", !isActive);
     });
+  };
 
-    document.addEventListener('click', (e) => {
-      if (!themeToggle.contains(e.target) && !themeMenu.contains(e.target)) {
-        closeThemeMenu();
-      }
-    });
+  const applyTheme = () => {
+    const theme = getSavedTheme();
+    const isDark =
+      theme === "dark" || (theme === "system" && colorScheme.matches);
 
-    themeOptions.forEach(option => {
-      option.addEventListener('click', () => {
-        changeTheme(option.dataset.theme);
-      });
-    });
+    document.documentElement.classList.toggle("dark", isDark);
+    updateActiveIcon(theme);
+  };
 
-    colorScheme.addEventListener('change', applyTheme);
-    document.addEventListener('astro:after-swap', applyTheme);
+  const toggleThemeMenu = () => {
+    const isOpen = themeToggle.getAttribute("aria-expanded") === "true";
 
+    themeMenu.classList.toggle("hidden", isOpen);
+    themeToggle.setAttribute("aria-expanded", !isOpen);
+  };
+
+  const closeThemeMenu = () => {
+    themeMenu.classList.add("hidden");
+    themeToggle.setAttribute("aria-expanded", "false");
+  };
+
+  const changeTheme = (theme) => {
+    localStorage.setItem("theme", theme);
     applyTheme();
+    closeThemeMenu();
+  };
+
+  themeToggle.addEventListener("click", (e) => {
+    e.stopPropagation();
+    toggleThemeMenu();
+  });
+
+  document.addEventListener("click", (e) => {
+    if (!themeToggle.contains(e.target) && !themeMenu.contains(e.target)) {
+      closeThemeMenu();
+    }
+  });
+
+  themeOptions.forEach((option) => {
+    option.addEventListener("click", () => {
+      changeTheme(option.dataset.theme);
+    });
+  });
+
+  colorScheme.addEventListener("change", applyTheme);
+  document.addEventListener("astro:after-swap", applyTheme);
+
+  applyTheme();
 </script>

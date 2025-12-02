@@ -12,14 +12,22 @@ const sections = [
 ];
 ---
 
-<header id="header" class="fixed top-0 z-20 flex flex-col items-center w-full pt-4">
-  <div id="signature-wrapper" class="overflow-hidden transition-all duration-300 ease-in-out">
-    <h1 id="signature" class="signature text-3xl font-bold mb-3">martinezdom</h1>
+<header
+  id="header"
+  class="fixed top-0 z-20 flex w-full flex-col items-center pt-4"
+>
+  <div
+    id="signature-wrapper"
+    class="overflow-hidden transition-all duration-300 ease-in-out"
+  >
+    <h1 id="signature" class="signature mb-3 text-3xl font-bold">
+      martinezdom
+    </h1>
   </div>
 
   <nav
     id="main-nav"
-    class="flex items-center gap-4 px-6 py-2 text-sm font-medium bg-indigo-500/40 dark:bg-slate-900/80 backdrop-blur-md glitter border-1 border-indigo-500/40 rounded-full"
+    class="glitter flex items-center gap-4 rounded-full border-1 border-indigo-500/40 bg-indigo-500/40 px-6 py-2 text-xs font-medium backdrop-blur-md md:text-sm dark:bg-slate-900/80"
   >
     <ul class="flex space-x-4">
       {
@@ -27,7 +35,7 @@ const sections = [
           <li>
             <a
               href={`${prefix}/${section.href}`}
-              class="text-slate-900 hover:text-indigo-500 hover:underline underline-offset-4 dark:text-white dark:hover:text-indigo-400 transition-colors duration-200"
+              class="text-slate-900 underline-offset-4 transition-colors duration-200 hover:text-indigo-500 hover:underline dark:text-white dark:hover:text-indigo-400"
             >
               {section.title}
             </a>
@@ -35,7 +43,8 @@ const sections = [
         ))
       }
     </ul>
-    <div class="border-l border-indigo-500/40 dark:border-indigo-500/40 h-5"></div>
+    <div class="h-5 border-l border-indigo-500/40 dark:border-indigo-500/40">
+    </div>
     <LanguageSelector language={language} />
   </nav>
 </header>
@@ -44,17 +53,17 @@ const sections = [
   document.addEventListener("DOMContentLoaded", () => {
     const signature = document.getElementById("signature");
     const signatureWrapper = document.getElementById("signature-wrapper");
-    
+
     const signatureHeight = signature.offsetHeight + 12;
     signatureWrapper.style.maxHeight = `${signatureHeight}px`;
-    
+
     signature.style.transition = "opacity 0.3s ease, transform 0.3s ease";
-    
+
     window.addEventListener("scroll", () => {
       const scrollY = window.scrollY;
       const scale = Math.max(1 - scrollY / 600, 0.8);
       signature.style.transform = `scale(${scale})`;
-      
+
       if (scrollY > 200) {
         signature.style.opacity = "0";
         signature.style.pointerEvents = "none";
