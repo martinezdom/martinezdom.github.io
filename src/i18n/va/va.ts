@@ -19,6 +19,7 @@ const va: Translation = {
   },
   curriculum: "Currículum",
   contactMe: "Contacta'm",
+  developedBy: "Desenvolupat per",
 };
 
 export default va;

@@ -17,4 +17,5 @@ export interface Translation {
   };
   curriculum: string;
   contactMe: string;
+  developedBy: string;
 }

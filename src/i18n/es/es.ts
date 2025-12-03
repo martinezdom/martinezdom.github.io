@@ -19,6 +19,7 @@ const es: Translation = {
   },
   curriculum: "Currículum",
   contactMe: "Contáctame",
+  developedBy: "Desarrollado por",
 };
 
 export default es;

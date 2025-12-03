@@ -9,14 +9,16 @@ import GithubIcon from "./icons/Github.astro";
 ---
 
 <div>
-  <div>
+  <div class="flex justify-end pb-8">
     <img
-      class="size-16 rounded-full glitter"
+      class="glitter size-42 rounded-lg border-1 border-indigo-500/40 md:size-54 lg:size-72"
       src="/hero_picture.png"
       alt={personalImageAlt}
     />
   </div>
-  <nav class="flex flex-wrap gap-4 text-xs font-medium md:text-sm">
+  <nav
+    class="grid grid-cols-2 gap-4 text-xs font-medium md:grid-cols-4 md:text-sm"
+  >
     <SocialPill href="https://www.linkedin.com/in/martinezdom/">
       <LinkedInIcon class="size-4" />
       LinkedIn
