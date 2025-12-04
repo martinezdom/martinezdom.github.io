@@ -1,6 +1,5 @@
 ---
 const { language } = Astro.props;
-const personalImageAlt = "Miguel Ángel";
 import SocialPill from "./SocialPill.astro";
 import LinkedInIcon from "./icons/LinkedIn.astro";
 import MailIcon from "./icons/Mail.astro";
@@ -11,9 +10,9 @@ import GithubIcon from "./icons/Github.astro";
 <div>
   <div class="flex justify-end pb-8">
     <img
-      class="glitter size-42 rounded-lg border-1 border-indigo-500/40 md:size-54 lg:size-72"
+      class="glitter h-auto rounded-lg border border-indigo-500/40 object-cover md:w-56 lg:w-72"
       src="/hero_picture.png"
-      alt={personalImageAlt}
+      alt="Miguel Ángel"
     />
   </div>
   <nav
