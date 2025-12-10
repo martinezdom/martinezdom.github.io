@@ -20,6 +20,9 @@ const es: Translation = {
   curriculum: "Currículum",
   contactMe: "Contáctame",
   developedBy: "Desarrollado por",
+  heroBadge: "Disponible para trabajar",
+  heroDescription:
+    "De Alcoy, España. <span class='text-indigo-500 dark:text-yellow-200/90'>Desarrollador Web</span>. Me gusta cuidar cada detalle al máximo y crear experiencias únicas.",
 };
 
 export default es;

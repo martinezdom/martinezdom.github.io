@@ -20,6 +20,9 @@ const va: Translation = {
   curriculum: "Currículum",
   contactMe: "Contacta'm",
   developedBy: "Desenvolupat per",
+  heroBadge: "Disponible per a treballar",
+  heroDescription:
+    "D'Alcoi, Espanya. <span class='text-indigo-500 dark:text-yellow-200/90'>Desenvolupador Web</span>. M'agrada cuidar cada detall al màxim i crear experiències úniques.",
 };
 
 export default va;

@@ -21,6 +21,7 @@
 @theme {
   --font-sans: "Roboto", system-ui, sans-serif;
   --color-primary: #4f46e5;
+  --animate-ping: ping 1.5s cubic-bezier(0, 0, 0.5, 1) infinite;
 }
 
 .signature {

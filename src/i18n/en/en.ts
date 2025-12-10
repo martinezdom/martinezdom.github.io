@@ -20,6 +20,9 @@ const en: Translation = {
   curriculum: "Curriculum",
   contactMe: "Contact me",
   developedBy: "Developed by",
+  heroBadge: "Available for work",
+  heroDescription:
+    "From Alcoy, Spain. <span class='text-indigo-500 dark:text-yellow-200/90'>Web Developer</span>. I love taking care of every detail to the maximum and creating unique experiences.",
 };
 
 export default en;
