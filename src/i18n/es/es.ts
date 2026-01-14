@@ -23,6 +23,28 @@ const es: Translation = {
   heroBadge: "Disponible para trabajar",
   heroDescription:
     "De Alcoy, España. <span class='text-indigo-500 dark:text-yellow-200/90'>Desarrollador Web</span>. Me gusta cuidar cada detalle al máximo y crear experiencias únicas.",
+  experienceSection: {
+    date: "Fecha",
+    title: "Título",
+    company: "Empresa",
+    description: "Descripción",
+  },
+  experience: [
+    {
+      date: "Marzo 2025 - Junio 2025",
+      title: "Desarrollador Web",
+      company: "Sollutia",
+      description:
+        "Realización de prácticas del Ciclo Formativo de Grado Superior (DAW) en Sollutia. Creación de la página web desde 0 para el proyecto final de ciclo y mantenimiento correctivo de proyectos existentes, empleando tecnologías clave como PHP, JavaScript y MySQL.",
+    },
+    {
+      date: "Marzo 2023 - Junio 2023",
+      title: "Desarrollador Web",
+      company: "Coratge",
+      description:
+        "Prácticas correspondientes al Ciclo Formativo de Grado Medio (SMR) en Coratge. Desarrollo desde cero de un sitio web corporativo utilizando WordPress, abarcando desde la configuración inicial del hosting y dominio hasta la personalización y despliegue final.",
+    },
+  ],
 };
 
 export default es;

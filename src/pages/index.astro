@@ -4,13 +4,25 @@ import language from "@/i18n/es/es.ts";
 import Hero from "@/components/Hero.astro";
 import ThemeToggle from "@/components/ThemeToggle.astro";
 import SectionContainer from "@/components/SectionContainer.astro";
+import Experience from "@/components/Experience.astro";
+import TitleSection from "@/components/TitleSection.astro";
+import Briefcase from "@/components/icons/Briefcase.astro";
 ---
 
 <Layout language={language}>
-  <main class="px-4">
-    <SectionContainer id="hero" class="py-36 md:py-48">
+  <main
+    class="flex flex-col gap-y-16 overflow-hidden px-6 pb-20 md:gap-y-24 md:pb-32 md:px-8"
+  >
+    <SectionContainer id="hero" class="pt-36 md:pt-48">
       <Hero language={language} />
     </SectionContainer>
     <ThemeToggle language={language} />
+    <SectionContainer id="experiencia">
+      <TitleSection>
+        <Briefcase class="size-8" />
+        Experiencia laboral
+      </TitleSection>
+      <Experience language={language} />
+    </SectionContainer>
   </main>
 </Layout>

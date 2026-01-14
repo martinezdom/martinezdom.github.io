@@ -1,0 +1,21 @@
+---
+import ExperienceItem from "@/components/ExperienceItem.astro";
+import type { Translation } from "@/i18n/types";
+
+interface Props {
+  language: Translation;
+}
+
+const { language } = Astro.props;
+const { experience } = language;
+---
+
+<ol class="relative ml-3 border-s-2 border-gray-300 dark:border-gray-700">
+  {
+    experience.map((experienceItem) => (
+      <li class="ms-4 mb-10">
+        <ExperienceItem {...experienceItem} />
+      </li>
+    ))
+  }
+</ol>

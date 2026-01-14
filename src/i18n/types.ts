@@ -20,4 +20,18 @@ export interface Translation {
   developedBy: string;
   heroBadge: string;
   heroDescription: string;
+  experienceSection: {
+    date: string;
+    title: string;
+    company: string;
+    description: string;
+  };
+  experience: ExperienceItem[];
+}
+
+export interface ExperienceItem {
+  date: string;
+  title: string;
+  company: string;
+  description: string;
 }

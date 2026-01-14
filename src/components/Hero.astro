@@ -8,83 +8,70 @@ import GithubIcon from "./icons/Github.astro";
 import Badge from "./Badge.astro";
 ---
 
-<div>
+<div
+  class="grid grid-cols-1 items-center gap-8 pb-8 md:grid-cols-3 md:items-start"
+>
   <div
-    class="grid grid-cols-1 items-center gap-8 pb-8 md:grid-cols-3 md:items-start"
+    class="flex flex-col items-center gap-5 text-center md:col-span-2 md:items-start md:text-left"
   >
-    <div
-      class="flex flex-col items-center gap-6 text-center md:col-span-2 md:items-start md:text-left"
+    <a
+      href="https://linkedin.com/in/martinezdom"
+      target="_blank"
+      rel="noopener"
+      class="flex items-center transition md:justify-center md:hover:scale-105"
     >
-      <a
-        href="https://linkedin.com/in/martinezdom"
-        target="_blank"
-        rel="noopener"
-        class="flex items-center transition md:justify-center md:hover:scale-105"
-      >
-        <Badge>
-          <span class="mr-1.5 flex h-2 w-2 items-center justify-center">
-            <span
-              class="absolute inline-flex h-2 w-2 animate-ping rounded-full bg-indigo-400 opacity-75"
-            ></span>
-            <span
-              class="relative inline-flex h-2 w-2 rounded-full bg-indigo-500"
-            ></span>
-          </span>
-          {language.heroBadge}
-        </Badge>
-      </a>
-      <div
-        class="flex flex-wrap items-end justify-center gap-x-2 md:justify-start"
-      >
-        <h1
-          class="text-4xl font-bold tracking-tight text-gray-800 sm:text-5xl dark:text-white"
-        >
-          Miguel Ángel Martínez
-        </h1>
-        <div
-          class="hidden h-9 w-px self-center bg-indigo-500/40 md:block dark:bg-slate-700"
-        >
-        </div>
-        <a
-          href="https://github.com/martinezdom"
-          class="mb-1 text-sm font-medium text-slate-700 hover:underline hover:underline-offset-2 dark:text-slate-300"
-          >@martinezdom</a
-        >
-      </div>
-
-      <p
-        class="text-base leading-relaxed text-pretty text-slate-700 md:text-xl dark:text-slate-300"
-        set:html={language.heroDescription}
-      />
-
-      <nav
-        class="grid w-full max-w-sm grid-cols-2 gap-4 text-xs font-medium md:max-w-none md:grid-cols-4 md:text-sm"
-      >
-        <SocialPill href="https://www.linkedin.com/in/martinezdom/">
-          <LinkedInIcon class="size-4" />
-          LinkedIn
-        </SocialPill>
-        <SocialPill href="https://github.com/martinezdom">
-          <GithubIcon class="size-4" />
-          GitHub
-        </SocialPill>
-        <SocialPill href={`/CV-${language.prefix.toUpperCase()}.pdf`}>
-          <DocumentIcon class="size-4" />
-          {language.curriculum}
-        </SocialPill>
-        <SocialPill href="mailto:martinezdom@gmail.com">
-          <MailIcon class="size-4" />
-          {language.contactMe}
-        </SocialPill>
-      </nav>
-    </div>
-
-    <div class="order-first flex justify-center md:order-none md:justify-end">
+      <Badge>
+        <span class="mr-1.5 flex h-2 w-2 items-center justify-center">
+          <span
+            class="absolute inline-flex h-2 w-2 animate-ping rounded-full bg-indigo-400 opacity-75"
+          ></span>
+          <span class="relative inline-flex h-2 w-2 rounded-full bg-indigo-500"
+          ></span>
+        </span>
+        {language.heroBadge}
+      </Badge>
+    </a>
+    <h1
+      class="flex flex-col gap-2 text-4xl font-bold tracking-tight text-gray-800 sm:text-5xl md:block md:gap-0 dark:text-white"
+    >
+      Miguel Ángel Martínez
+    </h1>
+    <p
+      class="text-base leading-relaxed text-slate-700 md:text-xl dark:text-slate-300"
+      set:html={language.heroDescription}
+    />
+    <nav
+      class="grid w-full max-w-sm grid-cols-2 gap-4 text-xs font-medium md:max-w-none md:grid-cols-4 md:text-sm"
+    >
+      <SocialPill href="https://www.linkedin.com/in/martinezdom/">
+        <LinkedInIcon class="size-4" />
+        LinkedIn
+      </SocialPill>
+      <SocialPill href="https://github.com/martinezdom">
+        <GithubIcon class="size-4" />
+        GitHub
+      </SocialPill>
+      <SocialPill href={`/CV-${language.prefix.toUpperCase()}.pdf`}>
+        <DocumentIcon class="size-4" />
+        {language.curriculum}
+      </SocialPill>
+      <SocialPill href="mailto:tartanasdev@gmail.com">
+        <MailIcon class="size-4" />
+        {language.contactMe}
+      </SocialPill>
+    </nav>
+  </div>
+  <div class="order-first flex justify-center md:order-none md:justify-end">
+    <a
+      href="https://github.com/martinezdom"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       <img
-        class="glitter h-auto w-40 rounded-2xl object-cover transition duration-500 hover:scale-105 md:w-48 md:rotate-3 md:hover:rotate-0 lg:w-56"
+        class="glitter h-40 w-40 rounded-full object-cover transition duration-500 hover:scale-105 md:h-auto md:w-48 md:rounded-2xl lg:w-56"
         src="/hero_picture.png"
         alt="Miguel Ángel"
       />
-    </div>
+    </a>
   </div>
 </div>
