@@ -27,6 +27,7 @@ export interface Translation {
     description: string;
   };
   experience: ExperienceItem[];
+  projects: ProjectItem[];
 }
 
 export interface ExperienceItem {
@@ -34,4 +35,11 @@ export interface ExperienceItem {
   title: string;
   company: string;
   description: string;
+}
+
+export interface ProjectItem {
+  title: string;
+  description: string;
+  github: string;
+  image: string;
 }

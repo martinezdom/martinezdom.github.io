@@ -7,11 +7,12 @@ import SectionContainer from "@/components/SectionContainer.astro";
 import Experience from "@/components/Experience.astro";
 import TitleSection from "@/components/TitleSection.astro";
 import Briefcase from "@/components/icons/Briefcase.astro";
+import Code from "@/components/icons/Code.astro";
 ---
 
 <Layout language={language}>
   <main
-    class="flex flex-col gap-y-16 overflow-hidden px-6 pb-20 md:gap-y-24 md:pb-32 md:px-8"
+    class="flex flex-col gap-y-16 overflow-hidden px-6 pb-20 md:gap-y-24 md:px-8 md:pb-32"
   >
     <SectionContainer id="hero" class="pt-36 md:pt-48">
       <Hero language={language} />
@@ -22,6 +23,12 @@ import Briefcase from "@/components/icons/Briefcase.astro";
         Experiència laboral
       </TitleSection>
       <Experience language={language} />
+    </SectionContainer>
+    <SectionContainer id="projectes">
+      <TitleSection>
+        <Code class="size-8" />
+        Projectes
+      </TitleSection>
     </SectionContainer>
     <ThemeToggle language={language} />
   </main>
