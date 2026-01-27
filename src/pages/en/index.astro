@@ -21,9 +21,8 @@ import Code from "@/components/icons/Code.astro";
       <TitleSection>
         <Briefcase class="size-8" />
         Work Experience
-        <Experience language={language} />
       </TitleSection>
-      <ThemeToggle language={language} />
+      <Experience language={language} />
     </SectionContainer>
     <SectionContainer id="projects">
       <TitleSection>
@@ -31,5 +30,6 @@ import Code from "@/components/icons/Code.astro";
         Projects
       </TitleSection>
     </SectionContainer>
+    <ThemeToggle language={language} />
   </main>
 </Layout>

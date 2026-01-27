@@ -23,12 +23,6 @@ const en: Translation = {
   heroBadge: "Available for work",
   heroDescription:
     "From Alcoy, Spain. <span class='text-indigo-500 dark:text-yellow-200/90'>Web Developer</span>. I love taking care of every detail to the maximum and creating unique experiences.",
-  experienceSection: {
-    date: "Date",
-    title: "Title",
-    company: "Company",
-    description: "Description",
-  },
   experience: [
     {
       date: "March 2025 - June 2025",
@@ -43,6 +37,22 @@ const en: Translation = {
       company: "Coratge",
       description:
         "Completed internship for the Technician in Microcomputer Systems and Networks (SMR) at Coratge. Developed a corporate website from scratch using WordPress, covering everything from initial hosting and domain configuration to customization and final deployment.",
+    },
+  ],
+  projects: [
+    {
+      title: "Dom Books",
+      description:
+        "Reactive SPA built with Vue 3 and TailwindCSS. Features global state management via Pinia, complex form validation (VeeValidate/Yup), and LocalStorage persistence. Designed with a reusable component-oriented architecture.",
+      github: "https://github.com/martinezdom/Dom-Books",
+      image: "/projects/dombooks.webp",
+    },
+    {
+      title: "Download Stats Panel",
+      description:
+        "Full Stack platform (PHP/MySQL) containerized with Docker. Includes an analytical dashboard with interactive charts, secure authentication, and custom MVC architecture. Deployable in Apache/Nginx environments with Virtual Host configuration.",
+      github: "https://github.com/martinezdom/DownloadStatsPanel",
+      image: "/projects/downloadstatspanel.webp",
     },
   ],
 };

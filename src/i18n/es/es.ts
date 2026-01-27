@@ -23,12 +23,6 @@ const es: Translation = {
   heroBadge: "Disponible para trabajar",
   heroDescription:
     "De Alcoy, España. <span class='text-indigo-500 dark:text-yellow-200/90'>Desarrollador Web</span>. Me gusta cuidar cada detalle al máximo y crear experiencias únicas.",
-  experienceSection: {
-    date: "Fecha",
-    title: "Título",
-    company: "Empresa",
-    description: "Descripción",
-  },
   experience: [
     {
       date: "Marzo 2025 - Junio 2025",
@@ -43,6 +37,22 @@ const es: Translation = {
       company: "Coratge",
       description:
         "Prácticas correspondientes al Ciclo Formativo de Grado Medio (SMR) en Coratge. Desarrollo desde cero de un sitio web corporativo utilizando WordPress, abarcando desde la configuración inicial del hosting y dominio hasta la personalización y despliegue final.",
+    },
+  ],
+  projects: [
+    {
+      title: "Dom Books",
+      description:
+        "SPA reactiva desarrollada con Vue 3 y TailwindCSS. Implementa gestión de estado global con Pinia, validación de formularios complejos (VeeValidate/Yup) y persistencia en LocalStorage. Arquitectura orientada a componentes reutilizables.",
+      github: "https://github.com/martinezdom/Dom-Books",
+      image: "/projects/dombooks.webp",
+    },
+    {
+      title: "Download Stats Panel",
+      description:
+        "Plataforma Full Stack (PHP/MySQL) contenerizada con Docker. Dashboard analítico con gráficos interactivos, autenticación segura y arquitectura MVC manual. Desplegable en entornos Apache/Nginx con configuración de Virtual Hosts.",
+      github: "https://github.com/martinezdom/DownloadStatsPanel",
+      image: "/projects/downloadstatspanel.webp",
     },
   ],
 };
