@@ -10,10 +10,10 @@ const { language } = Astro.props;
 const { projects } = language;
 ---
 
-<div class="">
+<div class="flex flex-col gap-6">
   {
     projects.map((projectItem) => (
-      <article class="">
+      <article class="group flex flex-col md:flex-row md:space-x-8">
         <ProjectItem {...projectItem} />
       </article>
     ))

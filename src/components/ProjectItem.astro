@@ -4,7 +4,15 @@ interface Props {
   description: string;
   github: string;
   image: string;
+  imageAlt: string;
 }
 
-const { title, description, github, image } = Astro.props;
+const { title, description, github, image, imageAlt } = Astro.props;
 ---
+
+<div>
+  <img src={image} alt={imageAlt} />
+</div>
+<div>
+  <h3>{title}</h3>
+</div>

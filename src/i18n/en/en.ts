@@ -46,6 +46,7 @@ const en: Translation = {
         "Reactive SPA built with Vue 3 and TailwindCSS. Features global state management via Pinia, complex form validation (VeeValidate/Yup), and LocalStorage persistence. Designed with a reusable component-oriented architecture.",
       github: "https://github.com/martinezdom/Dom-Books",
       image: "/projects/dombooks.webp",
+      imageAlt: "Screenshot of the Dom Books application",
     },
     {
       title: "Download Stats Panel",
@@ -53,6 +54,7 @@ const en: Translation = {
         "Full Stack platform (PHP/MySQL) containerized with Docker. Includes an analytical dashboard with interactive charts, secure authentication, and custom MVC architecture. Deployable in Apache/Nginx environments with Virtual Host configuration.",
       github: "https://github.com/martinezdom/DownloadStatsPanel",
       image: "/projects/downloadstatspanel.webp",
+      imageAlt: "Screenshot of the Download Stats Panel application",
     },
   ],
 };

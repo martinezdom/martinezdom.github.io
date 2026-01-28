@@ -36,4 +36,5 @@ export interface ProjectItem {
   description: string;
   github: string;
   image: string;
+  imageAlt: string;
 }

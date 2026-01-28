@@ -46,6 +46,7 @@ const va: Translation = {
         "SPA reactiva desenvolupada amb Vue 3 i TailwindCSS. Implementa gestió d'estat global amb Pinia, validació de formularis complexos (VeeValidate/Yup) i persistència en LocalStorage. Arquitectura orientada a components reutilitzables.",
       github: "https://github.com/martinezdom/Dom-Books",
       image: "/projects/dombooks.webp",
+      imageAlt: "Captura de pantalla de l'aplicació Dom Books",
     },
     {
       title: "Download Stats Panel",
@@ -53,6 +54,7 @@ const va: Translation = {
         "Plataforma Full Stack (PHP/MySQL) contenidoritzada amb Docker. Dashboard analític amb gràfics interactius, autenticació segura i arquitectura MVC manual. Desplegable en entorns Apache/Nginx amb configuració de Virtual Hosts.",
       github: "https://github.com/martinezdom/DownloadStatsPanel",
       image: "/projects/downloadstatspanel.webp",
+      imageAlt: "Captura de pantalla de l'aplicació Download Stats Panel",
     },
   ],
 };
