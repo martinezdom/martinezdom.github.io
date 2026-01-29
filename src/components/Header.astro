@@ -7,6 +7,7 @@ const prefix = language.prefix === "es" ? "" : `/${language.prefix}`;
 const sections = [
   language.nav.experience,
   language.nav.projects,
+  language.nav.studies,
   language.nav.about,
   language.nav.contact,
 ];
@@ -34,7 +35,11 @@ const sections = [
         sections.map((section) => (
           <li>
             <a
-              href={`${prefix}/${section.href}`}
+              href={
+                section.title === language.nav.contact.title
+                  ? "mailto:tartanasdev@gmail.com"
+                  : `${prefix}/${section.href}`
+              }
               class="text-slate-900 underline-offset-4 transition-colors duration-200 hover:text-indigo-500 hover:underline dark:text-white dark:hover:text-indigo-400"
             >
               {section.title}

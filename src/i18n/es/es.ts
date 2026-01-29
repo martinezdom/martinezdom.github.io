@@ -5,6 +5,7 @@ const es: Translation = {
   nav: {
     experience: { title: "Experiencia", href: "#experiencia" },
     projects: { title: "Proyectos", href: "#proyectos" },
+    studies: { title: "Estudios", href: "#estudios" },
     about: { title: "Sobre mí", href: "#sobre-mi" },
     contact: { title: "Contacto", href: "#contacto" },
   },

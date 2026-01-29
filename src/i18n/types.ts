@@ -3,6 +3,7 @@ export interface Translation {
   nav: {
     experience: { title: string; href: string };
     projects: { title: string; href: string };
+    studies: { title: string; href: string };
     about: { title: string; href: string };
     contact: { title: string; href: string };
   };
