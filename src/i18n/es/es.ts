@@ -46,8 +46,9 @@ const es: Translation = {
       description:
         "SPA reactiva desarrollada con Vue 3 y TailwindCSS. Implementa gestión de estado global con Pinia, validación de formularios complejos (VeeValidate/Yup) y persistencia en LocalStorage. Arquitectura orientada a componentes reutilizables.",
       github: "https://github.com/martinezdom/Dom-Books",
-      image: "/projects/dombooks.webp",
+      image: "/projects/dom_books.webp",
       imageAlt: "Captura de pantalla de la aplicación Dom Books",
+      languages: ["Vue", "TailwindCSS"],
     },
     {
       title: "Download Stats Panel",
@@ -56,6 +57,7 @@ const es: Translation = {
       github: "https://github.com/martinezdom/DownloadStatsPanel",
       image: "/projects/downloadstatspanel.webp",
       imageAlt: "Captura de pantalla de la aplicación Download Stats Panel",
+      languages: ["PHP", "MySQL", "JavaScript", "CSS"],
     },
   ],
 };

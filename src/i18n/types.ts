@@ -38,4 +38,5 @@ export interface ProjectItem {
   github: string;
   image: string;
   imageAlt: string;
+  languages: string[];
 }

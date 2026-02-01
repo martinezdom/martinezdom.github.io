@@ -10,9 +10,18 @@ interface Props {
 const { title, description, github, image, imageAlt } = Astro.props;
 ---
 
-<div>
-  <img src={image} alt={imageAlt} />
+<div
+  class="mb-4 w-full overflow-hidden rounded-2xl border-2 border-indigo-200 md:mb-0 md:w-1/2"
+>
+  <img
+    class="h-full w-full scale-105 object-cover transition-transform duration-300 hover:scale-100"
+    src={image}
+    alt={imageAlt}
+  />
 </div>
-<div>
-  <h3>{title}</h3>
+<div class="flex-row">
+  <div>
+    <h3 class="font-semibold text-indigo-500">{title}</h3>
+  </div>
+  <div>{description}</div>
 </div>
