@@ -1,0 +1,146 @@
+<!DOCTYPE html><html lang="va"> <head><meta charset="UTF-8"><meta name="description" content="Portafolio de martinezdom, desarrollador web junior."><meta name="viewport" content="width=device-width"><meta name="generator" content="Astro v5.16.0"><link rel="icon" type="image/svg+xml" href="/favicon.ico"><title>Portafolio de martinezdom | Desarrollador web</title><script>
+  const stored = localStorage.getItem("theme");
+  const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  const theme = stored || (prefersDark ? "dark" : "light");
+
+  document.documentElement.classList.toggle("dark", theme === "dark");
+</script><link rel="stylesheet" href="/_astro/index.aK84YWu3.css"></head> <body class="text-slate-90 relative flex min-h-screen flex-col selection:bg-indigo-500 selection:text-white dark:text-slate-50 dark:selection:bg-indigo-400 dark:selection:text-slate-900"> <div class="absolute inset-0 -z-10 h-full w-full [background:radial-gradient(125%_125%_at_50%_10%,#f8fafc_40%,#a5b4fc_100%)] dark:[background:radial-gradient(125%_125%_at_50%_10%,#0f172a_40%,#312e81_100%)]"></div> <header id="header" class="fixed top-0 z-20 flex w-full flex-col items-center px-6 pt-4 md:px-0"> <div id="signature-wrapper" class="overflow-hidden transition-all duration-300 ease-in-out"> <h1 id="signature" class="signature mb-3 text-3xl font-bold">
+martinezdom
+</h1> </div> <nav id="main-nav" class="glitter mx-4 flex items-center gap-4 rounded-full border-1 border-indigo-500/40 bg-indigo-500/40 px-2 py-2 text-xs font-medium backdrop-blur-xl md:mx-2 md:px-6 md:text-sm dark:bg-slate-900/80"> <ul class="flex space-x-3 md:space-x-6"> <li> <a href="/va/#experiencia" class="whitespace-nowrap text-slate-900 underline-offset-4 transition-colors duration-200 hover:text-indigo-500 hover:underline dark:text-white dark:hover:text-indigo-400"> Experiència </a> </li><li> <a href="/va/#projectes" class="whitespace-nowrap text-slate-900 underline-offset-4 transition-colors duration-200 hover:text-indigo-500 hover:underline dark:text-white dark:hover:text-indigo-400"> Projectes </a> </li><li> <a href="/va/#estudis" class="whitespace-nowrap text-slate-900 underline-offset-4 transition-colors duration-200 hover:text-indigo-500 hover:underline dark:text-white dark:hover:text-indigo-400"> Estudis </a> </li><li> <a href="/va/#sobre-mi" class="whitespace-nowrap text-slate-900 underline-offset-4 transition-colors duration-200 hover:text-indigo-500 hover:underline dark:text-white dark:hover:text-indigo-400"> Sobre mi </a> </li><li> <a href="mailto:tartanasdev@gmail.com" class="whitespace-nowrap text-slate-900 underline-offset-4 transition-colors duration-200 hover:text-indigo-500 hover:underline dark:text-white dark:hover:text-indigo-400"> Contacte </a> </li> </ul> <div class="h-5 border-l border-indigo-500/40"></div> <div class="relative"> <button id="lang-selector" class="flex cursor-pointer items-center gap-1 py-1 text-slate-900 transition-colors duration-200 hover:text-indigo-500 md:text-sm dark:text-white dark:hover:text-indigo-400" aria-expanded="false"> <span id="current-lang">VA</span> <svg class="h-3 w-3 transition-transform duration-350" id="lang-arrow" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"> <path d="M19 9l-7 7-7-7"></path> </svg> </button> <div id="lang-menu" class="absolute inset-x-0 z-10 mt-1 hidden justify-center" role="menu"> <div class="min-w-[60px] rounded-md border border-indigo-500/40 bg-white py-1 dark:bg-slate-900"> <a href="/" class="block px-4 py-2 text-center text-sm text-slate-900 transition-colors duration-150 hover:bg-indigo-50 hover:text-indigo-600 dark:text-slate-200 dark:hover:bg-slate-800 dark:hover:text-indigo-400" data-lang="es"> ES </a><a href="/en" class="block px-4 py-2 text-center text-sm text-slate-900 transition-colors duration-150 hover:bg-indigo-50 hover:text-indigo-600 dark:text-slate-200 dark:hover:bg-slate-800 dark:hover:text-indigo-400" data-lang="en"> EN </a><a href="/va" class="block px-4 py-2 text-center text-sm text-slate-900 transition-colors duration-150 hover:bg-indigo-50 hover:text-indigo-600 dark:text-slate-200 dark:hover:bg-slate-800 dark:hover:text-indigo-400" data-lang="va"> VA </a> </div> </div> </div> <script>
+  const langSelector = document.getElementById("lang-selector");
+  const langMenu = document.getElementById("lang-menu");
+  const langArrow = document.getElementById("lang-arrow");
+
+  const toggleLanguageMenu = () => {
+    const isOpen = langSelector.getAttribute("aria-expanded") === "true";
+    langMenu.classList.toggle("hidden", isOpen);
+    langMenu.classList.toggle("flex", !isOpen);
+    langSelector.setAttribute("aria-expanded", (!isOpen).toString());
+    langArrow.style.transform = isOpen ? "rotate(0deg)" : "rotate(180deg)";
+  };
+
+  const closeLanguageMenu = () => {
+    langMenu.classList.add("hidden");
+    langMenu.classList.remove("flex");
+    langSelector.setAttribute("aria-expanded", "false");
+    langArrow.style.transform = "rotate(0deg)";
+  };
+
+  langSelector.addEventListener("click", (e) => {
+    e.stopPropagation();
+    toggleLanguageMenu();
+  });
+
+  document.addEventListener("click", (e) => {
+    if (!langSelector.contains(e.target) && !langMenu.contains(e.target)) {
+      closeLanguageMenu();
+    }
+  });
+</script> </nav> </header> <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const signature = document.getElementById("signature");
+    const signatureWrapper = document.getElementById("signature-wrapper");
+
+    const signatureHeight = signature.offsetHeight + 12;
+    signatureWrapper.style.maxHeight = `${signatureHeight}px`;
+
+    signature.style.transition = "opacity 0.3s ease, transform 0.3s ease";
+
+    window.addEventListener("scroll", () => {
+      const scrollY = window.scrollY;
+      const scale = Math.max(1 - scrollY / 600, 0.8);
+      signature.style.transform = `scale(${scale})`;
+
+      if (scrollY > 200) {
+        signature.style.opacity = "0";
+        signature.style.pointerEvents = "none";
+        signatureWrapper.style.maxHeight = "0";
+      } else {
+        signature.style.pointerEvents = "auto";
+        signatureWrapper.style.maxHeight = `${signatureHeight}px`;
+        signature.style.opacity = "1";
+      }
+    });
+  });
+</script>  <main class="flex flex-col gap-y-16 overflow-hidden px-6 pb-20 md:gap-y-24 md:px-8 md:pb-32"> <section id="hero" data-section="hero" class="section pt-36 md:pt-48 scroll-m-20 w-full mx-auto container lg:max-w-4xl md:max-w-2xl">  <div class="grid grid-cols-1 items-center gap-8 pb-8 md:grid-cols-3 md:items-start"> <div class="flex flex-col items-center gap-5 text-center md:col-span-2 md:items-start md:text-left"> <a href="https://linkedin.com/in/martinezdom" target="_blank" rel="noopener" class="flex items-center transition md:justify-center md:hover:scale-105"> <div class="flex items-center"> <span class="relative inline-flex overflow-hidden rounded-full p-[1px]"> <span class="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#c7d2fe_0%,#4f46e5_50%,#c7d2fe_100%)] dark:bg-[conic-gradient(from_90deg_at_50%_50%,#A5B4FC_0%,#4338CA_50%,#A5B4FC_100%)]"></span> <div class="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-100 px-3 py-1 text-sm font-medium text-indigo-800 backdrop-blur-3xl dark:bg-slate-950/90 dark:text-indigo-300">  <span class="mr-1.5 flex h-2 w-2 items-center justify-center"> <span class="absolute inline-flex h-2 w-2 animate-ping rounded-full bg-indigo-400 opacity-75"></span> <span class="relative inline-flex h-2 w-2 rounded-full bg-indigo-500"></span> </span> Disponible per a treballar </div> </span> </div> </a> <h1 class="flex flex-col gap-2 text-4xl font-bold tracking-tight text-gray-800 sm:text-5xl md:block md:gap-0 dark:text-white">
+Miguel Ángel Martínez
+</h1> <p class="text-base leading-relaxed text-slate-700 md:text-xl dark:text-slate-300">D'Alcoi, Espanya. <span class='text-indigo-500 dark:text-yellow-200/90'>Desenvolupador Web</span>. M'agrada cuidar cada detall al màxim i crear experiències úniques.</p> <nav class="grid w-full max-w-sm grid-cols-2 gap-4 text-xs font-medium md:max-w-none md:grid-cols-4 md:text-sm"> <a href="https://www.linkedin.com/in/martinezdom/" target="_blank" rel="noopener noreferrer" role="link" class="group inline-flex items-center justify-center gap-2 rounded-full border border-indigo-500/40 bg-slate-100 px-4 py-1 text-slate-700 transition-colors duration-200 hover:border-indigo-950 hover:bg-indigo-950 hover:text-white dark:bg-transparent dark:text-slate-200 dark:hover:border-indigo-500 dark:hover:bg-indigo-600 dark:hover:text-black">  <svg class="size-4" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-linkedin" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z"></path><path d="M8 11l0 5"></path><path d="M8 8l0 .01"></path><path d="M12 16l0 -5"></path><path d="M16 16v-3a2 2 0 0 0 -4 0"></path></svg>
+LinkedIn
+ </a> <a href="https://github.com/martinezdom" target="_blank" rel="noopener noreferrer" role="link" class="group inline-flex items-center justify-center gap-2 rounded-full border border-indigo-500/40 bg-slate-100 px-4 py-1 text-slate-700 transition-colors duration-200 hover:border-indigo-950 hover:bg-indigo-950 hover:text-white dark:bg-transparent dark:text-slate-200 dark:hover:border-indigo-500 dark:hover:bg-indigo-600 dark:hover:text-black">  <svg class="size-4" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"></path></svg>
+GitHub
+ </a> <a href="/CV-VA.pdf" target="_blank" rel="noopener noreferrer" role="link" class="group inline-flex items-center justify-center gap-2 rounded-full border border-indigo-500/40 bg-slate-100 px-4 py-1 text-slate-700 transition-colors duration-200 hover:border-indigo-950 hover:bg-indigo-950 hover:text-white dark:bg-transparent dark:text-slate-200 dark:hover:border-indigo-500 dark:hover:bg-indigo-600 dark:hover:text-black">  <svg class="size-4" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"> <path stroke="none" d="M0 0h24v24H0z" fill="none"></path> <path d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z"></path> </svg> Currículum </a> <a href="mailto:tartanasdev@gmail.com" target="_blank" rel="noopener noreferrer" role="link" class="group inline-flex items-center justify-center gap-2 rounded-full border border-indigo-500/40 bg-slate-100 px-4 py-1 text-slate-700 transition-colors duration-200 hover:border-indigo-950 hover:bg-indigo-950 hover:text-white dark:bg-transparent dark:text-slate-200 dark:hover:border-indigo-500 dark:hover:bg-indigo-600 dark:hover:text-black">  <svg class="size-4" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-mail-forward" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M12 18h-7a2 2 0 0 1 -2 -2v-10a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v7.5"></path><path d="M3 6l9 6l9 -6"></path><path d="M15 18h6"></path><path d="M18 15l3 3l-3 3"></path></svg> Contacta&#39;m </a> </nav> </div> <div class="order-first flex justify-center md:order-none md:justify-end"> <a href="https://github.com/martinezdom" target="_blank" rel="noopener noreferrer"> <img class="glitter h-40 w-40 rounded-full object-cover transition duration-500 hover:scale-105 md:h-auto md:w-48 md:rounded-2xl lg:w-56" src="/hero_picture.png" alt="Miguel Ángel"> </a> </div> </div>  </section> <section id="experiencia" data-section="experiencia" class="section undefined scroll-m-20 w-full mx-auto container lg:max-w-4xl md:max-w-2xl">  <h2 class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-gray-800 dark:text-white undefined">  <svg class="size-8" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M3 7m0 2a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v9a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z"></path><path d="M8 7v-2a2 2 0 0 1 2 -2h4a2 2 0 0 1 2 2v2"></path><path d="M12 12l0 .01"></path><path d="M3 13a20 20 0 0 0 18 0"></path></svg>
+Experiència laboral
+ </h2> <ol class="relative ml-3 border-s-2 border-gray-300 dark:border-gray-700"> <li class="ms-4 mb-10"> <div class="absolute -start-[7px] mt-1.5 h-3 w-3 rounded-full border border-white bg-indigo-500 dark:border-gray-900 dark:bg-yellow-400"></div> <time class="mb-1 text-sm leading-none font-normal text-gray-500 dark:text-gray-500">Març 2025 - Juny 2025</time> <h3 class="mt-2 text-lg font-semibold text-indigo-500 dark:text-yellow-400"> Desenvolupador Web </h3> <h4 class="text-md mb-2 font-medium text-gray-600 dark:text-white"> Sollutia </h4> <p class="mb-4 text-base font-normal text-pretty text-gray-500 dark:text-gray-400"> Realització de pràctiques del Cicle Formatiu de Grau Superior (DAW) a Sollutia. Creació de la pàgina web des de 0 per al projecte final de cicle i manteniment correctiu de projectes existents, emprant tecnologies clau com PHP, JavaScript i MySQL. </p> </li><li class="ms-4 mb-10"> <div class="absolute -start-[7px] mt-1.5 h-3 w-3 rounded-full border border-white bg-indigo-500 dark:border-gray-900 dark:bg-yellow-400"></div> <time class="mb-1 text-sm leading-none font-normal text-gray-500 dark:text-gray-500">Març 2023 - Juny 2023</time> <h3 class="mt-2 text-lg font-semibold text-indigo-500 dark:text-yellow-400"> Desenvolupador Web </h3> <h4 class="text-md mb-2 font-medium text-gray-600 dark:text-white"> Coratge </h4> <p class="mb-4 text-base font-normal text-pretty text-gray-500 dark:text-gray-400"> Pràctiques corresponents al Cicle Formatiu de Grau Mitjà (SMR) a Coratge. Desenvolupament des de zero d&#39;un lloc web corporatiu utilitzant WordPress, abastant des de la configuració inicial del hosting i domini fins a la personalització i desplegament final. </p> </li> </ol>  </section> <section id="projectes" data-section="projectes" class="section undefined scroll-m-20 w-full mx-auto container lg:max-w-4xl md:max-w-2xl">  <h2 class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-gray-800 dark:text-white undefined">  <svg class="size-8" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M7 8l-4 4l4 4"></path><path d="M17 8l4 4l-4 4"></path><path d="M14 4l-4 16"></path></svg>
+Projectes
+ </h2>  </section> <div class="fixed bottom-8 right-10 z-50"> <button id="theme-toggle" aria-expanded="false" class="rounded-full flex items-center justify-center size-11 border-2 border-violet-400/60 dark:border-violet-500/60 text-violet-600 dark:text-violet-400 bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm hover:border-violet-600 hover:bg-violet-600 hover:text-white hover:scale-110 dark:hover:bg-violet-500 dark:hover:border-violet-500 dark:hover:text-white cursor-pointer transition-all duration-300 shadow-lg hover:shadow-violet-500/50 aria-[expanded=true]:bg-violet-600 aria-[expanded=true]:text-white aria-[expanded=true]:border-violet-600 aria-[expanded=true]:scale-110 aria-[expanded=true]:shadow-violet-500/50 aria-[expanded=true]:dark:bg-violet-500 aria-[expanded=true]:dark:border-violet-500 relative glitter"> <span class="sr-only">Seleccionar tema</span> <span id="light" class="theme-main-icon absolute"> <svg width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"> <path stroke="none" d="M0 0h24v24H0z" fill="none"></path> <path d="M12 12m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0"></path> <path d="M3 12h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7"></path> </svg> </span> <span id="dark" class="theme-main-icon absolute"> <svg width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"> <path stroke="none" d="M0 0h24v24H0z" fill="none"></path> <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z"></path> </svg> </span> <span id="system" class="theme-main-icon absolute"> <svg width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"> <path stroke="none" d="M0 0h24v24H0z" fill="none"></path> <path d="M3 5a1 1 0 0 1 1 -1h16a1 1 0 0 1 1 1v10a1 1 0 0 1 -1 1h-16a1 1 0 0 1 -1 -1v-10z"></path> <path d="M7 20h10"></path> <path d="M9 16v4"></path> <path d="M15 16v4"></path> </svg> </span> </button> <div id="theme-menu" class="absolute right-0 bottom-full mb-1.5 hidden flex-col space-y-1.5" role="menu" aria-labelledby="theme-toggle"> <button class="theme-option rounded-full flex items-center justify-center size-11 border-2 border-violet-400/60 dark:border-violet-500/60 text-violet-600 dark:text-violet-400 bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm hover:border-violet-600 hover:bg-violet-600 hover:text-white hover:scale-110 dark:hover:bg-violet-500 dark:hover:border-violet-500 dark:hover:text-white cursor-pointer transition-all duration-300 shadow-lg hover:shadow-violet-500/50 aria-[expanded=true]:bg-violet-600 aria-[expanded=true]:text-white aria-[expanded=true]:border-violet-600 aria-[expanded=true]:scale-110 aria-[expanded=true]:shadow-violet-500/50 aria-[expanded=true]:dark:bg-violet-500 aria-[expanded=true]:dark:border-violet-500" data-theme="light" role="menuitem" aria-label="Clar" title="Clar"> <span class="sr-only">Clar</span> <span class="size-6"> <svg width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"> <path stroke="none" d="M0 0h24v24H0z" fill="none"></path> <path d="M12 12m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0"></path> <path d="M3 12h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7"></path> </svg> </span> </button><button class="theme-option rounded-full flex items-center justify-center size-11 border-2 border-violet-400/60 dark:border-violet-500/60 text-violet-600 dark:text-violet-400 bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm hover:border-violet-600 hover:bg-violet-600 hover:text-white hover:scale-110 dark:hover:bg-violet-500 dark:hover:border-violet-500 dark:hover:text-white cursor-pointer transition-all duration-300 shadow-lg hover:shadow-violet-500/50 aria-[expanded=true]:bg-violet-600 aria-[expanded=true]:text-white aria-[expanded=true]:border-violet-600 aria-[expanded=true]:scale-110 aria-[expanded=true]:shadow-violet-500/50 aria-[expanded=true]:dark:bg-violet-500 aria-[expanded=true]:dark:border-violet-500" data-theme="dark" role="menuitem" aria-label="Fosc" title="Fosc"> <span class="sr-only">Fosc</span> <span class="size-6"> <svg width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"> <path stroke="none" d="M0 0h24v24H0z" fill="none"></path> <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z"></path> </svg> </span> </button><button class="theme-option rounded-full flex items-center justify-center size-11 border-2 border-violet-400/60 dark:border-violet-500/60 text-violet-600 dark:text-violet-400 bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm hover:border-violet-600 hover:bg-violet-600 hover:text-white hover:scale-110 dark:hover:bg-violet-500 dark:hover:border-violet-500 dark:hover:text-white cursor-pointer transition-all duration-300 shadow-lg hover:shadow-violet-500/50 aria-[expanded=true]:bg-violet-600 aria-[expanded=true]:text-white aria-[expanded=true]:border-violet-600 aria-[expanded=true]:scale-110 aria-[expanded=true]:shadow-violet-500/50 aria-[expanded=true]:dark:bg-violet-500 aria-[expanded=true]:dark:border-violet-500" data-theme="system" role="menuitem" aria-label="Sistema" title="Sistema"> <span class="sr-only">Sistema</span> <span class="size-6"> <svg width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"> <path stroke="none" d="M0 0h24v24H0z" fill="none"></path> <path d="M3 5a1 1 0 0 1 1 -1h16a1 1 0 0 1 1 1v10a1 1 0 0 1 -1 1h-16a1 1 0 0 1 -1 -1v-10z"></path> <path d="M7 20h10"></path> <path d="M9 16v4"></path> <path d="M15 16v4"></path> </svg> </span> </button> </div> </div> <script>
+  const themeToggle = document.getElementById("theme-toggle");
+  const themeMenu = document.getElementById("theme-menu");
+  const themeIcons = document.querySelectorAll(".theme-main-icon");
+  const themeOptions = document.querySelectorAll(".theme-option");
+  const colorScheme = window.matchMedia("(prefers-color-scheme: dark)");
+
+  const getSavedTheme = () => {
+    const saved = localStorage.getItem("theme");
+    return ["light", "dark", "system"].includes(saved) ? saved : "system";
+  };
+
+  const updateActiveIcon = (theme) => {
+    themeIcons.forEach((icon) => {
+      const isActive = icon.id === theme;
+      icon.classList.toggle("opacity-100", isActive);
+      icon.classList.toggle("opacity-0", !isActive);
+    });
+  };
+
+  const applyTheme = () => {
+    const theme = getSavedTheme();
+    const isDark =
+      theme === "dark" || (theme === "system" && colorScheme.matches);
+
+    document.documentElement.classList.toggle("dark", isDark);
+    updateActiveIcon(theme);
+  };
+
+  const toggleThemeMenu = () => {
+    const isOpen = themeToggle.getAttribute("aria-expanded") === "true";
+
+    themeMenu.classList.toggle("hidden", isOpen);
+    themeToggle.setAttribute("aria-expanded", !isOpen);
+  };
+
+  const closeThemeMenu = () => {
+    themeMenu.classList.add("hidden");
+    themeToggle.setAttribute("aria-expanded", "false");
+  };
+
+  const changeTheme = (theme) => {
+    localStorage.setItem("theme", theme);
+    applyTheme();
+    closeThemeMenu();
+  };
+
+  themeToggle.addEventListener("click", (e) => {
+    e.stopPropagation();
+    toggleThemeMenu();
+  });
+
+  document.addEventListener("click", (e) => {
+    if (!themeToggle.contains(e.target) && !themeMenu.contains(e.target)) {
+      closeThemeMenu();
+    }
+  });
+
+  themeOptions.forEach((option) => {
+    option.addEventListener("click", () => {
+      changeTheme(option.dataset.theme);
+    });
+  });
+
+  colorScheme.addEventListener("change", applyTheme);
+  document.addEventListener("astro:after-swap", applyTheme);
+
+  applyTheme();
+</script> </main>  <footer class="mt-16 flex w-full flex-col items-center justify-center gap-1 rounded-xl border-t-2 border-indigo-500/40 py-6 opacity-80"> <span class="text-zinc-800/90 dark:text-white">
+&copy; 2026 </span> <span class="text-zinc-800/90 dark:text-white"> Desenvolupat per <a href="https://github.com/martinezdom" target="_blank" class="signature font-medium text-indigo-600 hover:text-indigo-800 dark:text-yellow-200/90 dark:hover:text-yellow-100">
+martinezdom</a>.
+</span> </footer> </body></html>
