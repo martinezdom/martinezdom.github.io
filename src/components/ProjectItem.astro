@@ -1,27 +1,103 @@
 ---
+import Vue from "@/components/icons/Vue.astro";
+import Tailwind from "@/components/icons/Tailwind.astro";
+import PHP from "@/components/icons/PHP.astro";
+import MySQL from "@/components/icons/MySQL.astro";
+import JavaScript from "@/components/icons/JavaScript.astro";
+import CSS from "@/components/icons/CSS.astro";
+
 interface Props {
   title: string;
   description: string;
   github: string;
   image: string;
   imageAlt: string;
+  languages: string[];
 }
 
-const { title, description, github, image, imageAlt } = Astro.props;
+const { title, description, github, image, imageAlt, languages } = Astro.props;
+
+const TAGS = {
+  Vue: {
+    name: "Vue.js",
+    class: "bg-[#41b883] text-white",
+    icon: Vue,
+  },
+  TailwindCSS: {
+    name: "Tailwind CSS",
+    class: "bg-[#003159] text-white",
+    icon: Tailwind,
+  },
+  PHP: {
+    name: "PHP",
+    class: "bg-[#777bb4] text-white",
+    icon: PHP,
+  },
+  MySQL: {
+    name: "MySQL",
+    class: "bg-[#4479a1] text-white",
+    icon: MySQL,
+  },
+  JavaScript: {
+    name: "JavaScript",
+    class: "bg-[#f7df1e] text-black",
+    icon: JavaScript,
+  },
+  CSS: {
+    name: "CSS",
+    class: "bg-[#1572b6] text-white",
+    icon: CSS,
+  },
+};
+
+const tags = languages.map((langName) => {
+  const tag = TAGS[langName as keyof typeof TAGS];
+  return (
+    tag || {
+      name: langName,
+      class: "bg-gray-600 text-white",
+      icon: null,
+    }
+  );
+});
 ---
 
 <div
-  class="mb-4 w-full overflow-hidden rounded-2xl border-2 border-indigo-200 md:mb-0 md:w-1/2"
+  class="mb-4 w-full overflow-hidden rounded-2xl border-2 border-indigo-200 md:mb-0 md:w-1/2 md:flex-shrink-0"
 >
-  <img
-    class="h-full w-full scale-105 object-cover transition-transform duration-300 hover:scale-100"
-    src={image}
-    alt={imageAlt}
-  />
+  <a href={github}>
+    <img
+      class="h-full w-full scale-105 object-cover transition-transform duration-300 hover:scale-100"
+      src={image}
+      alt={imageAlt}
+    />
+  </a>
 </div>
-<div class="flex-row">
+<div class="flex-row md:w-1/2">
   <div>
-    <h3 class="font-semibold text-indigo-500">{title}</h3>
+    <a href={github}>
+      <h3
+        class="hover:indigo-950 mb-3 text-2xl font-semibold text-indigo-500 hover:cursor-pointer dark:text-yellow-400 dark:hover:text-indigo-500"
+      >
+        {title}
+      </h3>
+    </a>
   </div>
-  <div>{description}</div>
+  <div class="mb-3 flex flex-wrap gap-2">
+    <ul class="flex flex-row gap-x-2">
+      {
+        tags.map((tag) => (
+          <li>
+            <span
+              class={`flex gap-x-2 rounded-full text-xs ${tag.class} px-2 py-1`}
+            >
+              {tag.icon && <tag.icon class="h-4 w-4" />}
+              {tag.name}
+            </span>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+  <div class="text-justify">{description}</div>
 </div>
