@@ -22,6 +22,7 @@ const TAGS = {
     name: "Vue.js",
     class: "bg-[#41b883] text-white",
     icon: Vue,
+    iconClass: "size-3.5",
   },
   TailwindCSS: {
     name: "Tailwind CSS",
@@ -32,6 +33,7 @@ const TAGS = {
     name: "PHP",
     class: "bg-[#777bb4] text-white",
     icon: PHP,
+    iconClass: "h-4 w-auto",
   },
   MySQL: {
     name: "MySQL",
@@ -89,9 +91,9 @@ const tags = languages.map((langName) => {
         tags.map((tag) => (
           <li>
             <span
-              class={`flex gap-x-2 rounded-full text-xs ${tag.class} px-2 py-1`}
+              class={`flex items-center gap-x-2 rounded-full text-xs ${tag.class} px-2 py-1`}
             >
-              {tag.icon && <tag.icon class="h-4 w-4" />}
+              {tag.icon && <tag.icon class={tag.iconClass || "size-4"} />}
               {tag.name}
             </span>
           </li>
