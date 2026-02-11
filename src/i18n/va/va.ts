@@ -55,7 +55,7 @@ const va: Translation = {
       description:
         "Plataforma Full Stack (PHP/MySQL) contenidoritzada amb Docker. Dashboard analític amb gràfics interactius, autenticació segura i arquitectura MVC manual. Desplegable en entorns Apache/Nginx amb configuració de Virtual Hosts.",
       github: "https://github.com/martinezdom/DownloadStatsPanel",
-      image: "/projects/downloadstatspanel.webp",
+      image: "/projects/dsp.webp",
       imageAlt: "Captura de pantalla de l'aplicació Download Stats Panel",
       languages: ["PHP", "MySQL", "JavaScript", "CSS"],
     },

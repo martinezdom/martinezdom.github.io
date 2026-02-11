@@ -55,7 +55,7 @@ const en: Translation = {
       description:
         "Full Stack platform (PHP/MySQL) containerized with Docker. Includes an analytical dashboard with interactive charts, secure authentication, and custom MVC architecture. Deployable in Apache/Nginx environments with Virtual Host configuration.",
       github: "https://github.com/martinezdom/DownloadStatsPanel",
-      image: "/projects/downloadstatspanel.webp",
+      image: "/projects/dsp.webp",
       imageAlt: "Screenshot of the Download Stats Panel application",
       languages: ["PHP", "MySQL", "JavaScript", "CSS"],
     },
