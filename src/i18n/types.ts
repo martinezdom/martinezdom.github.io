@@ -21,6 +21,7 @@ export interface Translation {
   developedBy: string;
   heroBadge: string;
   heroDescription: string;
+  code: string;
   experience: ExperienceItem[];
   projects: ProjectItem[];
 }
@@ -39,4 +40,5 @@ export interface ProjectItem {
   image: string;
   imageAlt: string;
   languages: string[];
+  url: string;
 }

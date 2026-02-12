@@ -24,6 +24,7 @@ const en: Translation = {
   heroBadge: "Available for work",
   heroDescription:
     "From Alcoy, Spain. <span class='text-indigo-500 dark:text-yellow-200/90'>Web Developer</span>. I love taking care of every detail to the maximum and creating unique experiences.",
+  code: "Code",
   experience: [
     {
       date: "March 2025 - June 2025",
@@ -44,20 +45,22 @@ const en: Translation = {
     {
       title: "Dom Books",
       description:
-        "Reactive SPA built with Vue 3 and TailwindCSS. Features global state management via Pinia, complex form validation (VeeValidate/Yup), and LocalStorage persistence. Designed with a reusable component-oriented architecture.",
+        "Reactive SPA built with Vue 3 and TailwindCSS. Features global state management via Pinia, complex form validation (VeeValidate/Yup), and LocalStorage persistence.",
       github: "https://github.com/martinezdom/Dom-Books",
       image: "/projects/dom_books.webp",
       imageAlt: "Screenshot of the Dom Books application",
       languages: ["Vue", "TailwindCSS"],
+      url: "http://localhost:5173",
     },
     {
       title: "Download Stats Panel",
       description:
-        "Full Stack platform (PHP/MySQL) containerized with Docker. Includes an analytical dashboard with interactive charts, secure authentication, and custom MVC architecture. Deployable in Apache/Nginx environments with Virtual Host configuration.",
+        "Full Stack platform (PHP/MySQL) containerized with Docker. Includes an analytical dashboard with interactive charts, secure authentication, and custom MVC architecture.",
       github: "https://github.com/martinezdom/DownloadStatsPanel",
       image: "/projects/dsp.webp",
       imageAlt: "Screenshot of the Download Stats Panel application",
-      languages: ["PHP", "MySQL", "JavaScript", "CSS"],
+      languages: ["PHP", "MySQL", "JavaScript", "CSS", "Docker"],
+      url: "http://localhost/layout/backend/index.php?sec=home",
     },
   ],
 };

@@ -5,6 +5,11 @@ import PHP from "@/components/icons/PHP.astro";
 import MySQL from "@/components/icons/MySQL.astro";
 import JavaScript from "@/components/icons/JavaScript.astro";
 import CSS from "@/components/icons/CSS.astro";
+import Docker from "@/components/icons/Docker.astro";
+import BrowserFrame from "@/components/BrowserFrame.astro";
+import LinkButton from "@/components/icons/LinkButton.astro";
+import Github from "@/components/icons/Github.astro";
+import type { Translation } from "@/i18n/types";
 
 interface Props {
   title: string;
@@ -13,11 +18,25 @@ interface Props {
   image: string;
   imageAlt: string;
   languages: string[];
+  url: string;
+  language: Translation;
 }
 
-const { title, description, github, image, imageAlt, languages } = Astro.props;
+const {
+  title,
+  description,
+  github,
+  image,
+  imageAlt,
+  languages,
+  url,
+  language,
+} = Astro.props;
 
-const TAGS = {
+const TAGS: Record<
+  string,
+  { name: string; class: string; icon: any; iconClass?: string }
+> = {
   Vue: {
     name: "Vue.js",
     class: "bg-[#41b883] text-white",
@@ -50,43 +69,43 @@ const TAGS = {
     class: "bg-[#1572b6] text-white",
     icon: CSS,
   },
+  Docker: {
+    name: "Docker",
+    class: "bg-[#2c3e50] text-white",
+    icon: Docker,
+  },
 };
 
 const tags = languages.map((langName) => {
-  const tag = TAGS[langName as keyof typeof TAGS];
+  const tag = TAGS[langName];
   return (
     tag || {
       name: langName,
       class: "bg-gray-600 text-white",
       icon: null,
+      iconClass: "",
     }
   );
 });
 ---
 
-<div
-  class="mb-4 w-full overflow-hidden rounded-2xl border-2 border-indigo-200 md:mb-0 md:w-1/2 md:flex-shrink-0"
->
-  <a href={github}>
-    <img
-      class="h-full w-full scale-105 object-cover transition-transform duration-300 hover:scale-100"
-      src={image}
-      alt={imageAlt}
-    />
+<div class="mb-6 w-full md:mb-0 md:w-1/2 md:flex-shrink-0">
+  <a href={github} target="_blank" rel="noopener noreferrer">
+    <BrowserFrame image={image} alt={imageAlt} url={url} />
   </a>
 </div>
 <div class="flex-row md:w-1/2">
   <div>
-    <a href={github}>
-      <h3
-        class="hover:indigo-950 mb-3 text-2xl font-semibold text-indigo-500 hover:cursor-pointer dark:text-yellow-400 dark:hover:text-indigo-500"
+    <h3 class="mb-3 text-2xl font-semibold">
+      <a
+        href={github}
+        class="text-indigo-500 transition-colors duration-200 hover:cursor-pointer hover:text-indigo-950 dark:text-yellow-400 dark:hover:text-indigo-500"
       >
         {title}
-      </h3>
-    </a>
+      </a>
+    </h3>
   </div>
-  <div class="mb-3 flex flex-wrap gap-2">
-    <ul class="flex flex-row gap-x-2">
+    <ul class="mb-3 flex flex-row flex-wrap gap-2">
       {
         tags.map((tag) => (
           <li>
@@ -100,6 +119,8 @@ const tags = languages.map((langName) => {
         ))
       }
     </ul>
-  </div>
-  <div class="text-justify leading-8">{description}</div>
+  <div class="mb-3 text-justify leading-8">{description}</div>
+  <footer>
+    <LinkButton href={github}><Github />{language.code}</LinkButton>
+  </footer>
 </div>

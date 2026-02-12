@@ -24,6 +24,7 @@ const va: Translation = {
   heroBadge: "Disponible per a treballar",
   heroDescription:
     "D'Alcoi, Espanya. <span class='text-indigo-500 dark:text-yellow-200/90'>Desenvolupador Web</span>. M'agrada cuidar cada detall al màxim i crear experiències úniques.",
+  code: "Codi",
   experience: [
     {
       date: "Març 2025 - Juny 2025",
@@ -44,20 +45,22 @@ const va: Translation = {
     {
       title: "Dom Books",
       description:
-        "SPA reactiva desenvolupada amb Vue 3 i TailwindCSS. Implementa gestió d'estat global amb Pinia, validació de formularis complexos (VeeValidate/Yup) i persistència en LocalStorage. Arquitectura orientada a components reutilitzables.",
+        "SPA reactiva desenvolupada amb Vue 3 i TailwindCSS. Implementa gestió d'estat global amb Pinia, validació de formularis complexos (VeeValidate/Yup) i persistència en LocalStorage.",
       github: "https://github.com/martinezdom/Dom-Books",
       image: "/projects/dom_books.webp",
       imageAlt: "Captura de pantalla de l'aplicació Dom Books",
       languages: ["Vue", "TailwindCSS"],
+      url: "http://localhost:5173",
     },
     {
       title: "Download Stats Panel",
       description:
-        "Plataforma Full Stack (PHP/MySQL) contenidoritzada amb Docker. Dashboard analític amb gràfics interactius, autenticació segura i arquitectura MVC manual. Desplegable en entorns Apache/Nginx amb configuració de Virtual Hosts.",
+        "Plataforma Full Stack (PHP/MySQL) contenidoritzada amb Docker. Dashboard analític amb gràfics interactius, autenticació segura i arquitectura MVC manual.",
       github: "https://github.com/martinezdom/DownloadStatsPanel",
       image: "/projects/dsp.webp",
       imageAlt: "Captura de pantalla de l'aplicació Download Stats Panel",
-      languages: ["PHP", "MySQL", "JavaScript", "CSS"],
+      languages: ["PHP", "MySQL", "JavaScript", "CSS", "Docker"],
+      url: "http://localhost/layout/backend/index.php?sec=home",
     },
   ],
 };

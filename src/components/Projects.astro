@@ -14,7 +14,7 @@ const { projects } = language;
   {
     projects.map((projectItem) => (
       <article class="group flex flex-col md:flex-row md:space-x-8">
-        <ProjectItem {...projectItem} />
+        <ProjectItem {...projectItem} language={language} />
       </article>
     ))
   }
