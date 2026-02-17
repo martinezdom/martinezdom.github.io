@@ -1,0 +1,21 @@
+---
+import StudiesItem from "@/components/StudiesItem.astro";
+import type { Translation } from "@/i18n/types";
+
+interface Props {
+  language: Translation;
+}
+
+const { language } = Astro.props;
+const { studies } = language;
+---
+
+<ol class="relative ml-3 border-s-2 border-gray-300 dark:border-gray-700">
+  {
+    studies.map((studyItem) => (
+      <li class="ms-4 mb-10">
+        <StudiesItem {...studyItem} />
+      </li>
+    ))
+  }
+</ol>

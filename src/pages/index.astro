@@ -8,7 +8,11 @@ import Experience from "@/components/Experience.astro";
 import TitleSection from "@/components/TitleSection.astro";
 import Briefcase from "@/components/icons/Briefcase.astro";
 import Code from "@/components/icons/Code.astro";
+import Book from "@/components/icons/Book.astro";
 import Projects from "@/components/Projects.astro";
+import Studies from "@/components/Studies.astro";
+import Profile from "@/components/icons/Profile.astro";
+import AboutMe from "@/components/AboutMe.astro";
 ---
 
 <Layout language={language}>
@@ -18,7 +22,6 @@ import Projects from "@/components/Projects.astro";
     <SectionContainer id="hero" class="pt-36 md:pt-48">
       <Hero language={language} />
     </SectionContainer>
-    <ThemeToggle language={language} />
     <SectionContainer id="experiencia">
       <TitleSection>
         <Briefcase class="size-8" />
@@ -33,5 +36,20 @@ import Projects from "@/components/Projects.astro";
       </TitleSection>
       <Projects language={language} />
     </SectionContainer>
+    <SectionContainer id="estudios">
+      <TitleSection>
+        <Book class="size-8" />
+        Estudios
+      </TitleSection>
+      <Studies language={language} />
+    </SectionContainer>
+    <SectionContainer id="sobre-mi">
+      <TitleSection>
+        <Profile class="size-8" />
+        Sobre mí
+      </TitleSection>
+      <AboutMe language={language} />
+    </SectionContainer>
+    <ThemeToggle language={language} />
   </main>
 </Layout>

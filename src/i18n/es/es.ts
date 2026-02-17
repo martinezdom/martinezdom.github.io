@@ -24,6 +24,13 @@ const es: Translation = {
   heroBadge: "Disponible para trabajar",
   heroDescription:
     "De Alcoy, España. <span class='text-indigo-500 dark:text-yellow-200/90'>Desarrollador Web</span>. Me gusta cuidar cada detalle al máximo y crear experiencias únicas.",
+  aboutMe: [
+    "Me llamo Miguel Ángel aunque también me conocen como <em>Tartanas</em>.",
+    "Desde bien pequeño, me gustaba estar trasteando con el ordenador, lo que me ha llevado a formarme en el mundo de la informática.",
+    "Actualmente, sigo formándome pero esta vez como especialista en ciberseguridad. Es distinto a lo que estaba acostumbrado pero la verdad me gusta bastante y me motiva a seguir aprendiendo cada día.",
+    "Algo que me caracteriza es que me gusta cuidar cada pequeño detalle de lo que hago; no me gusta ver pequeños fallos que molesten la experiencia del usuario aunque sea mínimamente.",
+    "Mi objetivo siempre será seguir aprendiendo lo máximo posible, poder ayudar a los demás y sobre todo, trabajar en equipo.",
+  ],
   code: "Código",
   experience: [
     {
@@ -61,6 +68,36 @@ const es: Translation = {
       imageAlt: "Captura de pantalla de la aplicación Download Stats Panel",
       languages: ["PHP", "MySQL", "JavaScript", "CSS", "Docker"],
       url: "http://localhost/layout/backend/index.php?sec=home",
+    },
+  ],
+  studies: [
+    {
+      date: "2025 - ahora",
+      title: "Curso de especialización en Ciberseguridad",
+      institution: "CIP FP Batoi",
+      description:
+        "Curso de especialización en Ciberseguridad. Formación avanzada en seguridad informática, incluyendo análisis de vulnerabilidades, gestión de incidentes, protección de datos e infraestructura.",
+    },
+    {
+      date: "2023 - 2025",
+      title: "Desarrollo de Aplicaciones Web",
+      institution: "CIP FP Batoi",
+      description:
+        "Ciclo Formativo de Grado Superior en Desarrollo de Aplicaciones Web. Aprendizaje de tecnologías como HTML, CSS, JavaScript, PHP, MySQL y frameworks como Vue.js, Laravel o Springboot.",
+    },
+    {
+      date: "2021 - 2023",
+      title: "Sistemas Microinformáticos y Redes",
+      institution: "CIP FP Batoi",
+      description:
+        "Ciclo Formativo de Grado Medio en Sistemas Microinformáticos y Redes. Formación en instalación, configuración y mantenimiento de sistemas informáticos, redes y servicios asociados. Así como uso en entornos Linux y Windows Server.",
+    },
+    {
+      date: "2017 - 2021",
+      title: "Educación Secundaria Obligatoria",
+      institution: "IES Andreu Sempere",
+      description:
+        "Educación Secundaria Obligatoria (ESO) en el IES Andreu Sempere de Alcoy. Formación general en diversas materias.",
     },
   ],
 };

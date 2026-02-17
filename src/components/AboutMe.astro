@@ -1,0 +1,22 @@
+---
+import type { Translation } from "@/i18n/types";
+
+interface Props {
+  language: Translation;
+}
+
+const { language } = Astro.props;
+const { aboutMe } = language;
+---
+
+<article class="flex flex-col gap-6 md:flex-row-reverse">
+  <div class="flex-1">
+    <img
+      src="martinezdom.webp"
+      alt="Imágen de Miguel Ángel Martínez Domínguez"
+    />
+  </div>
+  <div class="flex flex-2 flex-col gap-4 text-justify">
+    {aboutMe.map((paragraph) => <p set:html={paragraph} />)}
+  </div>
+</article>

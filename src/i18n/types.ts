@@ -21,9 +21,11 @@ export interface Translation {
   developedBy: string;
   heroBadge: string;
   heroDescription: string;
+  aboutMe: string[];
   code: string;
   experience: ExperienceItem[];
   projects: ProjectItem[];
+  studies: StudiesItem[];
 }
 
 export interface ExperienceItem {
@@ -41,4 +43,11 @@ export interface ProjectItem {
   imageAlt: string;
   languages: string[];
   url: string;
+}
+
+export interface StudiesItem {
+  date: string;
+  title: string;
+  institution: string;
+  description: string;
 }
