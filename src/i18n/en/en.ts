@@ -23,7 +23,7 @@ const en: Translation = {
   developedBy: "Developed by",
   heroBadge: "Available for work",
   heroDescription:
-    "From Alcoy, Spain. <span class='text-indigo-500 dark:text-yellow-200/90'>Web Developer</span> and <span class='text-indigo-500 dark:text-yellow-200/90'>cybersecurity student</span>. I love taking care of every detail to the maximum, creating the best experiences and that everything is <span class='text-indigo-500 dark:text-yellow-200/90'>secure.</span>",
+    "From Alcoy, Spain. <span class='text-indigo-500 dark:text-yellow-200/90'>Web Developer</span> and <span class='text-indigo-500 dark:text-yellow-200/90'>cybersecurity student</span>. I love taking care of every detail to the maximum, creating the best experiences and that everything is <span class='text-indigo-500 dark:text-yellow-200/90'>secure</span>.",
   aboutMe: [
     "My name is Miguel Ángel, although I'm also known as Tartanas.",
     "Since I was very young, I loved tinkering with computers, which led me to train in the <strong>world of computing</strong>.",
