@@ -23,13 +23,13 @@ const en: Translation = {
   developedBy: "Developed by",
   heroBadge: "Available for work",
   heroDescription:
-    "From Alcoy, Spain. <span class='text-indigo-500 dark:text-yellow-200/90'>Web Developer</span>. I love taking care of every detail to the maximum and creating unique experiences.",
+    "From Alcoy, Spain. <span class='text-indigo-500 dark:text-yellow-200/90'>Web Developer</span> and <span class='text-indigo-500 dark:text-yellow-200/90'>cybersecurity student</span>. I love taking care of every detail to the maximum, creating the best experiences and that everything is <span class='text-indigo-500 dark:text-yellow-200/90'>secure.</span>",
   aboutMe: [
-    "My name is Miguel Ángel, although I'm also known as <em>Tartanas</em>.",
-    "Since I was very young, I loved tinkering with computers, which led me to train in the world of computing.",
-    "Currently, I continue my training, but this time as a cybersecurity specialist. It's different from what I was used to, but I actually like it a lot and it motivates me to keep learning every day.",
-    "Something that characterizes me is that I like to take care of every small detail of what I do; I don't like to see small flaws that disrupt the user experience, even minimally.",
-    "My goal will always be to keep learning as much as possible, to be able to help others and, above all, to work as a team.",
+    "My name is Miguel Ángel, although I'm also known as Tartanas.",
+    "Since I was very young, I loved tinkering with computers, which led me to train in the <strong>world of computing</strong>.",
+    "Currently, I continue my training, but this time as a <strong>cybersecurity specialist</strong>. It's different from what I was used to, but I actually like it a lot and it motivates me to keep learning every day.",
+    "Something that characterizes me is that I like to <strong>take care of every small detail of what I do</strong>; I don't like to see small flaws that disrupt the user experience, even minimally.",
+    "My goal will always be to <strong>keep learning as much as possible</strong>, to be able to help others and, above all, to <strong>work as a team</strong>.",
   ],
   code: "Code",
   experience: [

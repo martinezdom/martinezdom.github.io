@@ -16,7 +16,9 @@ const { aboutMe } = language;
       alt="Imágen de Miguel Ángel Martínez Domínguez"
     />
   </div>
-  <div class="flex flex-2 flex-col gap-4 text-justify">
+  <div
+    class="flex flex-2 flex-col gap-4 text-justify [&>p>strong]:text-indigo-500 [&>p>strong]:dark:text-yellow-200/90"
+  >
     {aboutMe.map((paragraph) => <p set:html={paragraph} />)}
   </div>
 </article>

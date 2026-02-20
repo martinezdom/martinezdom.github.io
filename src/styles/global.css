@@ -32,13 +32,10 @@
     0 0 15px rgba(97, 95, 255, 0.4);
 }
 
-.dark .signature {
-  text-shadow:
-    0 0 5px rgba(97, 95, 255, 0.4),
-    0 0 10px rgba(97, 95, 255, 0.4),
-    0 0 15px rgba(97, 95, 255, 0.4);
+.glitter {
+  box-shadow: 0 0 8px 3px rgba(99, 102, 241, 0.4);
 }
 
-.glitter {
-  box-shadow: 0 0 8px 3px rgba(97, 95, 255, 0.4);
+.dark .theme-toggle-glitter {
+  box-shadow: 0 0 8px 3px rgba(250, 204, 21, 0.4);
 }

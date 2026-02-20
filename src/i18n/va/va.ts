@@ -23,13 +23,13 @@ const va: Translation = {
   developedBy: "Desenvolupat per",
   heroBadge: "Disponible per a treballar",
   heroDescription:
-    "D'Alcoi, Espanya. <span class='text-indigo-500 dark:text-yellow-200/90'>Desenvolupador Web</span>. M'agrada cuidar cada detall al màxim i crear experiències úniques.",
+    "D'Alcoi, Espanya. <span class='text-indigo-500 dark:text-yellow-200/90'>Desenvolupador Web</span> i <span class='text-indigo-500 dark:text-yellow-200/90'>estudiant de ciberseguretat</span>. M'agrada cuidar cada detall al màxim, crear les millors experiències i que tot siga <span class='text-indigo-500 dark:text-yellow-200/90'>segur.</span>",
   aboutMe: [
-    "Em dic Miguel Ángel encara que també em coneixen com a <em>Tartanas</em>.",
-    "Des de ben menut, m'agradava estar trastejant amb l'ordinador, la qual cosa m'ha portat a formar-me en el món de la informàtica.",
-    "Actualment, continue formant-me però esta vegada com a especialista en ciberseguretat. És diferent del que estava acostumat però la veritat m'agrada prou i em motiva a seguir aprenent cada dia.",
-    "Una cosa que em caracteritza és que m'agrada cuidar cada xicotet detall del que faig; no m'agrada veure xicotets errors que molesten l'experiència de l'usuari encara que siga mínimament.",
-    "El meu objectiu sempre serà seguir aprenent el màxim possible, poder ajudar els altres i, sobretot, treballar en equip.",
+    "Em dic Miguel Ángel encara que també em coneixen com a Tartanas.",
+    "Des de ben menut, m'agradava estar trastejant amb l'ordinador, la qual cosa m'ha portat a formar-me en el <strong>món de la informàtica</strong>.",
+    "Actualment, continue formant-me però esta vegada com a <strong>especialista en ciberseguretat</strong>. És diferent del que estava acostumat però la veritat m'agrada prou i em motiva a seguir aprenent cada dia.",
+    "Una cosa que em caracteritza és que m'agrada <strong>cuidar cada xicotet detall del que faig</strong>; no m'agrada veure xicotets errors que molesten l'experiència de l'usuari encara que siga mínimament.",
+    "El meu objectiu sempre serà <strong>seguir aprenent el màxim possible</strong>, poder ajudar els altres i, sobretot, <strong>treballar en equip</strong>.",
   ],
   code: "Codi",
   experience: [
