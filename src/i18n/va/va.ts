@@ -23,7 +23,7 @@ const va: Translation = {
   developedBy: "Desenvolupat per",
   heroBadge: "Disponible per a treballar",
   heroDescription:
-    "D'Alcoi, Espanya. <span class='text-indigo-500 dark:text-yellow-200/90'>Desenvolupador Web</span> i <span class='text-indigo-500 dark:text-yellow-200/90'>estudiant de ciberseguretat</span>. M'agrada cuidar cada detall al màxim, crear les millors experiències i que tot siga <span class='text-indigo-500 dark:text-yellow-200/90'>segur.</span>",
+    "D'Alcoi, Espanya. <span class='text-indigo-500 dark:text-yellow-200/90'>Desenvolupador Web</span> i <span class='text-indigo-500 dark:text-yellow-200/90'>estudiant de ciberseguretat</span>. M'agrada cuidar cada detall al màxim, crear les millors experiències i que tot siga <span class='text-indigo-500 dark:text-yellow-200/90'>segur</span>.",
   aboutMe: [
     "Em dic Miguel Ángel encara que també em coneixen com a Tartanas.",
     "Des de ben menut, m'agradava estar trastejant amb l'ordinador, la qual cosa m'ha portat a formar-me en el <strong>món de la informàtica</strong>.",
