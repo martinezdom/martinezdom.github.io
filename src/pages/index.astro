@@ -2,7 +2,6 @@
 import Layout from "@/layouts/Layout.astro";
 import language from "@/i18n/es/es.ts";
 import Hero from "@/components/Hero.astro";
-import ThemeToggle from "@/components/ThemeToggle.astro";
 import SectionContainer from "@/components/SectionContainer.astro";
 import Experience from "@/components/Experience.astro";
 import TitleSection from "@/components/TitleSection.astro";
@@ -17,7 +16,7 @@ import AboutMe from "@/components/AboutMe.astro";
 
 <Layout language={language}>
   <main
-    class="flex flex-col gap-y-16 overflow-hidden px-6 pb-20 md:gap-y-24 md:px-8 md:pb-32"
+    class="flex flex-col gap-y-20 overflow-hidden px-6 pb-12 md:gap-y-32 md:px-8 md:pb-24"
   >
     <SectionContainer id="hero" class="pt-36 md:pt-48">
       <Hero language={language} />
@@ -50,6 +49,5 @@ import AboutMe from "@/components/AboutMe.astro";
       </TitleSection>
       <AboutMe language={language} />
     </SectionContainer>
-    <ThemeToggle language={language} />
   </main>
 </Layout>

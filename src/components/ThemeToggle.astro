@@ -2,7 +2,7 @@
 import SunIcon from "./icons/Sun.astro";
 import MoonIcon from "./icons/Moon.astro";
 import SystemIcon from "./icons/System.astro";
-const { language } = Astro.props;
+const { language, position = "top" } = Astro.props;
 
 const THEMES = [
   { label: language.themes.light, value: "light", icon: SunIcon },
@@ -11,32 +11,35 @@ const THEMES = [
 ];
 
 const buttonClasses =
-  "rounded-full flex items-center justify-center size-11 border-2 border-indigo-500 dark:border-yellow-500 text-indigo-500 dark:text-yellow-400 bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm hover:border-indigo-500 hover:bg-indigo-500 hover:text-white hover:scale-110 dark:hover:bg-yellow-500 dark:hover:border-yellow-500 dark:hover:text-slate-900 cursor-pointer transition-all duration-300 shadow-lg hover:shadow-indigo-500/50 dark:hover:shadow-yellow-500/50 aria-[expanded=true]:bg-indigo-500 aria-[expanded=true]:text-white aria-[expanded=true]:border-indigo-500 aria-[expanded=true]:scale-110 aria-[expanded=true]:shadow-indigo-500/50 aria-[expanded=true]:dark:bg-yellow-500 aria-[expanded=true]:dark:border-yellow-500 aria-[expanded=true]:dark:text-slate-900 aria-[expanded=true]:dark:shadow-yellow-500/50";
+  "rounded-full flex items-center justify-center size-10 border-2 border-indigo-500 dark:border-yellow-500 text-indigo-500 dark:text-yellow-400 bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm hover:border-indigo-500 hover:bg-indigo-500 hover:text-white hover:scale-110 dark:hover:bg-yellow-500 dark:hover:border-yellow-500 dark:hover:text-slate-900 cursor-pointer transition-all duration-300 shadow-lg hover:shadow-indigo-500/50 dark:hover:shadow-yellow-500/50 aria-[expanded=true]:bg-indigo-500 aria-[expanded=true]:text-white aria-[expanded=true]:border-indigo-500 aria-[expanded=true]:scale-110 aria-[expanded=true]:shadow-indigo-500/50 aria-[expanded=true]:dark:bg-yellow-500 aria-[expanded=true]:dark:border-yellow-500 aria-[expanded=true]:dark:text-slate-900 aria-[expanded=true]:dark:shadow-yellow-500/50";
+
+const menuPositionClass =
+  position === "bottom" ? "bottom-full mb-1.5" : "top-full mt-1.5";
 ---
 
-<div class="fixed right-10 bottom-8 z-50">
+<div class="relative z-50 flex">
   <button
     id="theme-toggle"
     aria-expanded="false"
-    class={`${buttonClasses} relative glitter theme-toggle-glitter`}
+    class={`${buttonClasses} theme-toggle-glitter relative glitter p-1`}
     aria-haspopup="menu"
   >
     <span class="sr-only">{language.themes.selectorText}</span>
 
-    <span id="light" class="theme-main-icon absolute">
+    <span id="light" class="theme-main-icon absolute inset-0 m-auto flex size-5 items-center justify-center">
       <SunIcon />
     </span>
-    <span id="dark" class="theme-main-icon absolute">
+    <span id="dark" class="theme-main-icon absolute inset-0 m-auto flex size-5 items-center justify-center">
       <MoonIcon />
     </span>
-    <span id="system" class="theme-main-icon absolute">
+    <span id="system" class="theme-main-icon absolute inset-0 m-auto flex size-5 items-center justify-center">
       <SystemIcon />
     </span>
   </button>
 
   <div
     id="theme-menu"
-    class="absolute right-0 bottom-full mb-1.5 hidden flex-col space-y-1.5"
+    class={`absolute right-0 ${menuPositionClass} hidden flex-col space-y-1.5`}
     role="menu"
     aria-labelledby="theme-toggle"
   >
@@ -50,7 +53,7 @@ const buttonClasses =
           title={theme.label}
         >
           <span class="sr-only">{theme.label}</span>
-          <span class="size-6">
+          <span class="flex size-5 items-center justify-center">
             <theme.icon />
           </span>
         </button>
