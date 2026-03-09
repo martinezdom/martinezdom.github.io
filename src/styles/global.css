@@ -39,3 +39,10 @@
 .dark .theme-toggle-glitter {
   box-shadow: 0 0 8px 3px rgba(250, 204, 21, 0.4);
 }
+
+.dark .signature-yellow {
+  text-shadow:
+    0 0 5px rgba(250, 204, 21, 0.4),
+    0 0 10px rgba(250, 204, 21, 0.4),
+    0 0 15px rgba(250, 204, 21, 0.4);
+}
