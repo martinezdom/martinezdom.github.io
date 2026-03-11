@@ -25,7 +25,7 @@ const en: Translation = {
   heroDescription:
     "From Alcoy, Spain. <span class='text-indigo-500 dark:text-yellow-200/90'>Web Developer</span> and <span class='text-indigo-500 dark:text-yellow-200/90'>cybersecurity student</span>. I love taking care of every detail to the maximum, creating the best experiences and that everything is <span class='text-indigo-500 dark:text-yellow-200/90'>secure</span>.",
   aboutMe: [
-    "My name is Miguel Ángel, although I'm also known as Tartanas.",
+    "My name is Miguel Ángel, although I'm also known as <strong><a href='https://github.com/martinezdom' target='_blank'>martinezdom</a></strong>.",
     "Since I was very young, I loved tinkering with computers, which led me to train in the <strong>world of computing</strong>.",
     "Currently, I continue my training, but this time as a <strong>cybersecurity specialist</strong>. It's different from what I was used to, but I actually like it a lot and it motivates me to keep learning every day.",
     "Something that characterizes me is that I like to <strong>take care of every small detail of what I do</strong>; I don't like to see small flaws that disrupt the user experience, even minimally.",

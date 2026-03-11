@@ -25,7 +25,7 @@ const es: Translation = {
   heroDescription:
     "De Alcoy, España. <span class='text-indigo-500 dark:text-yellow-200/90'>Desarrollador Web</span> y <span class='text-indigo-500 dark:text-yellow-200/90'>estudiante de ciberseguridad</span>. Me gusta cuidar cada detalle al máximo, crear las mejores experiencias y que todo sea <span class='text-indigo-500 dark:text-yellow-200/90'>seguro</span>.",
   aboutMe: [
-    "Me llamo Miguel Ángel aunque también me conocen como Tartanas.",
+    "Me llamo Miguel Ángel aunque también me conocen como <strong><a href='https://github.com/martinezdom' target='_blank'>martinezdom</a></strong>.",
     "Desde bien pequeño, me gustaba estar trasteando con el ordenador, lo que me ha llevado a formarme en el <strong>mundo de la informática</strong>.",
     "Actualmente, sigo formándome pero esta vez como <strong>especialista en ciberseguridad</strong>. Es distinto a lo que estaba acostumbrado pero la verdad me gusta bastante y me motiva a seguir aprendiendo cada día.",
     "Algo que me caracteriza es que me gusta <strong>cuidar cada pequeño detalle de lo que hago</strong>; no me gusta ver pequeños fallos que molesten la experiencia del usuario aunque sea mínimamente.",
