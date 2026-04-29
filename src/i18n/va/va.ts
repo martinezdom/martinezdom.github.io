@@ -53,7 +53,12 @@ const va: Translation = {
       title: "Dom Books",
       description:
         "SPA reactiva desenvolupada amb Vue 3 i TailwindCSS. Implementa gestió d'estat global amb Pinia, validació de formularis complexos (VeeValidate/Yup) i persistència en LocalStorage.",
-      github: "https://github.com/martinezdom/Dom-Books",
+      repositories: [
+        {
+          label: "GitHub",
+          url: "https://github.com/martinezdom/Dom-Books",
+        },
+      ],
       image: "/projects/dom_books.webp",
       imageAlt: "Captura de pantalla de l'aplicació Dom Books",
       languages: ["Vue", "TailwindCSS"],
@@ -63,11 +68,35 @@ const va: Translation = {
       title: "Download Stats Panel",
       description:
         "Plataforma Full Stack (PHP/MySQL) contenidoritzada amb Docker. Dashboard analític amb gràfics interactius, autenticació segura i arquitectura MVC manual.",
-      github: "https://github.com/martinezdom/DownloadStatsPanel",
+      repositories: [
+        {
+          label: "GitHub",
+          url: "https://github.com/martinezdom/DownloadStatsPanel",
+        },
+      ],
       image: "/projects/dsp.webp",
       imageAlt: "Captura de pantalla de l'aplicació Download Stats Panel",
       languages: ["PHP", "MySQL", "JavaScript", "CSS", "Docker"],
       url: "http://localhost/layout/backend/index.php?sec=home",
+    },
+    {
+      title: "Repair Shop",
+      description:
+        "SPA full stack amb Vue, Spring Boot i MySQL, contenidoritzada amb Docker. Inclou llistes amb CRUD complet, autenticació amb Spring Security i gestió de rols basada en RBAC.",
+      repositories: [
+        {
+          label: "Frontend",
+          url: "https://github.com/martinezdom/Repair-Shop-Frontend",
+        },
+        {
+          label: "Backend",
+          url: "https://github.com/martinezdom/Repair-Shop-Backend",
+        },
+      ],
+      image: "/projects/repair_shop.webp",
+      imageAlt: "Captura de pantalla de la aplicación Repair Shop",
+      languages: ["Spring Boot", "Vue", "TypeScript", "TailwindCSS", "MySQL"],
+      url: "http://localhost:4321/",
     },
   ],
   studies: [
@@ -76,14 +105,14 @@ const va: Translation = {
       title: "Curs d'especialitzacio en Ciberseguretat",
       institution: "CIP FP Batoi",
       description:
-        "Curs d'especialitzacio en Ciberseguretat. Formacio avançada en seguretat informatica, incloent analisi de vulnerabilitats, gestio d'incidents, proteccio de dades i infraestructura.",
+      "Curs d'especialitzacio en Ciberseguretat. Formacio avançada en seguretat informatica, incloent analisi de vulnerabilitats, gestio d'incidents, proteccio de dades i infraestructura.",
     },
     {
       date: "2023 - 2025",
       title: "Desenvolupament d'Aplicacions Web",
       institution: "CIP FP Batoi",
       description:
-        "Cicle Formatiu de Grau Superior en Desenvolupament d'Aplicacions Web. Aprenentatge de tecnologies com HTML, CSS, JavaScript, PHP, MySQL i frameworks com Vue.js, Laravel o Springboot.",
+      "Cicle Formatiu de Grau Superior en Desenvolupament d'Aplicacions Web. Aprenentatge de tecnologies com HTML, CSS, JavaScript, PHP, MySQL i frameworks com Vue.js, Laravel o Springboot.",
     },
     {
       date: "2021 - 2023",
@@ -91,15 +120,17 @@ const va: Translation = {
       institution: "CIP FP Batoi",
       description:
         "Cicle Formatiu de Grau Mitja en Sistemes Microinformatics i Xarxes. Formacio en instal·lacio, configuracio i manteniment de sistemes informatics, xarxes i serveis associats, aixi com l'ús en entorns Linux i Windows Server.",
-    },
-    {
+      },
+      {
       date: "2017 - 2021",
       title: "Educacio Secundaria Obligatoria",
       institution: "IES Andreu Sempere",
       description:
-        "Educacio Secundaria Obligatoria (ESO) a l'IES Andreu Sempere d'Alcoi. Formacio general en diverses materies.",
+      "Educacio Secundaria Obligatoria (ESO) a l'IES Andreu Sempere d'Alcoi. Formacio general en diverses materies.",
     },
   ],
+  demo: "Demo",
+  onDevelopment: "En desenvolupament",
 };
 
 export default va;

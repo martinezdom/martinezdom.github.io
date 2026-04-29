@@ -53,7 +53,12 @@ const en: Translation = {
       title: "Dom Books",
       description:
         "Reactive SPA built with Vue 3 and TailwindCSS. Features global state management via Pinia, complex form validation (VeeValidate/Yup), and LocalStorage persistence.",
-      github: "https://github.com/martinezdom/Dom-Books",
+      repositories: [
+        {
+          label: "GitHub",
+          url: "https://github.com/martinezdom/Dom-Books",
+        },
+      ],
       image: "/projects/dom_books.webp",
       imageAlt: "Screenshot of the Dom Books application",
       languages: ["Vue", "TailwindCSS"],
@@ -63,11 +68,35 @@ const en: Translation = {
       title: "Download Stats Panel",
       description:
         "Full Stack platform (PHP/MySQL) containerized with Docker. Includes an analytical dashboard with interactive charts, secure authentication, and custom MVC architecture.",
-      github: "https://github.com/martinezdom/DownloadStatsPanel",
+      repositories: [
+        {
+          label: "GitHub",
+          url: "https://github.com/martinezdom/DownloadStatsPanel",
+        },
+      ],
       image: "/projects/dsp.webp",
       imageAlt: "Screenshot of the Download Stats Panel application",
       languages: ["PHP", "MySQL", "JavaScript", "CSS", "Docker"],
       url: "http://localhost/layout/backend/index.php?sec=home",
+    },
+    {
+      title: "Repair Shop",
+      description:
+        "Full Stack SPA with Vue, Spring Boot, and MySQL, containerized with Docker. Includes complete CRUD functionality, authentication with Spring Security, and role-based access control.",
+      repositories: [
+        {
+          label: "Frontend",
+          url: "https://github.com/martinezdom/Repair-Shop-Frontend",
+        },
+        {
+          label: "Backend",
+          url: "https://github.com/martinezdom/Repair-Shop-Backend",
+        },
+      ],
+      image: "/projects/repair_shop.webp",
+      imageAlt: "Screenshot of the Repair Shop application",
+      languages: ["Spring Boot", "Vue", "TypeScript", "TailwindCSS", "MySQL"],
+      url: "http://localhost:4321/",
     },
   ],
   studies: [
@@ -100,6 +129,8 @@ const en: Translation = {
         "Compulsory Secondary Education (ESO) at IES Andreu Sempere in Alcoy. General training in various subjects.",
     },
   ],
+  demo: "Demo",
+  onDevelopment: "In development",
 };
 
 export default en;

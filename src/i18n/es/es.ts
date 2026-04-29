@@ -53,7 +53,12 @@ const es: Translation = {
       title: "Dom Books",
       description:
         "SPA reactiva desarrollada con Vue 3 y TailwindCSS. Implementa gestión de estado global con Pinia, validación de formularios complejos (VeeValidate/Yup) y persistencia en LocalStorage.",
-      github: "https://github.com/martinezdom/Dom-Books",
+      repositories: [
+        {
+          label: "GitHub",
+          url: "https://github.com/martinezdom/Dom-Books",
+        },
+      ],
       image: "/projects/dom_books.webp",
       imageAlt: "Captura de pantalla de la aplicación Dom Books",
       languages: ["Vue", "TailwindCSS"],
@@ -63,11 +68,35 @@ const es: Translation = {
       title: "Download Stats Panel",
       description:
         "Plataforma Full Stack (PHP/MySQL) contenerizada con Docker. Dashboard analítico con gráficos interactivos, autenticación segura y arquitectura MVC manual.",
-      github: "https://github.com/martinezdom/DownloadStatsPanel",
+      repositories: [
+        {
+          label: "GitHub",
+          url: "https://github.com/martinezdom/DownloadStatsPanel",
+        },
+      ],
       image: "/projects/dsp.webp",
       imageAlt: "Captura de pantalla de la aplicación Download Stats Panel",
       languages: ["PHP", "MySQL", "JavaScript", "CSS", "Docker"],
       url: "http://localhost/layout/backend/index.php?sec=home",
+    },
+    {
+      title: "Repair Shop",
+      description:
+        "SPA full stack con Vue, Spring Boot y MySQL, contenedorizada con Docker. Incluye listas con CRUD completo, autenticación con Spring Security y gestión de roles basada en RBAC.",
+      repositories: [
+        {
+          label: "Frontend",
+          url: "https://github.com/martinezdom/Repair-Shop-Frontend",
+        },
+        {
+          label: "Backend",
+          url: "https://github.com/martinezdom/Repair-Shop-Backend",
+        },
+      ],
+      image: "/projects/repair_shop.webp",
+      imageAlt: "Captura de pantalla de la aplicación Repair Shop",
+      languages: ["Spring Boot", "Vue", "TypeScript", "TailwindCSS", "MySQL"],
+      url: "http://localhost:4321/",
     },
   ],
   studies: [
@@ -76,30 +105,32 @@ const es: Translation = {
       title: "Curso de especialización en Ciberseguridad",
       institution: "CIP FP Batoi",
       description:
-        "Curso de especialización en Ciberseguridad. Formación avanzada en seguridad informática, incluyendo análisis de vulnerabilidades, gestión de incidentes, protección de datos e infraestructura.",
+      "Curso de especialización en Ciberseguridad. Formación avanzada en seguridad informática, incluyendo análisis de vulnerabilidades, gestión de incidentes, protección de datos e infraestructura.",
     },
     {
       date: "2023 - 2025",
       title: "Desarrollo de Aplicaciones Web",
       institution: "CIP FP Batoi",
       description:
-        "Ciclo Formativo de Grado Superior en Desarrollo de Aplicaciones Web. Aprendizaje de tecnologías como HTML, CSS, JavaScript, PHP, MySQL y frameworks como Vue.js, Laravel o Springboot.",
+      "Ciclo Formativo de Grado Superior en Desarrollo de Aplicaciones Web. Aprendizaje de tecnologías como HTML, CSS, JavaScript, PHP, MySQL y frameworks como Vue.js, Laravel o Springboot.",
     },
     {
       date: "2021 - 2023",
       title: "Sistemas Microinformáticos y Redes",
       institution: "CIP FP Batoi",
       description:
-        "Ciclo Formativo de Grado Medio en Sistemas Microinformáticos y Redes. Formación en instalación, configuración y mantenimiento de sistemas informáticos, redes y servicios asociados. Así como uso en entornos Linux y Windows Server.",
+      "Ciclo Formativo de Grado Medio en Sistemas Microinformáticos y Redes. Formación en instalación, configuración y mantenimiento de sistemas informáticos, redes y servicios asociados. Así como uso en entornos Linux y Windows Server.",
     },
     {
       date: "2017 - 2021",
       title: "Educación Secundaria Obligatoria",
       institution: "IES Andreu Sempere",
       description:
-        "Educación Secundaria Obligatoria (ESO) en el IES Andreu Sempere de Alcoy. Formación general en diversas materias.",
+      "Educación Secundaria Obligatoria (ESO) en el IES Andreu Sempere de Alcoy. Formación general en diversas materias.",
     },
   ],
+  demo: "Demo",
+  onDevelopment: "En desarrollo",
 };
 
 export default es;

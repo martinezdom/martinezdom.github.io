@@ -9,28 +9,32 @@ import Docker from "@/components/icons/Docker.astro";
 import BrowserFrame from "@/components/BrowserFrame.astro";
 import LinkButton from "@/components/icons/LinkButton.astro";
 import Github from "@/components/icons/Github.astro";
+import Eye from "./icons/eye.astro";
+import SpringBoot from "@/components/icons/SpringBoot.astro";
 import type { Translation } from "@/i18n/types";
 
 interface Props {
   title: string;
   description: string;
-  github: string;
+  repositories: { label: string; url: string }[];
   image: string;
   imageAlt: string;
   languages: string[];
   url: string;
   language: Translation;
+  onDevelopment?: string;
 }
 
 const {
   title,
   description,
-  github,
+  repositories,
   image,
   imageAlt,
   languages,
   url,
   language,
+  onDevelopment,
 } = Astro.props;
 
 const TAGS: Record<
@@ -74,6 +78,11 @@ const TAGS: Record<
     class: "bg-[#2c3e50] text-white",
     icon: Docker,
   },
+  "Spring Boot": {
+    name: "Spring Boot",
+    class: "bg-[#6db33f] text-white",
+    icon: SpringBoot,
+  },
 };
 
 const tags = languages.map((langName) => {
@@ -90,37 +99,65 @@ const tags = languages.map((langName) => {
 ---
 
 <div class="w-full md:w-1/2 md:flex-shrink-0">
-  <a href={github} target="_blank" rel="noopener noreferrer">
-    <BrowserFrame image={image} alt={imageAlt} url={url} />
-  </a>
+  {
+    title !== "Repair Shop" && (
+      <a href={repositories[0].url} target="_blank" rel="noopener noreferrer">
+        <BrowserFrame image={image} alt={imageAlt} url={url} />
+      </a>
+    )
+  }
+  {
+    title === "Repair Shop" && (
+      <div class="relative flex aspect-video w-full animate-pulse flex-col items-center justify-center overflow-hidden rounded-lg border border-indigo-500 bg-gray-300/50 shadow-xl dark:border-yellow-400 dark:bg-gray-800/50">
+        <p class="text-xl font-bold text-indigo-500 dark:text-yellow-400">
+          {language.onDevelopment}
+        </p>
+      </div>
+    )
+  }
 </div>
 <div class="flex-row md:w-1/2">
   <div>
     <h3 class="mb-3 text-2xl font-semibold">
       <a
-        href={github}
+        href={repositories[0].url}
         class="text-indigo-500 transition-colors duration-200 hover:cursor-pointer hover:text-indigo-950 dark:text-yellow-400 dark:hover:text-indigo-500"
       >
         {title}
       </a>
     </h3>
   </div>
-    <ul class="mb-3 flex flex-row flex-wrap gap-2">
-      {
-        tags.map((tag) => (
-          <li>
-            <span
-              class={`flex items-center gap-x-2 rounded-full text-xs ${tag.class} px-2 py-1`}
-            >
-              {tag.icon && <tag.icon class={tag.iconClass || "size-4"} />}
-              {tag.name}
-            </span>
-          </li>
-        ))
-      }
-    </ul>
+  <ul class="mb-3 flex flex-row flex-wrap gap-2">
+    {
+      tags.map((tag) => (
+        <li>
+          <span
+            class={`flex items-center gap-x-2 rounded-full text-xs ${tag.class} px-2 py-1`}
+          >
+            {tag.icon && <tag.icon class={tag.iconClass || "size-4"} />}
+            {tag.name}
+          </span>
+        </li>
+      ))
+    }
+  </ul>
   <p class="mb-3 text-justify leading-8">{description}</p>
-  <footer>
-    <LinkButton href={github}><Github />{language.code}</LinkButton>
+  <footer class="flex flex-wrap gap-2">
+    {
+      repositories.map((repo) => (
+        <LinkButton href={repo.url}>
+          <Github />
+          {repo.label}
+        </LinkButton>
+      ))
+    }
+    {
+      title == "Dom Books" && (
+        <LinkButton href="https://dom-books.vercel.app/">
+          <Eye />
+          {language.demo}
+        </LinkButton>
+      )
+    }
   </footer>
 </div>

@@ -23,9 +23,11 @@ export interface Translation {
   heroDescription: string;
   aboutMe: string[];
   code: string;
+  demo: string;
   experience: ExperienceItem[];
   projects: ProjectItem[];
   studies: StudiesItem[];
+  onDevelopment?: string;
 }
 
 export interface ExperienceItem {
@@ -38,7 +40,7 @@ export interface ExperienceItem {
 export interface ProjectItem {
   title: string;
   description: string;
-  github: string;
+  repositories: { label: string; url: string }[];
   image: string;
   imageAlt: string;
   languages: string[];
