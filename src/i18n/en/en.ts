@@ -27,9 +27,11 @@ const en: Translation = {
   aboutMe: [
     "My name is Miguel Ángel, although I'm also known as <strong><a href='https://github.com/martinezdom' target='_blank'>martinezdom</a></strong>.",
     "Since I was very young, I loved tinkering with computers, which led me to train in the <strong>world of computing</strong>.",
-    "Currently, I continue my training, but this time as a <strong>cybersecurity specialist</strong>. It's different from what I was used to, but I actually like it a lot and it motivates me to keep learning every day.",
-    "Something that characterizes me is that I like to <strong>take care of every small detail of what I do</strong>; I don't like to see small flaws that disrupt the user experience, even minimally.",
-    "My goal will always be to <strong>keep learning as much as possible</strong>, to be able to help others and, above all, to <strong>work as a team</strong>.",
+    "Currently, I continue my training, but this time as a <strong>cybersecurity specialist</strong>. It's different from what I was used to, but I really like it and it motivates me to keep learning every day.",
+    "Something that characterizes me is that I like to <strong>take care of every small detail of what I do</strong>, I don't like to see small flaws that disrupt the user experience, even minimally.",
+    "My goal will always be to <strong>keep learning as much as possible</strong> and to be able to help others.",
+    "I am very <strong>self-taught</strong>, I like to always learn new things and <strong>deepen my knowledge</strong> of what I already know.",
+    "In this age of <strong>AI</strong>, I try to use it for what <strong>saves me time</strong>, not to do what I can do myself with a little effort, I like to <strong>thoroughly understand</strong> what I do and not feel dependent on a tool.",
   ],
   code: "Code",
   experience: [

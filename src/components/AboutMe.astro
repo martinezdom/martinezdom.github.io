@@ -9,16 +9,18 @@ const { language } = Astro.props;
 const { aboutMe } = language;
 ---
 
-<article class="flex flex-col gap-8 md:flex-row-reverse md:items-center">
-  <div class="flex-1">
+<article
+  class="flex flex-col gap-6 md:flex-row-reverse md:items-center md:gap-12 lg:gap-24"
+>
+  <div class="md:shrink-0">
     <img
-      class="glitter mx-auto size-56 rounded-2xl object-cover transition duration-500 hover:scale-105 md:mx-0 md:h-auto md:w-48 lg:w-56"
+      class="glitter mx-auto size-56 rounded-2xl object-cover transition duration-500 hover:scale-105 md:mx-0 md:h-auto md:w-56 lg:w-62"
       src="/hero_picture.webp"
       alt="Miguel Ángel"
     />
   </div>
   <div
-    class="flex flex-2 flex-col gap-4 text-justify [&>p>strong]:text-indigo-500 [&>p>strong]:dark:text-yellow-200/90"
+    class="flex flex-1 flex-col gap-4 text-justify [&>p>strong]:text-indigo-500 [&>p>strong]:dark:text-yellow-200/90"
   >
     {aboutMe.map((paragraph) => <p set:html={paragraph} />)}
   </div>

@@ -28,8 +28,10 @@ const es: Translation = {
     "Me llamo Miguel Ángel aunque también me conocen como <strong><a href='https://github.com/martinezdom' target='_blank'>martinezdom</a></strong>.",
     "Desde bien pequeño, me gustaba estar trasteando con el ordenador, lo que me ha llevado a formarme en el <strong>mundo de la informática</strong>.",
     "Actualmente, sigo formándome pero esta vez como <strong>especialista en ciberseguridad</strong>. Es distinto a lo que estaba acostumbrado pero la verdad me gusta bastante y me motiva a seguir aprendiendo cada día.",
-    "Algo que me caracteriza es que me gusta <strong>cuidar cada pequeño detalle de lo que hago</strong>; no me gusta ver pequeños fallos que molesten la experiencia del usuario aunque sea mínimamente.",
-    "Mi objetivo siempre será <strong>seguir aprendiendo lo máximo posible</strong>, poder ayudar a los demás y sobre todo, <strong>trabajar en equipo</strong>.",
+    "Algo que me caracteriza es que me gusta <strong>cuidar cada pequeño detalle de lo que hago</strong>, no me gusta ver pequeños fallos que molesten la experiencia del usuario aunque sea mínimamente.",
+    "Mi objetivo siempre será <strong>seguir aprendiendo lo máximo posible</strong> y poder ayudar a los demás.",
+    "Soy muy <strong>autodidacta</strong>, me gusta siempre aprender cosas nuevas y profundizar más en lo que <strong>ya conozco</strong>.",
+    "En época de <strong>IA</strong>, trato de usarlo para lo que me <strong>ahorra tiempo</strong>, no para hacer lo que puedo hacer yo mismo con un poco de esfuerzo, me gusta conocer <strong>a fondo</strong> lo que hago y no sentirme dependiente de una herramienta.",
   ],
   code: "Código",
   experience: [
@@ -105,28 +107,28 @@ const es: Translation = {
       title: "Curso de especialización en Ciberseguridad",
       institution: "CIP FP Batoi",
       description:
-      "Curso de especialización en Ciberseguridad. Formación avanzada en seguridad informática, incluyendo análisis de vulnerabilidades, gestión de incidentes, protección de datos e infraestructura.",
+        "Curso de especialización en Ciberseguridad. Formación avanzada en seguridad informática, incluyendo análisis de vulnerabilidades, gestión de incidentes, protección de datos e infraestructura.",
     },
     {
       date: "2023 - 2025",
       title: "Desarrollo de Aplicaciones Web",
       institution: "CIP FP Batoi",
       description:
-      "Ciclo Formativo de Grado Superior en Desarrollo de Aplicaciones Web. Aprendizaje de tecnologías como HTML, CSS, JavaScript, PHP, MySQL y frameworks como Vue.js, Laravel o Springboot.",
+        "Ciclo Formativo de Grado Superior en Desarrollo de Aplicaciones Web. Aprendizaje de tecnologías como HTML, CSS, JavaScript, PHP, MySQL y frameworks como Vue.js, Laravel o Springboot.",
     },
     {
       date: "2021 - 2023",
       title: "Sistemas Microinformáticos y Redes",
       institution: "CIP FP Batoi",
       description:
-      "Ciclo Formativo de Grado Medio en Sistemas Microinformáticos y Redes. Formación en instalación, configuración y mantenimiento de sistemas informáticos, redes y servicios asociados. Así como uso en entornos Linux y Windows Server.",
+        "Ciclo Formativo de Grado Medio en Sistemas Microinformáticos y Redes. Formación en instalación, configuración y mantenimiento de sistemas informáticos, redes y servicios asociados. Así como uso en entornos Linux y Windows Server.",
     },
     {
       date: "2017 - 2021",
       title: "Educación Secundaria Obligatoria",
       institution: "IES Andreu Sempere",
       description:
-      "Educación Secundaria Obligatoria (ESO) en el IES Andreu Sempere de Alcoy. Formación general en diversas materias.",
+        "Educación Secundaria Obligatoria (ESO) en el IES Andreu Sempere de Alcoy. Formación general en diversas materias.",
     },
   ],
   demo: "Demo",

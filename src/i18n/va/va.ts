@@ -27,9 +27,11 @@ const va: Translation = {
   aboutMe: [
     "Em dic Miguel Ángel encara que també em coneixen com a <strong><a href='https://github.com/martinezdom' target='_blank'>martinezdom</a></strong>.",
     "Des de ben menut, m'agradava estar trastejant amb l'ordinador, la qual cosa m'ha portat a formar-me en el <strong>món de la informàtica</strong>.",
-    "Actualment, continue formant-me però esta vegada com a <strong>especialista en ciberseguretat</strong>. És diferent del que estava acostumat però la veritat m'agrada prou i em motiva a seguir aprenent cada dia.",
-    "Una cosa que em caracteritza és que m'agrada <strong>cuidar cada xicotet detall del que faig</strong>; no m'agrada veure xicotets errors que molesten l'experiència de l'usuari encara que siga mínimament.",
-    "El meu objectiu sempre serà <strong>seguir aprenent el màxim possible</strong>, poder ajudar els altres i, sobretot, <strong>treballar en equip</strong>.",
+    "Actualment, continue formant-me però aquesta vegada com a <strong>especialista en ciberseguretat</strong>. És diferent del que estava acostumat però la veritat m'agrada bastant i em motiva a seguir aprenent cada dia.",
+    "Una cosa que em caracteritza és que m'agrada <strong>cuidar cada xicotet detall del que faig</strong>, no m'agrada veure xicolets falles que molesten l'experiència de l'usuari encara que siga mínimament.",
+    "El meu objectiu sempre serà <strong>seguir aprenent lo màxim possible</strong> i poder ajudar als altres.",
+    "Sóc molt <strong>autodidacte</strong>, m'agrada sempre aprendre coses noves i <strong>aprofundir més</strong> en lo que ja conec.",
+    "En época d'<strong>IA</strong>, tracte d'utilitzar-la per al que em <strong>estalvia temps</strong>, no per fer el que puc fer jo mateix amb un poc d'esforç, m'agrada <strong>conéixer a fons</strong> el que faig i no sentir-me dependent d'una ferramenta.",
   ],
   code: "Codi",
   experience: [
@@ -105,14 +107,14 @@ const va: Translation = {
       title: "Curs d'especialitzacio en Ciberseguretat",
       institution: "CIP FP Batoi",
       description:
-      "Curs d'especialitzacio en Ciberseguretat. Formacio avançada en seguretat informatica, incloent analisi de vulnerabilitats, gestio d'incidents, proteccio de dades i infraestructura.",
+        "Curs d'especialitzacio en Ciberseguretat. Formacio avançada en seguretat informatica, incloent analisi de vulnerabilitats, gestio d'incidents, proteccio de dades i infraestructura.",
     },
     {
       date: "2023 - 2025",
       title: "Desenvolupament d'Aplicacions Web",
       institution: "CIP FP Batoi",
       description:
-      "Cicle Formatiu de Grau Superior en Desenvolupament d'Aplicacions Web. Aprenentatge de tecnologies com HTML, CSS, JavaScript, PHP, MySQL i frameworks com Vue.js, Laravel o Springboot.",
+        "Cicle Formatiu de Grau Superior en Desenvolupament d'Aplicacions Web. Aprenentatge de tecnologies com HTML, CSS, JavaScript, PHP, MySQL i frameworks com Vue.js, Laravel o Springboot.",
     },
     {
       date: "2021 - 2023",
@@ -120,13 +122,13 @@ const va: Translation = {
       institution: "CIP FP Batoi",
       description:
         "Cicle Formatiu de Grau Mitja en Sistemes Microinformatics i Xarxes. Formacio en instal·lacio, configuracio i manteniment de sistemes informatics, xarxes i serveis associats, aixi com l'ús en entorns Linux i Windows Server.",
-      },
-      {
+    },
+    {
       date: "2017 - 2021",
       title: "Educacio Secundaria Obligatoria",
       institution: "IES Andreu Sempere",
       description:
-      "Educacio Secundaria Obligatoria (ESO) a l'IES Andreu Sempere d'Alcoi. Formacio general en diverses materies.",
+        "Educacio Secundaria Obligatoria (ESO) a l'IES Andreu Sempere d'Alcoi. Formacio general en diverses materies.",
     },
   ],
   demo: "Demo",
