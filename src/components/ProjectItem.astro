@@ -12,6 +12,7 @@ import Github from "@/components/icons/Github.astro";
 import Eye from "./icons/eye.astro";
 import SpringBoot from "@/components/icons/SpringBoot.astro";
 import TypeScript from "./icons/TypeScript.astro";
+import Close from "./icons/Close.astro";
 import type { Translation } from "@/i18n/types";
 
 interface Props {
@@ -114,7 +115,10 @@ const tags = languages.map((langName) => {
   }
   {
     title === "Repair Shop" && (
-      <div class="relative flex aspect-video w-full animate-pulse flex-col items-center justify-center overflow-hidden rounded-lg border border-indigo-500 bg-gray-300/50 shadow-xl dark:border-yellow-400 dark:bg-gray-800/50">
+      <div
+        class="relative flex aspect-video w-full animate-pulse cursor-pointer flex-col items-center justify-center overflow-hidden rounded-lg border border-indigo-500 bg-gray-300/50 shadow-xl dark:border-yellow-400 dark:bg-gray-800/50"
+        data-open-repair-modal
+      >
         <p class="text-xl font-bold text-indigo-500 dark:text-yellow-400">
           {language.onDevelopment}
         </p>
@@ -125,12 +129,27 @@ const tags = languages.map((langName) => {
 <div class="flex-row md:w-1/2">
   <div>
     <h3 class="mb-3 text-2xl font-semibold">
-      <a
-        href={repositories[0].url}
-        class="text-indigo-500 transition-colors duration-200 hover:cursor-pointer hover:text-indigo-950 dark:text-yellow-400 dark:hover:text-indigo-500"
-      >
-        {title}
-      </a>
+      {
+        title !== "Repair Shop" && (
+          <a
+            href={repositories[0].url}
+            class="text-indigo-500 transition-colors duration-200 hover:cursor-pointer hover:text-indigo-950 dark:text-yellow-400 dark:hover:text-indigo-500"
+          >
+            {title}
+          </a>
+        )
+      }
+      {
+        title === "Repair Shop" && (
+          <button
+            type="button"
+            data-open-repair-modal
+            class="text-indigo-500 transition-colors duration-200 hover:cursor-pointer hover:text-indigo-950 dark:text-yellow-400 dark:hover:text-indigo-500"
+          >
+            {title}
+          </button>
+        )
+      }
     </h3>
   </div>
   <ul class="mb-3 flex flex-row flex-wrap gap-2">
@@ -167,3 +186,72 @@ const tags = languages.map((langName) => {
     }
   </footer>
 </div>
+
+{
+  title === "Repair Shop" && (
+    <dialog
+      data-repair-modal
+      class="m-auto w-full max-w-md rounded-2xl border border-indigo-200 bg-white text-gray-900 shadow-2xl backdrop:bg-black/60 dark:border-yellow-300/40 dark:bg-gray-900 dark:text-gray-100"
+    >
+      <div class="flex flex-col p-6">
+        <div class="mb-4 flex items-start justify-between gap-4">
+          <div>
+            <h4 class="text-xl font-bold text-indigo-500 dark:text-yellow-500">
+              {title}
+            </h4>
+          </div>
+          <button
+            type="button"
+            data-close-repair-modal
+            aria-label="Cerrar modal"
+            class="group inline-flex items-center justify-center rounded-full p-2 text-gray-500 transition-all duration-200 hover:bg-indigo-100 hover:text-indigo-600 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-yellow-400"
+          >
+            <Close class="size-5 cursor-pointer transition-transform duration-300 group-hover:scale-110 group-hover:rotate-90" />
+          </button>
+        </div>
+
+        <div class="flex flex-col gap-6 md:flex-row">
+          {repositories.map((repo) => (
+            <div class="flex flex-1">
+              <LinkButton
+                href={repo.url}
+                class="w-full max-w-none justify-center py-3"
+              >
+                <Github />
+                <span>{repo.label}</span>
+              </LinkButton>
+            </div>
+          ))}
+        </div>
+      </div>
+    </dialog>
+  )
+}
+
+<script is:inline>
+  document.querySelectorAll("[data-repair-modal]").forEach((modal) => {
+    const container = modal.closest("article");
+    if (!container) {
+      return;
+    }
+
+    const openButtons = container.querySelectorAll("[data-open-repair-modal]");
+    const closeButton = modal.querySelector("[data-close-repair-modal]");
+
+    openButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        modal.showModal();
+      });
+    });
+
+    closeButton?.addEventListener("click", () => {
+      modal.close();
+    });
+
+    modal.addEventListener("click", (event) => {
+      if (event.target === modal) {
+        modal.close();
+      }
+    });
+  });
+</script>
