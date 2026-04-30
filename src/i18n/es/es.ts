@@ -31,7 +31,7 @@ const es: Translation = {
     "Algo que me caracteriza es que me gusta <strong>cuidar cada pequeño detalle de lo que hago</strong>, no me gusta ver pequeños fallos que molesten la experiencia del usuario aunque sea mínimamente.",
     "Mi objetivo siempre será <strong>seguir aprendiendo lo máximo posible</strong> y poder ayudar a los demás.",
     "Soy muy <strong>autodidacta</strong>, me gusta siempre aprender cosas nuevas y profundizar más en lo que <strong>ya conozco</strong>.",
-    "En época de <strong>IA</strong>, trato de usarlo para lo que me <strong>ahorra tiempo</strong>, no para hacer lo que puedo hacer yo mismo con un poco de esfuerzo, me gusta conocer <strong>a fondo</strong> lo que hago y no sentirme dependiente de una herramienta.",
+    "En época de <strong>IA</strong>, trato de usarla para lo que me <strong>ahorra tiempo</strong>, no para hacer lo que puedo hacer yo mismo con un poco de esfuerzo, me gusta conocer <strong>a fondo</strong> lo que hago y no sentirme dependiente de una herramienta.",
   ],
   code: "Código",
   experience: [
