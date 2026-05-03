@@ -52,21 +52,6 @@ const va: Translation = {
   ],
   projects: [
     {
-      title: "Dom Books",
-      description:
-        "SPA reactiva desenvolupada amb Vue 3 i TailwindCSS. Implementa gestió d'estat global amb Pinia, validació de formularis complexos (VeeValidate/Yup) i persistència en LocalStorage.",
-      repositories: [
-        {
-          label: "GitHub",
-          url: "https://github.com/martinezdom/Dom-Books",
-        },
-      ],
-      image: "/projects/dom_books.webp",
-      imageAlt: "Captura de pantalla de l'aplicació Dom Books",
-      languages: ["Vue", "TailwindCSS"],
-      url: "http://localhost:5173",
-    },
-    {
       title: "Download Stats Panel",
       description:
         "Plataforma Full Stack (PHP/MySQL) contenidoritzada amb Docker. Dashboard analític amb gràfics interactius, autenticació segura i arquitectura MVC manual.",
@@ -80,6 +65,21 @@ const va: Translation = {
       imageAlt: "Captura de pantalla de l'aplicació Download Stats Panel",
       languages: ["PHP", "MySQL", "JavaScript", "CSS", "Docker"],
       url: "http://localhost/layout/backend/index.php?sec=home",
+    },
+    {
+      title: "Dom Books",
+      description:
+        "SPA reactiva desenvolupada amb Vue 3 i TailwindCSS. Implementa gestió d'estat global amb Pinia, validació de formularis complexos (VeeValidate/Yup) i persistència en LocalStorage.",
+      repositories: [
+        {
+          label: "GitHub",
+          url: "https://github.com/martinezdom/Dom-Books",
+        },
+      ],
+      image: "/projects/dom_books.webp",
+      imageAlt: "Captura de pantalla de l'aplicació Dom Books",
+      languages: ["Vue", "TailwindCSS"],
+      url: "http://localhost:5173",
     },
     {
       title: "Repair Shop",

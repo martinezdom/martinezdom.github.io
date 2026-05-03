@@ -52,21 +52,6 @@ const en: Translation = {
   ],
   projects: [
     {
-      title: "Dom Books",
-      description:
-        "Reactive SPA built with Vue 3 and TailwindCSS. Features global state management via Pinia, complex form validation (VeeValidate/Yup), and LocalStorage persistence.",
-      repositories: [
-        {
-          label: "GitHub",
-          url: "https://github.com/martinezdom/Dom-Books",
-        },
-      ],
-      image: "/projects/dom_books.webp",
-      imageAlt: "Screenshot of the Dom Books application",
-      languages: ["Vue", "TailwindCSS"],
-      url: "http://localhost:5173",
-    },
-    {
       title: "Download Stats Panel",
       description:
         "Full Stack platform (PHP/MySQL) containerized with Docker. Includes an analytical dashboard with interactive charts, secure authentication, and custom MVC architecture.",
@@ -80,6 +65,21 @@ const en: Translation = {
       imageAlt: "Screenshot of the Download Stats Panel application",
       languages: ["PHP", "MySQL", "JavaScript", "CSS", "Docker"],
       url: "http://localhost/layout/backend/index.php?sec=home",
+    },
+    {
+      title: "Dom Books",
+      description:
+        "Reactive SPA built with Vue 3 and TailwindCSS. Features global state management via Pinia, complex form validation (VeeValidate/Yup), and LocalStorage persistence.",
+      repositories: [
+        {
+          label: "GitHub",
+          url: "https://github.com/martinezdom/Dom-Books",
+        },
+      ],
+      image: "/projects/dom_books.webp",
+      imageAlt: "Screenshot of the Dom Books application",
+      languages: ["Vue", "TailwindCSS"],
+      url: "http://localhost:5173",
     },
     {
       title: "Repair Shop",
