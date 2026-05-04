@@ -31,7 +31,7 @@ const en: Translation = {
     "Something that characterizes me is that I like to <strong>take care of every small detail of what I do</strong>, I don't like to see small flaws that disrupt the user experience, even minimally.",
     "My goal will always be to <strong>keep learning as much as possible</strong> and to be able to help others.",
     "I am very <strong>self-taught</strong>, I like to always learn new things and <strong>deepen my knowledge</strong> of what I already know.",
-    "In this age of <strong>AI</strong>, I try to use it for what <strong>saves me time</strong>, not to do what I can do myself with a little effort, I like to <strong>thoroughly understand</strong> what I do and not feel dependent on a tool.",
+    "In the age of <strong>AI</strong>, even though it's booming, I make a point of <strong>staying updated</strong> and <strong>knowing how to use it</strong>, but actually I only use it when it truly <strong>saves me time</strong>. I'm not a fan of <strong>overusing it</strong>, when I don't understand something, I prefer to check the <strong>official documentation</strong> or search forums to make sure I fully understand what I write.",
   ],
   code: "Code",
   experience: [
@@ -65,6 +65,21 @@ const en: Translation = {
       imageAlt: "Screenshot of the Download Stats Panel application",
       languages: ["PHP", "MySQL", "JavaScript", "CSS", "Docker"],
       url: "http://localhost/layout/backend/index.php?sec=home",
+    },
+    {
+      title: "Dom Car",
+      description:
+        "Responsive car sharing platform built with Spring Boot, Thymeleaf, and Tailwind. Allows creating trips, searching routes, and booking seats quickly and intuitively.",
+      repositories: [
+        {
+          label: "GitHub",
+          url: "https://github.com/martinezdom/Dom-Car",
+        },
+      ],
+      image: "/projects/dom_car.webp",
+      imageAlt: "Screenshot of the Dom Car application",
+      languages: ["Spring Boot", "Thymeleaf", "TailwindCSS"],
+      url: "http://localhost:5173",
     },
     {
       title: "Dom Books",

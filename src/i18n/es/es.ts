@@ -31,7 +31,7 @@ const es: Translation = {
     "Algo que me caracteriza es que me gusta <strong>cuidar cada pequeño detalle de lo que hago</strong>, no me gusta ver pequeños fallos que molesten la experiencia del usuario aunque sea mínimamente.",
     "Mi objetivo siempre será <strong>seguir aprendiendo lo máximo posible</strong> y poder ayudar a los demás.",
     "Soy muy <strong>autodidacta</strong>, me gusta siempre aprender cosas nuevas y profundizar más en lo que <strong>ya conozco</strong>.",
-    "En época de <strong>IA</strong>, trato de usarla para lo que me <strong>ahorra tiempo</strong>, no para hacer lo que puedo hacer yo mismo con un poco de esfuerzo, me gusta conocer <strong>a fondo</strong> lo que hago y no sentirme dependiente de una herramienta.",
+    "En la era de la <strong>IA</strong>, aunque esté en auge, procuro <strong>mantenerme al día</strong> y <strong>saber utilizarla</strong>, pero realmente la empleo solo cuando realmente me <strong>ahorra tiempo</strong>. No me gusta <strong>abusar de ella</strong>, si algo no lo entiendo, prefiero consultar la <strong>documentación oficial</strong> o busco en foros para asegurarme de comprender lo que escribo.",
   ],
   code: "Código",
   experience: [
@@ -65,6 +65,21 @@ const es: Translation = {
       imageAlt: "Captura de pantalla de la aplicación Download Stats Panel",
       languages: ["PHP", "MySQL", "JavaScript", "CSS", "Docker"],
       url: "http://localhost/layout/backend/index.php?sec=home",
+    },
+    {
+      title: "Dom Car",
+      description:
+        "Plataforma responsive de viajes compartidos hecha con Spring Boot, Thymeleaf y Tailwind. Permite crear viajes, buscar rutas y reservar plazas de forma rápida e intuitiva.",
+      repositories: [
+        {
+          label: "GitHub",
+          url: "https://github.com/martinezdom/Dom-Car",
+        },
+      ],
+      image: "/projects/dom_car.webp",
+      imageAlt: "Captura de pantalla de la aplicación Dom Car",
+      languages: ["Spring Boot", "Thymeleaf", "TailwindCSS"],
+      url: "http://localhost:5173",
     },
     {
       title: "Dom Books",

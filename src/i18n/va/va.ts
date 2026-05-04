@@ -31,7 +31,7 @@ const va: Translation = {
     "Una cosa que em caracteritza és que m'agrada <strong>cuidar cada xicotet detall del que faig</strong>, no m'agrada veure xicolets falles que molesten l'experiència de l'usuari encara que siga mínimament.",
     "El meu objectiu sempre serà <strong>seguir aprenent lo màxim possible</strong> i poder ajudar als altres.",
     "Sóc molt <strong>autodidacte</strong>, m'agrada sempre aprendre coses noves i <strong>aprofundir més</strong> en lo que ja conec.",
-    "En época d'<strong>IA</strong>, tracte d'utilitzar-la per al que em <strong>estalvia temps</strong>, no per fer el que puc fer jo mateix amb un poc d'esforç, m'agrada <strong>conéixer a fons</strong> el que faig i no sentir-me dependent d'una ferramenta.",
+    "En l'era de la <strong>IA</strong>, tot i que està en auge, procuro <strong>mantenir-me al dia</strong> i <strong>saber utilitzar-la</strong>, però realment l'use només quan realment m'<strong>estalvia temps</strong>. No sóc gaire partidari de <strong>abusar-ne</strong>, si no ho entenc, consulte la <strong>documentació oficial</strong> o cerque en fòrums per assegurar-me que entenc tot el que escric.",
   ],
   code: "Codi",
   experience: [
@@ -67,6 +67,21 @@ const va: Translation = {
       url: "http://localhost/layout/backend/index.php?sec=home",
     },
     {
+      title: "Dom Car",
+      description:
+        "Plataforma de viatges compartits responsive, construïda amb Spring Boot, Thymeleaf i Tailwind. Permet als usuaris crear trajectes, cercar rutes i reservar seients de manera ràpida i intuïtiva.",
+      repositories: [
+        {
+          label: "GitHub",
+          url: "https://github.com/martinezdom/Dom-Car",
+        },
+      ],
+      image: "/projects/dom_car.webp",
+      imageAlt: "Captura de pantalla de l'aplicació Dom Car",
+      languages: ["Spring Boot", "Thymeleaf", "TailwindCSS"],
+      url: "http://localhost:5173",
+    },
+    {
       title: "Dom Books",
       description:
         "SPA reactiva desenvolupada amb Vue 3 i TailwindCSS. Implementa gestió d'estat global amb Pinia, validació de formularis complexos (VeeValidate/Yup) i persistència en LocalStorage.",
@@ -96,7 +111,7 @@ const va: Translation = {
         },
       ],
       image: "/projects/repair_shop.webp",
-      imageAlt: "Captura de pantalla de la aplicación Repair Shop",
+      imageAlt: "Captura de pantalla de l'aplicació Repair Shop",
       languages: ["Spring Boot", "Vue", "TypeScript", "TailwindCSS", "MySQL"],
       url: "http://localhost:4321/",
     },
