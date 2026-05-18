@@ -52,6 +52,25 @@ const es: Translation = {
   ],
   projects: [
     {
+      title: "Repair Shop",
+      description:
+        "SPA full stack con Vue, Spring Boot y MySQL, contenedorizada con Docker. Incluye listas con CRUD completo, autenticación con Spring Security y gestión de roles basada en RBAC.",
+      repositories: [
+        {
+          label: "Frontend",
+          url: "https://github.com/martinezdom/Repair-Shop-Frontend",
+        },
+        {
+          label: "Backend",
+          url: "https://github.com/martinezdom/Repair-Shop-Backend",
+        },
+      ],
+      image: "/projects/repair_shop.webp",
+      imageAlt: "Captura de pantalla de la aplicación Repair Shop",
+      languages: ["Spring Boot", "Vue", "TypeScript", "TailwindCSS", "MySQL"],
+      url: "http://localhost:5173/repairs",
+    },
+    {
       title: "Download Stats Panel",
       description:
         "Plataforma Full Stack (PHP/MySQL) contenerizada con Docker. Dashboard analítico con gráficos interactivos, autenticación segura y arquitectura MVC manual.",
@@ -79,7 +98,7 @@ const es: Translation = {
       image: "/projects/dom_car.webp",
       imageAlt: "Captura de pantalla de la aplicación Dom Car",
       languages: ["Spring Boot", "Thymeleaf", "TailwindCSS"],
-      url: "http://localhost:5173",
+      url: "http://localhost:8080",
     },
     {
       title: "Dom Books",
@@ -95,25 +114,6 @@ const es: Translation = {
       imageAlt: "Captura de pantalla de la aplicación Dom Books",
       languages: ["Vue", "TailwindCSS"],
       url: "http://localhost:5173",
-    },
-    {
-      title: "Repair Shop",
-      description:
-        "SPA full stack con Vue, Spring Boot y MySQL, contenedorizada con Docker. Incluye listas con CRUD completo, autenticación con Spring Security y gestión de roles basada en RBAC.",
-      repositories: [
-        {
-          label: "Frontend",
-          url: "https://github.com/martinezdom/Repair-Shop-Frontend",
-        },
-        {
-          label: "Backend",
-          url: "https://github.com/martinezdom/Repair-Shop-Backend",
-        },
-      ],
-      image: "/projects/repair_shop.webp",
-      imageAlt: "Captura de pantalla de la aplicación Repair Shop",
-      languages: ["Spring Boot", "Vue", "TypeScript", "TailwindCSS", "MySQL"],
-      url: "http://localhost:4321/",
     },
   ],
   studies: [
@@ -147,7 +147,6 @@ const es: Translation = {
     },
   ],
   demo: "Demo",
-  onDevelopment: "En desarrollo",
 };
 
 export default es;

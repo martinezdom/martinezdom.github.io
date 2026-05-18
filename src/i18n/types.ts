@@ -27,7 +27,6 @@ export interface Translation {
   experience: ExperienceItem[];
   projects: ProjectItem[];
   studies: StudiesItem[];
-  onDevelopment?: string;
 }
 
 export interface ExperienceItem {

@@ -109,26 +109,24 @@ const tags = languages.map((langName) => {
     }
   );
 });
+
+const hasMultipleRepos = repositories.length > 1;
 ---
 
 <div class="w-full md:w-1/2 md:flex-shrink-0">
   {
-    title !== "Repair Shop" && (
+    hasMultipleRepos ? (
+      <button
+        type="button"
+        data-open-project-modal
+        class="cursor-pointer transition-opacity hover:opacity-90"
+      >
+        <BrowserFrame image={image} alt={imageAlt} url={url} />
+      </button>
+    ) : (
       <a href={repositories[0].url} target="_blank" rel="noopener noreferrer">
         <BrowserFrame image={image} alt={imageAlt} url={url} />
       </a>
-    )
-  }
-  {
-    title === "Repair Shop" && (
-      <div
-        class="relative flex aspect-video w-full animate-pulse cursor-pointer flex-col items-center justify-center overflow-hidden rounded-lg border border-indigo-500 bg-gray-300/50 shadow-xl dark:border-yellow-400 dark:bg-gray-800/50"
-        data-open-repair-modal
-      >
-        <p class="text-xl font-bold text-indigo-500 dark:text-yellow-400">
-          {language.onDevelopment}
-        </p>
-      </div>
     )
   }
 </div>
@@ -136,7 +134,7 @@ const tags = languages.map((langName) => {
   <div>
     <h3 class="mb-3 text-2xl font-semibold">
       {
-        title !== "Repair Shop" && (
+        !hasMultipleRepos && (
           <a
             href={repositories[0].url}
             class="text-indigo-500 transition-colors duration-200 hover:cursor-pointer hover:text-indigo-950 dark:text-yellow-400 dark:hover:text-indigo-500"
@@ -146,10 +144,10 @@ const tags = languages.map((langName) => {
         )
       }
       {
-        title === "Repair Shop" && (
+        hasMultipleRepos && (
           <button
             type="button"
-            data-open-repair-modal
+            data-open-project-modal
             class="text-indigo-500 transition-colors duration-200 hover:cursor-pointer hover:text-indigo-950 dark:text-yellow-400 dark:hover:text-indigo-500"
           >
             {title}
@@ -194,9 +192,9 @@ const tags = languages.map((langName) => {
 </div>
 
 {
-  title === "Repair Shop" && (
+  hasMultipleRepos && (
     <dialog
-      data-repair-modal
+      data-project-modal
       class="m-auto w-full max-w-md rounded-2xl border border-indigo-200 bg-white text-gray-900 shadow-2xl backdrop:bg-black/60 dark:border-yellow-300/40 dark:bg-gray-900 dark:text-gray-100"
     >
       <div class="flex flex-col p-6">
@@ -208,7 +206,7 @@ const tags = languages.map((langName) => {
           </div>
           <button
             type="button"
-            data-close-repair-modal
+            data-close-project-modal
             aria-label="Cerrar modal"
             class="group inline-flex items-center justify-center rounded-full p-2 text-gray-500 transition-all duration-200 hover:bg-indigo-100 hover:text-indigo-600 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-yellow-400"
           >
@@ -235,14 +233,14 @@ const tags = languages.map((langName) => {
 }
 
 <script is:inline>
-  document.querySelectorAll("[data-repair-modal]").forEach((modal) => {
+  document.querySelectorAll("[data-project-modal]").forEach((modal) => {
     const container = modal.closest("article");
     if (!container) {
       return;
     }
 
-    const openButtons = container.querySelectorAll("[data-open-repair-modal]");
-    const closeButton = modal.querySelector("[data-close-repair-modal]");
+    const openButtons = container.querySelectorAll("[data-open-project-modal]");
+    const closeButton = modal.querySelector("[data-close-project-modal]");
 
     openButtons.forEach((button) => {
       button.addEventListener("click", () => {
