@@ -8,6 +8,7 @@ const en: Translation = {
     studies: { title: "Studies", href: "#studies" },
     about: { title: "About me", href: "#about-me" },
     contact: { title: "Contact", href: "#contact" },
+    services: { title: "Services", href: "services" },
   },
   castilian: "Castilian",
   english: "English",
@@ -147,6 +148,60 @@ const en: Translation = {
     },
   ],
   demo: "Demo",
+  servicesPage: {
+    hero: {
+      title: "Your business online, fast and secure",
+      subtitle:
+        "Creation of professional, modern, responsive and fully secure websites, without technical jargon.",
+      cta: "I want my secure website",
+    },
+    featuredService: {
+      title: "Professional Website + Basic Security Kit",
+      price: "500 €",
+      features: [
+        "Modern and responsive design.",
+        "SSL Certificate (HTTPS) and secure configuration.",
+        "Contact form protection.",
+        "Final security report in plain language.",
+        "Delivery in 5 working days.",
+        "Technical support for 15 days.",
+      ],
+    },
+    additionalServices: {
+      audit: {
+        title: "Web Security Audit",
+        description:
+          "I analyze your current website with professional tools and provide a report with solutions.",
+        price: "From 200 €",
+      },
+      customDev: {
+        title: "Custom Feature Development",
+        description:
+          "Need a booking system, client panel or something more complex? I develop it with the same security guarantees.",
+        price: "Custom quote",
+      },
+    },
+    workProcess: {
+      step1: {
+        title: "Contact and briefing",
+        description: "You tell me what you need and I give you a fixed quote.",
+      },
+      step2: {
+        title: "Development and security testing",
+        description: "I build your website and run my security checks.",
+      },
+      step3: {
+        title: "Delivery and support",
+        description:
+          "I deliver it, explain how it works and give you 15 days of support.",
+      },
+    },
+    finalCta: {
+      buttonText: "Talk to me with no obligation",
+      supportText:
+        "Have an idea in mind? Write to me and let's see how to shape it securely.",
+    },
+  },
 };
 
 export default en;

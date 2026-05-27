@@ -3,10 +3,16 @@ import Arrow from "./icons/Arrow.astro";
 
 const { language } = Astro.props;
 
+const currentPath = Astro.url.pathname;
+const isServicesPage =
+  currentPath.includes("/servicios") ||
+  currentPath.includes("/serveis") ||
+  currentPath.includes("/services");
+
 const LANGUAGES = [
-  { code: "ES", value: "es", path: "/" },
-  { code: "EN", value: "en", path: "/en" },
-  { code: "VA", value: "va", path: "/va" },
+  { code: "ES", value: "es", path: isServicesPage ? "/servicios" : "/" },
+  { code: "EN", value: "en", path: isServicesPage ? "/en/services" : "/en" },
+  { code: "VA", value: "va", path: isServicesPage ? "/va/serveis" : "/va" },
 ];
 
 const currentLang =

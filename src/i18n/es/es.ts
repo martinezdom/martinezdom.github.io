@@ -8,6 +8,7 @@ const es: Translation = {
     studies: { title: "Estudios", href: "#estudios" },
     about: { title: "Sobre mí", href: "#sobre-mi" },
     contact: { title: "Contacto", href: "#contacto" },
+    services: { title: "Servicios", href: "servicios" },
   },
   castilian: "Castellano",
   english: "Inglés",
@@ -147,6 +148,61 @@ const es: Translation = {
     },
   ],
   demo: "Demo",
+  servicesPage: {
+    hero: {
+      title: "Tu negocio en internet, rápido y blindado",
+      subtitle:
+        "Creación de páginas web profesionales, modernas, adaptativas y completamente seguras, sin tecnicismos.",
+      cta: "Quiero mi web segura",
+    },
+    featuredService: {
+      title: "Web Profesional + Kit de Seguridad Básico",
+      price: "500 €",
+      features: [
+        "Diseño moderno y responsive.",
+        "Certificado SSL (HTTPS) y configuración segura.",
+        "Protección de formularios de contacto.",
+        "Informe final de seguridad en lenguaje comprensible.",
+        "Entrega en 5 días laborables.",
+        "Soporte técnico durante 15 días.",
+      ],
+    },
+    additionalServices: {
+      audit: {
+        title: "Auditoría de Seguridad Web",
+        description:
+          "Analizo tu web actual con herramientas profesionales y te entrego un informe con soluciones.",
+        price: "Desde 200 €",
+      },
+      customDev: {
+        title: "Desarrollo de Funcionalidades a Medida",
+        description:
+          "¿Necesitas un sistema de reservas, panel de clientes o algo más complejo? Te lo desarrollo con las mismas garantías de seguridad.",
+        price: "Presupuesto personalizado",
+      },
+    },
+    workProcess: {
+      step1: {
+        title: "Contacto y briefing",
+        description:
+          "Me cuentas qué necesitas y te doy un presupuesto cerrado.",
+      },
+      step2: {
+        title: "Desarrollo y pruebas de seguridad",
+        description: "Creo tu web y la someto a mis controles de seguridad.",
+      },
+      step3: {
+        title: "Entrega y soporte",
+        description:
+          "Te la entrego, te explico cómo funciona y te doy 15 días de soporte.",
+      },
+    },
+    finalCta: {
+      buttonText: "Habla conmigo sin compromiso",
+      supportText:
+        "¿Tienes una idea en mente? Escríbeme y vemos cómo darle forma de manera segura.",
+    },
+  },
 };
 
 export default es;

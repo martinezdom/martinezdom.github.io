@@ -8,6 +8,7 @@ const va: Translation = {
     studies: { title: "Estudis", href: "#estudis" },
     about: { title: "Sobre mi", href: "#sobre-mi" },
     contact: { title: "Contacte", href: "#contacte" },
+    services: { title: "Serveis", href: "serveis" },
   },
   castilian: "Castellà",
   english: "Anglès",
@@ -147,6 +148,61 @@ const va: Translation = {
     },
   ],
   demo: "Demo",
+  servicesPage: {
+    hero: {
+      title: "El teu negoci a internet, ràpid i blindat",
+      subtitle:
+        "Creació de pàgines web professionals, modernes, adaptatives i completament segures, sense tecnicismes.",
+      cta: "Vull la meua web segura",
+    },
+    featuredService: {
+      title: "Web Professional + Kit de Seguretat Bàsic",
+      price: "500 €",
+      features: [
+        "Disseny modern i responsive.",
+        "Certificat SSL (HTTPS) i configuració segura.",
+        "Protecció de formularis de contacte.",
+        "Informe final de seguretat en llenguatge comprensible.",
+        "Lliurament en 5 dies laborables.",
+        "Suport tècnic durant 15 dies.",
+      ],
+    },
+    additionalServices: {
+      audit: {
+        title: "Auditoria de Seguretat Web",
+        description:
+          "Analitze la teua web actual amb eines professionals i t'entregue un informe amb solucions.",
+        price: "Des de 200 €",
+      },
+      customDev: {
+        title: "Desenvolupament de Funcionalitats a Mida",
+        description:
+          "Necessites un sistema de reserves, panell de clients o alguna cosa més complexa? T'ho desenvolupament amb les mateixes garanties de seguretat.",
+        price: "Pressupost personalitzat",
+      },
+    },
+    workProcess: {
+      step1: {
+        title: "Contacte i briefing",
+        description: "Em contes què necessites i et done un pressupost tancat.",
+      },
+      step2: {
+        title: "Desenvolupament i proves de seguretat",
+        description:
+          "Cree la teua web i la sotmet als meus controls de seguretat.",
+      },
+      step3: {
+        title: "Lliurament i suport",
+        description:
+          "Te la lliure, t'explique com funciona i et done 15 dies de suport.",
+      },
+    },
+    finalCta: {
+      buttonText: "Parla amb mi sense compromís",
+      supportText:
+        "Tens una idea al cap? Escriu-me i veiem com donar-li forma de manera segura.",
+    },
+  },
 };
 
 export default va;

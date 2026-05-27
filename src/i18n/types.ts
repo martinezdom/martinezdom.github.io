@@ -6,6 +6,7 @@ export interface Translation {
     studies: { title: string; href: string };
     about: { title: string; href: string };
     contact: { title: string; href: string };
+    services: { title: string; href: string };
   };
   castilian: string;
   english: string;
@@ -27,6 +28,48 @@ export interface Translation {
   experience: ExperienceItem[];
   projects: ProjectItem[];
   studies: StudiesItem[];
+  servicesPage: {
+    hero: {
+      title: string;
+      subtitle: string;
+      cta: string;
+    };
+    featuredService: {
+      title: string;
+      price: string;
+      features: string[];
+    };
+    additionalServices: {
+      audit: {
+        title: string;
+        description: string;
+        price: string;
+      };
+      customDev: {
+        title: string;
+        description: string;
+        price: string;
+      };
+    };
+    workProcess: {
+      step1: {
+        title: string;
+        description: string;
+      };
+      step2: {
+        title: string;
+        description: string;
+      };
+      step3: {
+        title: string;
+        description: string;
+      };
+    };
+    finalCta: {
+      buttonText: string;
+      supportText: string;
+    };
+  };
 }
 
 export interface ExperienceItem {

@@ -14,23 +14,55 @@ import Badge from "./Badge.astro";
   <div
     class="flex flex-col items-center gap-5 text-center md:col-span-2 md:items-start md:text-left"
   >
-    <a
-      href="https://linkedin.com/in/martinezdom"
-      target="_blank"
-      rel="noopener"
-      class="flex items-center transition md:justify-center md:hover:scale-105"
-    >
-      <Badge>
-        <span class="mr-1.5 flex h-2 w-2 items-center justify-center">
+    <div class="flex flex-wrap items-center gap-4 md:justify-start">
+      <a
+        href="https://linkedin.com/in/martinezdom"
+        target="_blank"
+        rel="noopener"
+        class="flex items-center transition md:justify-center md:hover:scale-105"
+      >
+        <Badge>
+          <span class="mr-1.5 flex h-2 w-2 items-center justify-center">
+            <span
+              class="absolute inline-flex h-2 w-2 animate-ping rounded-full bg-indigo-400 opacity-75 dark:bg-yellow-200/90"
+            ></span>
+            <span
+              class="relative inline-flex h-2 w-2 rounded-full bg-indigo-500 dark:bg-yellow-200/90"
+            ></span>
+          </span>
+          {language.heroBadge}
+        </Badge>
+      </a>
+      <a
+        href={language.prefix === "es"
+          ? "/servicios"
+          : `/${language.prefix}/${language.nav.services.href}`}
+        class="flex items-center transition md:justify-center md:hover:scale-105"
+      >
+        <div class="flex items-center">
           <span
-            class="absolute inline-flex h-2 w-2 animate-ping rounded-full bg-indigo-400 opacity-75"
-          ></span>
-          <span class="relative inline-flex h-2 w-2 rounded-full bg-indigo-500"
-          ></span>
-        </span>
-        {language.heroBadge}
-      </Badge>
-    </a>
+            class="relative inline-flex overflow-hidden rounded-full p-[1px]"
+          >
+            <span
+              class="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#6366f1_0%,#c7d2fe_50%,#6366f1_100%)] dark:bg-[conic-gradient(from_90deg_at_50%_50%,#fef08a_0%,#0f172a_50%,#fef08a_100%)]"
+            ></span>
+            <div
+              class="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-indigo-500 px-3 py-1 text-sm font-medium text-white backdrop-blur-3xl dark:bg-yellow-200/90 dark:text-slate-900"
+            >
+              <span class="mr-1.5 flex h-2 w-2 items-center justify-center">
+                <span
+                  class="absolute inline-flex h-2 w-2 animate-ping rounded-full bg-white opacity-75 dark:bg-slate-900/70"
+                ></span>
+                <span
+                  class="relative inline-flex h-2 w-2 rounded-full bg-white dark:bg-slate-900"
+                ></span>
+              </span>
+              {language.nav.services.title}
+            </div>
+          </span>
+        </div>
+      </a>
+    </div>
     <h1
       class="flex flex-col gap-2 text-4xl font-bold tracking-tight text-gray-800 sm:text-5xl md:block md:gap-0 dark:text-white"
     >

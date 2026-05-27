@@ -1,0 +1,13 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import language from "@/i18n/va/va.ts";
+import Services from "@/components/Services.astro";
+---
+
+<Layout language={language}>
+  <main
+    class="flex flex-col gap-y-20 overflow-hidden px-6 pb-12 md:gap-y-32 md:px-8 md:pb-24"
+  >
+    <Services language={language} />
+  </main>
+</Layout>
