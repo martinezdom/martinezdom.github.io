@@ -157,9 +157,10 @@ const va: Translation = {
     },
     featuredService: {
       title: "Web Professional + Kit de Seguretat Bàsic",
+      priceLabel: "Preu únic",
       price: "500 €",
       features: [
-        "Disseny modern i responsive.",
+        "Disseny modern i adaptatiu.",
         "Certificat SSL (HTTPS) i configuració segura.",
         "Protecció de formularis de contacte.",
         "Informe final de seguretat en llenguatge comprensible.",
@@ -168,6 +169,7 @@ const va: Translation = {
       ],
     },
     additionalServices: {
+      title: "Serveis Addicionals",
       audit: {
         title: "Auditoria de Seguretat Web",
         description:
@@ -176,31 +178,16 @@ const va: Translation = {
       },
       customDev: {
         title: "Desenvolupament de Funcionalitats a Mida",
+        priceLabel: "Preu",
         description:
           "Necessites un sistema de reserves, panell de clients o alguna cosa més complexa? T'ho desenvolupament amb les mateixes garanties de seguretat.",
         price: "Pressupost personalitzat",
       },
     },
-    workProcess: {
-      step1: {
-        title: "Contacte i briefing",
-        description: "Em contes què necessites i et done un pressupost tancat.",
-      },
-      step2: {
-        title: "Desenvolupament i proves de seguretat",
-        description:
-          "Cree la teua web i la sotmet als meus controls de seguretat.",
-      },
-      step3: {
-        title: "Lliurament i suport",
-        description:
-          "Te la lliure, t'explique com funciona i et done 15 dies de suport.",
-      },
-    },
     finalCta: {
       buttonText: "Parla amb mi sense compromís",
       supportText:
-        "Tens una idea al cap? Escriu-me i veiem com donar-li forma de manera segura.",
+        "Tens una idea al cap?<br />Escriu-me i veiem com donar-li forma de manera segura.",
     },
   },
 };

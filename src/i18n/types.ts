@@ -36,10 +36,12 @@ export interface Translation {
     };
     featuredService: {
       title: string;
+      priceLabel: string;
       price: string;
       features: string[];
     };
     additionalServices: {
+      title: string;
       audit: {
         title: string;
         description: string;
@@ -51,20 +53,7 @@ export interface Translation {
         price: string;
       };
     };
-    workProcess: {
-      step1: {
-        title: string;
-        description: string;
-      };
-      step2: {
-        title: string;
-        description: string;
-      };
-      step3: {
-        title: string;
-        description: string;
-      };
-    };
+
     finalCta: {
       buttonText: string;
       supportText: string;

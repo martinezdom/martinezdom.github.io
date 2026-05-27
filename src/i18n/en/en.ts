@@ -157,6 +157,7 @@ const en: Translation = {
     },
     featuredService: {
       title: "Professional Website + Basic Security Kit",
+      priceLabel: "One-time price",
       price: "500 €",
       features: [
         "Modern and responsive design.",
@@ -168,6 +169,7 @@ const en: Translation = {
       ],
     },
     additionalServices: {
+      title: "Additional Services",
       audit: {
         title: "Web Security Audit",
         description:
@@ -181,25 +183,10 @@ const en: Translation = {
         price: "Custom quote",
       },
     },
-    workProcess: {
-      step1: {
-        title: "Contact and briefing",
-        description: "You tell me what you need and I give you a fixed quote.",
-      },
-      step2: {
-        title: "Development and security testing",
-        description: "I build your website and run my security checks.",
-      },
-      step3: {
-        title: "Delivery and support",
-        description:
-          "I deliver it, explain how it works and give you 15 days of support.",
-      },
-    },
     finalCta: {
       buttonText: "Talk to me with no obligation",
       supportText:
-        "Have an idea in mind? Write to me and let's see how to shape it securely.",
+        "Have an idea in mind?<br />Write to me and let's see how to shape it securely.",
     },
   },
 };

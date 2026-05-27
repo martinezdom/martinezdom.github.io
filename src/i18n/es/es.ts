@@ -157,9 +157,10 @@ const es: Translation = {
     },
     featuredService: {
       title: "Web Profesional + Kit de Seguridad Básico",
+      priceLabel: "Precio único",
       price: "500 €",
       features: [
-        "Diseño moderno y responsive.",
+        "Diseño moderno y adaptativo.",
         "Certificado SSL (HTTPS) y configuración segura.",
         "Protección de formularios de contacto.",
         "Informe final de seguridad en lenguaje comprensible.",
@@ -168,6 +169,7 @@ const es: Translation = {
       ],
     },
     additionalServices: {
+      title: "Servicios Adicionales",
       audit: {
         title: "Auditoría de Seguridad Web",
         description:
@@ -181,26 +183,11 @@ const es: Translation = {
         price: "Presupuesto personalizado",
       },
     },
-    workProcess: {
-      step1: {
-        title: "Contacto y briefing",
-        description:
-          "Me cuentas qué necesitas y te doy un presupuesto cerrado.",
-      },
-      step2: {
-        title: "Desarrollo y pruebas de seguridad",
-        description: "Creo tu web y la someto a mis controles de seguridad.",
-      },
-      step3: {
-        title: "Entrega y soporte",
-        description:
-          "Te la entrego, te explico cómo funciona y te doy 15 días de soporte.",
-      },
-    },
+
     finalCta: {
       buttonText: "Habla conmigo sin compromiso",
       supportText:
-        "¿Tienes una idea en mente? Escríbeme y vemos cómo darle forma de manera segura.",
+        "¿Tienes una idea en mente?<br />Escríbeme y vemos cómo darle forma de manera segura.",
     },
   },
 };

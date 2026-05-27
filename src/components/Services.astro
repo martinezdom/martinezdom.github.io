@@ -2,26 +2,12 @@
 import Code from "./icons/Code.astro";
 import TitleSection from "./TitleSection.astro";
 import Briefcase from "./icons/Briefcase.astro";
-import System from "./icons/System.astro";
-import SocialPill from "./SocialPill.astro";
 import Mail from "./icons/Mail.astro";
 import SectionContainer from "./SectionContainer.astro";
 
 const { language } = Astro.props;
 const data = language.servicesPage;
 const contactEmail = "mailto:tartanasdev@gmail.com";
-const processTitle =
-  language.prefix === "en"
-    ? "Work Process"
-    : language.prefix === "va"
-      ? "Procés de treball"
-      : "Proceso de trabajo";
-const additionalTitle =
-  language.prefix === "en"
-    ? "Additional Services"
-    : language.prefix === "va"
-      ? "Serveis Addicionals"
-      : "Servicios Adicionales";
 ---
 
 <SectionContainer id="servicios" class="pt-32 md:pt-40">
@@ -40,14 +26,14 @@ const additionalTitle =
     </header>
 
     <section>
-      <TitleSection>
-        <Code class="size-8 text-indigo-500 dark:text-yellow-200/90" />
+      <TitleSection class="justify-center md:justify-start">
+        <Code class="size-8 shrink-0 text-indigo-500 dark:text-yellow-200/90" />
         {data.featuredService.title}
       </TitleSection>
       <div
-        class="relative mt-6 flex flex-col justify-between gap-8 rounded-2xl border border-indigo-500/40 bg-indigo-500/10 p-6 shadow-sm transition-all hover:shadow-md md:flex-row md:items-center md:p-10 dark:border-white/10 dark:bg-slate-900/50"
+        class="relative mt-6 flex flex-col items-center justify-between gap-8 rounded-2xl border border-indigo-500/40 bg-indigo-500/10 p-6 text-center shadow-sm transition-all hover:shadow-md md:flex-row md:items-center md:text-left md:p-10 dark:border-white/10 dark:bg-slate-900/50"
       >
-        <ul class="flex flex-col gap-y-3 text-slate-700 dark:text-slate-300">
+        <ul class="flex flex-col items-center gap-y-3 text-slate-700 md:items-start dark:text-slate-300">
           {
             data.featuredService.features.map((feature: string) => (
               <li class="flex items-start gap-x-3">
@@ -64,7 +50,7 @@ const additionalTitle =
         >
           <span
             class="text-sm font-medium tracking-wider text-slate-500 uppercase dark:text-slate-400"
-            >Precio único</span
+            >{data.featuredService.priceLabel}</span
           >
           <span
             class="mt-2 text-4xl font-bold text-indigo-500 dark:text-yellow-200/90"
@@ -76,14 +62,14 @@ const additionalTitle =
     </section>
 
     <section>
-      <TitleSection>
-        <Briefcase class="size-8 text-indigo-500 dark:text-yellow-200/90" />
-        {additionalTitle}
+      <TitleSection class="justify-center md:justify-start">
+        <Briefcase class="size-8 shrink-0 text-indigo-500 dark:text-yellow-200/90" />
+        {data.additionalServices.title}
       </TitleSection>
 
       <div class="mt-6 grid grid-cols-1 gap-6 md:grid-cols-2">
         <article
-          class="group flex flex-col gap-y-3 rounded-2xl border border-indigo-500/40 bg-indigo-500/10 p-6 transition-all hover:-translate-y-1 hover:shadow-md dark:border-white/10 dark:bg-slate-900/50"
+          class="group flex flex-col items-center text-center md:items-start md:text-left gap-y-3 rounded-2xl border border-indigo-500/40 bg-indigo-500/10 p-6 transition-all hover:-translate-y-1 hover:shadow-md dark:border-white/10 dark:bg-slate-900/50"
         >
           <h3 class="text-xl font-bold text-gray-800 dark:text-white">
             {data.additionalServices.audit.title}
@@ -99,7 +85,7 @@ const additionalTitle =
         </article>
 
         <article
-          class="group flex flex-col gap-y-3 rounded-2xl border border-indigo-500/40 bg-indigo-500/10 p-6 transition-all hover:-translate-y-1 hover:shadow-md dark:border-white/10 dark:bg-slate-900/50"
+          class="group flex flex-col items-center text-center md:items-start md:text-left gap-y-3 rounded-2xl border border-indigo-500/40 bg-indigo-500/10 p-6 transition-all hover:-translate-y-1 hover:shadow-md dark:border-white/10 dark:bg-slate-900/50"
         >
           <h3 class="text-xl font-bold text-gray-800 dark:text-white">
             {data.additionalServices.customDev.title}
@@ -119,9 +105,10 @@ const additionalTitle =
     <section
       class="mt-10 flex flex-col items-center justify-center gap-6 rounded-3xl border border-indigo-500/40 bg-indigo-500/10 p-10 text-center dark:border-white/10 dark:bg-slate-900/50"
     >
-      <h2 class="text-2xl font-bold text-gray-800 dark:text-white">
-        {data.finalCta.supportText}
-      </h2>
+      <h2 
+        class="text-2xl font-bold text-gray-800 dark:text-white"
+        set:html={data.finalCta.supportText}
+      />
       <a
         href={contactEmail}
         class="inline-flex items-center justify-center gap-2 rounded-full bg-indigo-500 px-8 py-4 text-lg font-semibold text-white transition hover:scale-105 hover:bg-indigo-600 dark:bg-yellow-200/90 dark:text-slate-900 dark:hover:bg-yellow-200"
