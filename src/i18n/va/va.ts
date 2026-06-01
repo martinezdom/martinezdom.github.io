@@ -150,7 +150,7 @@ const va: Translation = {
   demo: "Demo",
   servicesPage: {
     hero: {
-      title: "El teu negoci a internet, ràpid i blindat",
+      title: "El teu negoci a internet, ràpid i segur",
       subtitle:
         "Creació de pàgines web professionals, modernes, adaptatives i completament segures, sense tecnicismes.",
       cta: "Vull la meua web segura",
@@ -178,7 +178,6 @@ const va: Translation = {
       },
       customDev: {
         title: "Desenvolupament de Funcionalitats a Mida",
-        priceLabel: "Preu",
         description:
           "Necessites un sistema de reserves, panell de clients o alguna cosa més complexa? T'ho desenvolupament amb les mateixes garanties de seguretat.",
         price: "Pressupost personalitzat",

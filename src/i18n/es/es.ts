@@ -150,7 +150,7 @@ const es: Translation = {
   demo: "Demo",
   servicesPage: {
     hero: {
-      title: "Tu negocio en internet, rápido y blindado",
+      title: "Tu negocio en internet, rápido y seguro",
       subtitle:
         "Creación de páginas web profesionales, modernas, adaptativas y completamente seguras, sin tecnicismos.",
       cta: "Quiero mi web segura",
