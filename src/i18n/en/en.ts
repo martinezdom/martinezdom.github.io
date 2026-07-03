@@ -119,7 +119,7 @@ const en: Translation = {
   ],
   studies: [
     {
-      date: "2025 - now",
+      date: "2025 - 2026",
       title: "Cybersecurity Specialization Course",
       institution: "CIP FP Batoi",
       description:

@@ -119,7 +119,7 @@ const va: Translation = {
   ],
   studies: [
     {
-      date: "2025 - ara",
+      date: "2025 - 2026",
       title: "Curs d'especialitzacio en Ciberseguretat",
       institution: "CIP FP Batoi",
       description:
