@@ -1,0 +1,170 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="description" content="Portafolio de martinezdom, desarrollador web junior."><meta name="viewport" content="width=device-width"><meta name="generator" content="Astro v7.2.9"><link rel="icon" type="image/svg+xml" href="/favicon.ico"><title>Portafolio de martinezdom | Desarrollador web</title><script>
+  const stored = localStorage.getItem("theme");
+  const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  const theme = stored || (prefersDark ? "dark" : "light");
+
+  document.documentElement.classList.toggle("dark", theme === "dark");
+</script><link rel="stylesheet" href="/_astro/Code.DesqY4OS.css"></head><body class="text-slate-90 relative flex min-h-screen flex-col selection:bg-indigo-500 selection:text-white dark:text-slate-50 dark:selection:bg-indigo-400 dark:selection:text-slate-900"><div class="absolute inset-0 -z-10 h-full w-full [background:radial-gradient(125%_125%_at_50%_10%,#f8fafc_40%,#a5b4fc_100%)] dark:[background:radial-gradient(125%_125%_at_50%_10%,#0f172a_40%,#312e81_100%)]" aria-hidden="true"></div><header id="header" class="fixed top-0 z-20 flex w-full flex-col items-center px-6 pt-4 md:px-0"><div id="signature-wrapper" class="overflow-hidden transition-all duration-300 ease-in-out"><div id="signature" class="signature mb-3 text-3xl font-bold">martinezdom</div></div><nav id="main-nav" class="glitter mx-4 flex items-center gap-4 rounded-full border-1 border-indigo-500/40 bg-indigo-500/40 px-2 py-2 text-xs font-medium backdrop-blur-xl md:mx-2 md:px-6 md:text-sm dark:bg-slate-900/80"><ul class="flex space-x-3 md:space-x-6"><li><a href="/en/#experience" class="whitespace-nowrap text-slate-900 underline-offset-4 transition-colors duration-200 hover:text-indigo-500 hover:underline dark:text-white dark:hover:text-yellow-400">Experience</a></li><li><a href="/en/#projects" class="whitespace-nowrap text-slate-900 underline-offset-4 transition-colors duration-200 hover:text-indigo-500 hover:underline dark:text-white dark:hover:text-yellow-400">Projects</a></li><li><a href="/en/#studies" class="whitespace-nowrap text-slate-900 underline-offset-4 transition-colors duration-200 hover:text-indigo-500 hover:underline dark:text-white dark:hover:text-yellow-400">Studies</a></li><li><a href="/en/#about-me" class="whitespace-nowrap text-slate-900 underline-offset-4 transition-colors duration-200 hover:text-indigo-500 hover:underline dark:text-white dark:hover:text-yellow-400">About me</a></li><li><a href="mailto:tartanasdev@gmail.com" class="whitespace-nowrap text-slate-900 underline-offset-4 transition-colors duration-200 hover:text-indigo-500 hover:underline dark:text-white dark:hover:text-yellow-400">Contact</a></li></ul><div class="h-5 border-l border-indigo-500/40"></div><div class="flex items-center gap-0"><div class="relative"><button id="lang-selector" class="flex cursor-pointer items-center gap-1 py-1 text-slate-900 transition-colors duration-200 hover:text-indigo-500 md:text-sm dark:text-white dark:hover:text-yellow-400" aria-expanded="false"><span id="current-lang">EN</span><svg class="h-3 w-3 transition-transform duration-350" id="lang-arrow" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M19 9l-7 7-7-7"></path></svg></button><div id="lang-menu" class="absolute left-1/2 z-10 mt-2 -ml-2 hidden w-max -translate-x-1/2" role="menu"><div class="min-w-[60px] rounded-md border border-indigo-500/40 bg-white py-1 shadow-lg dark:bg-slate-900"><a href="/servicios" class="block px-4 py-2 text-center text-sm text-slate-900 transition-colors duration-150 hover:bg-indigo-50 hover:text-indigo-600 dark:text-slate-200 dark:hover:bg-slate-800 dark:hover:text-yellow-400" data-lang="es" role="menuitem">ES</a><a href="/en/services" class="block px-4 py-2 text-center text-sm text-slate-900 transition-colors duration-150 hover:bg-indigo-50 hover:text-indigo-600 dark:text-slate-200 dark:hover:bg-slate-800 dark:hover:text-yellow-400" data-lang="en" role="menuitem">EN</a><a href="/va/serveis" class="block px-4 py-2 text-center text-sm text-slate-900 transition-colors duration-150 hover:bg-indigo-50 hover:text-indigo-600 dark:text-slate-200 dark:hover:bg-slate-800 dark:hover:text-yellow-400" data-lang="va" role="menuitem">VA</a></div></div></div><script>
+  const langSelector = document.getElementById("lang-selector");
+  const langMenu = document.getElementById("lang-menu");
+  const langArrow = document.getElementById("lang-arrow");
+
+  const toggleLanguageMenu = () => {
+    const isOpen = langSelector.getAttribute("aria-expanded") === "true";
+    langMenu.classList.toggle("hidden", isOpen);
+    langMenu.classList.toggle("flex", !isOpen);
+    langSelector.setAttribute("aria-expanded", (!isOpen).toString());
+    langArrow.style.transform = isOpen ? "rotate(0deg)" : "rotate(180deg)";
+  };
+
+  const closeLanguageMenu = () => {
+    langMenu.classList.add("hidden");
+    langMenu.classList.remove("flex");
+    langSelector.setAttribute("aria-expanded", "false");
+    langArrow.style.transform = "rotate(0deg)";
+  };
+
+  langSelector.addEventListener("click", (e) => {
+    e.stopPropagation();
+    toggleLanguageMenu();
+  });
+
+  document.addEventListener("click", (e) => {
+    if (!langSelector.contains(e.target) && !langMenu.contains(e.target)) {
+      closeLanguageMenu();
+    }
+  });
+</script></div></nav></header><script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const signature = document.getElementById("signature");
+    const signatureWrapper = document.getElementById("signature-wrapper");
+
+    const signatureHeight = signature.offsetHeight + 12;
+    signatureWrapper.style.maxHeight = `${signatureHeight}px`;
+
+    signature.style.transition = "opacity 0.3s ease, transform 0.3s ease";
+
+    window.addEventListener("scroll", () => {
+      const scrollY = window.scrollY;
+      const scale = Math.max(1 - scrollY / 600, 0.8);
+      signature.style.transform = `scale(${scale})`;
+
+      if (scrollY > 200) {
+        signature.style.opacity = "0";
+        signature.style.pointerEvents = "none";
+        signatureWrapper.style.maxHeight = "0";
+      } else {
+        signature.style.pointerEvents = "auto";
+        signatureWrapper.style.maxHeight = `${signatureHeight}px`;
+        signature.style.opacity = "1";
+      }
+    });
+  });
+</script><main class="flex flex-col gap-y-20 overflow-hidden px-6 pb-12 md:gap-y-32 md:px-8 md:pb-24"><section id="servicios" data-section="servicios" class="section pt-32 md:pt-40 scroll-m-20 w-full mx-auto container lg:max-w-4xl md:max-w-2xl"><div class="flex flex-col gap-20"><header class="flex flex-col items-center justify-center gap-6 text-center"><h1 class="text-4xl font-extrabold tracking-tight text-gray-800 sm:text-5xl dark:text-white">Your business online, fast and secure</h1><p class="max-w-2xl text-lg text-pretty text-slate-600 md:text-xl dark:text-slate-300">Creation of professional, modern, responsive and fully secure websites, without technical jargon.</p></header><section><h2 class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-gray-800 dark:text-white undefined"><svg class="size-8 shrink-0 text-indigo-500 dark:text-yellow-200/90" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M7 8l-4 4l4 4"></path><path d="M17 8l4 4l-4 4"></path><path d="M14 4l-4 16"></path></svg>Professional Website + Basic Security Kit</h2><div class="relative mt-6 flex flex-col items-center justify-between gap-8 rounded-2xl border border-indigo-500/40 bg-indigo-500/10 p-6 text-center shadow-sm transition-all hover:shadow-md md:flex-row md:items-center md:text-left md:p-10 dark:border-white/10 dark:bg-slate-900/50"><ul class="flex flex-col items-center gap-y-3 text-slate-700 md:items-start dark:text-slate-300"><li class="flex items-start gap-x-3"><span class="mt-1 flex h-4 w-4 items-center justify-center rounded-full bg-indigo-100 text-xs font-bold text-indigo-500 dark:bg-yellow-200/20 dark:text-yellow-200/90">✓</span><span>Modern and responsive design.</span></li><li class="flex items-start gap-x-3"><span class="mt-1 flex h-4 w-4 items-center justify-center rounded-full bg-indigo-100 text-xs font-bold text-indigo-500 dark:bg-yellow-200/20 dark:text-yellow-200/90">✓</span><span>SSL Certificate (HTTPS) and secure configuration.</span></li><li class="flex items-start gap-x-3"><span class="mt-1 flex h-4 w-4 items-center justify-center rounded-full bg-indigo-100 text-xs font-bold text-indigo-500 dark:bg-yellow-200/20 dark:text-yellow-200/90">✓</span><span>Contact form protection.</span></li><li class="flex items-start gap-x-3"><span class="mt-1 flex h-4 w-4 items-center justify-center rounded-full bg-indigo-100 text-xs font-bold text-indigo-500 dark:bg-yellow-200/20 dark:text-yellow-200/90">✓</span><span>Final security report in plain language.</span></li><li class="flex items-start gap-x-3"><span class="mt-1 flex h-4 w-4 items-center justify-center rounded-full bg-indigo-100 text-xs font-bold text-indigo-500 dark:bg-yellow-200/20 dark:text-yellow-200/90">✓</span><span>Delivery in 5 working days.</span></li><li class="flex items-start gap-x-3"><span class="mt-1 flex h-4 w-4 items-center justify-center rounded-full bg-indigo-100 text-xs font-bold text-indigo-500 dark:bg-yellow-200/20 dark:text-yellow-200/90">✓</span><span>Technical support for 15 days.</span></li></ul><div class="flex flex-col items-center justify-center rounded-xl bg-indigo-500/10 p-6 shadow-sm ring-1 ring-indigo-500/20 md:min-w-[200px] dark:bg-slate-900/80 dark:ring-white/10"><span class="text-sm font-medium tracking-wider text-slate-500 uppercase dark:text-slate-400">One-time price</span><span class="mt-2 text-4xl font-bold text-indigo-500 dark:text-yellow-200/90">500 €</span></div></div></section><section><h2 class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-gray-800 dark:text-white undefined"><svg class="size-8 shrink-0 text-indigo-500 dark:text-yellow-200/90" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M3 7m0 2a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v9a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z"></path><path d="M8 7v-2a2 2 0 0 1 2 -2h4a2 2 0 0 1 2 2v2"></path><path d="M12 12l0 .01"></path><path d="M3 13a20 20 0 0 0 18 0"></path></svg>Additional Services</h2><div class="mt-6 grid grid-cols-1 gap-6 md:grid-cols-2"><article class="group flex flex-col items-center text-center md:items-start md:text-left gap-y-3 rounded-2xl border border-indigo-500/40 bg-indigo-500/10 p-6 transition-all hover:-translate-y-1 hover:shadow-md dark:border-white/10 dark:bg-slate-900/50"><h3 class="text-xl font-bold text-gray-800 dark:text-white">Web Security Audit</h3><span class="inline-flex w-max rounded-full bg-indigo-50 px-2.5 py-0.5 text-sm font-semibold text-indigo-600 dark:bg-yellow-200/10 dark:text-yellow-200/90">From 200 €</span><p class="mt-2 text-slate-600 dark:text-slate-400">I analyze your current website with professional tools and provide a report with solutions.</p></article><article class="group flex flex-col items-center text-center md:items-start md:text-left gap-y-3 rounded-2xl border border-indigo-500/40 bg-indigo-500/10 p-6 transition-all hover:-translate-y-1 hover:shadow-md dark:border-white/10 dark:bg-slate-900/50"><h3 class="text-xl font-bold text-gray-800 dark:text-white">Custom Feature Development</h3><span class="inline-flex w-max rounded-full bg-indigo-50 px-2.5 py-0.5 text-sm font-semibold text-indigo-600 dark:bg-yellow-200/10 dark:text-yellow-200/90">Custom quote</span><p class="mt-2 text-slate-600 dark:text-slate-400">Need a booking system, client panel or something more complex? I develop it with the same security guarantees.</p></article></div></section><section class="mt-10 flex flex-col items-center justify-center gap-6 rounded-3xl border border-indigo-500/40 bg-indigo-500/10 p-10 text-center dark:border-white/10 dark:bg-slate-900/50"><h2 class="text-2xl font-bold text-gray-800 dark:text-white">Have an idea in mind?<br />Write to me and let's see how to shape it securely.</h2><a href="mailto:tartanasdev@gmail.com" class="inline-flex items-center justify-center gap-2 rounded-full bg-indigo-500 px-8 py-4 text-lg font-semibold text-white transition hover:scale-105 hover:bg-indigo-600 dark:bg-yellow-200/90 dark:text-slate-900 dark:hover:bg-yellow-200"><svg class="size-5" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-mail-forward" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M12 18h-7a2 2 0 0 1 -2 -2v-10a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v7.5"></path><path d="M3 6l9 6l9 -6"></path><path d="M15 18h6"></path><path d="M18 15l3 3l-3 3"></path></svg>Talk to me with no obligation</a></section></div></section></main><div class="flex w-full justify-center px-4 pb-8 md:px-0"><footer class="mx-auto flex w-full max-w-4xl flex-col items-center justify-between gap-4 rounded-3xl border border-indigo-500/40 bg-indigo-500/10 px-6 py-4 shadow-lg backdrop-blur-lg md:grid md:grid-cols-3 md:gap-4 md:rounded-full dark:border-white/10 dark:bg-slate-900/50"><div class="order-2 flex w-full flex-row flex-wrap items-center justify-center gap-x-2 gap-y-1 md:order-none md:col-span-2 md:grid md:w-auto md:grid-cols-2 md:gap-4"><div class="flex items-center text-sm font-medium whitespace-nowrap text-zinc-800/90 md:justify-start md:text-base dark:text-gray-300">&copy; 2026</div><div class="flex items-center md:justify-center"><span class="flex items-center gap-1 text-sm font-medium text-zinc-800/90 md:text-base dark:text-gray-300">Developed by<a href="https://github.com/martinezdom" target="_blank" class="signature signature-yellow font-bold tracking-wider text-indigo-600 transition-colors hover:text-indigo-800 dark:text-yellow-400 dark:hover:text-yellow-200/90">martinezdom</a></span></div></div><div class="order-1 flex items-center justify-center md:order-none md:justify-end"><div class="theme-toggle-container relative z-50 flex items-center justify-center"><button id="theme-toggle" aria-expanded="false" class="rounded-full flex items-center justify-center size-10 border-2 border-indigo-500 dark:border-yellow-500 text-indigo-500 dark:text-yellow-400 bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm hover:border-indigo-500 hover:bg-indigo-500 hover:text-white hover:scale-110 dark:hover:bg-yellow-500 dark:hover:border-yellow-500 dark:hover:text-slate-900 cursor-pointer transition-all duration-300 shadow-lg hover:shadow-indigo-500/50 dark:hover:shadow-yellow-500/50 aria-[expanded=true]:bg-indigo-500 aria-[expanded=true]:text-white aria-[expanded=true]:border-indigo-500 aria-[expanded=true]:scale-110 aria-[expanded=true]:shadow-indigo-500/50 aria-[expanded=true]:dark:bg-yellow-500 aria-[expanded=true]:dark:border-yellow-500 aria-[expanded=true]:dark:text-slate-900 aria-[expanded=true]:dark:shadow-yellow-500/50 theme-toggle-glitter relative glitter p-1 z-10" aria-haspopup="menu"><span class="sr-only">Select Theme</span><span id="light" class="theme-main-icon absolute inset-0 m-auto flex size-5 items-center justify-center"><svg width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M12 12m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0"></path><path d="M3 12h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7"></path></svg></span><span id="dark" class="theme-main-icon absolute inset-0 m-auto flex size-5 items-center justify-center"><svg width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z"></path></svg></span><span id="system" class="theme-main-icon absolute inset-0 m-auto flex size-5 items-center justify-center"><svg width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M3 5a1 1 0 0 1 1 -1h16a1 1 0 0 1 1 1v10a1 1 0 0 1 -1 1h-16a1 1 0 0 1 -1 -1v-10z"></path><path d="M7 20h10"></path><path d="M9 16v4"></path><path d="M15 16v4"></path></svg></span></button><div id="theme-menu" class="pointer-events-none absolute top-1/2 right-full mr-2 flex translate-x-8 -translate-y-1/2 flex-row items-center gap-2 rounded-full border border-indigo-500/20 bg-slate-100 px-3 py-1.5 opacity-0 shadow-lg backdrop-blur-md transition-all duration-300 ease-in-out dark:border-white/10 dark:bg-slate-900" role="menu" aria-labelledby="theme-toggle"><button class="theme-option flex size-8 cursor-pointer items-center justify-center rounded-full text-zinc-500 transition-colors hover:bg-indigo-100 hover:text-indigo-600 dark:text-zinc-400 dark:hover:bg-white/10 dark:hover:text-yellow-400" data-theme="light" role="menuitem" aria-label="Light" title="Light"><span class="sr-only">Light</span><span class="flex size-4 items-center justify-center"><svg width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M12 12m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0"></path><path d="M3 12h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7"></path></svg></span></button><button class="theme-option flex size-8 cursor-pointer items-center justify-center rounded-full text-zinc-500 transition-colors hover:bg-indigo-100 hover:text-indigo-600 dark:text-zinc-400 dark:hover:bg-white/10 dark:hover:text-yellow-400" data-theme="dark" role="menuitem" aria-label="Dark" title="Dark"><span class="sr-only">Dark</span><span class="flex size-4 items-center justify-center"><svg width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z"></path></svg></span></button><button class="theme-option flex size-8 cursor-pointer items-center justify-center rounded-full text-zinc-500 transition-colors hover:bg-indigo-100 hover:text-indigo-600 dark:text-zinc-400 dark:hover:bg-white/10 dark:hover:text-yellow-400" data-theme="system" role="menuitem" aria-label="System" title="System"><span class="sr-only">System</span><span class="flex size-4 items-center justify-center"><svg width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M3 5a1 1 0 0 1 1 -1h16a1 1 0 0 1 1 1v10a1 1 0 0 1 -1 1h-16a1 1 0 0 1 -1 -1v-10z"></path><path d="M7 20h10"></path><path d="M9 16v4"></path><path d="M15 16v4"></path></svg></span></button></div></div><script>
+  const themeToggle = document.getElementById("theme-toggle");
+  const themeMenu = document.getElementById("theme-menu");
+  const themeIcons = document.querySelectorAll(".theme-main-icon");
+  const themeOptions = document.querySelectorAll(".theme-option");
+  const colorScheme = window.matchMedia("(prefers-color-scheme: dark)");
+
+  const getSavedTheme = () => {
+    const saved = localStorage.getItem("theme");
+    return ["light", "dark", "system"].includes(saved) ? saved : "system";
+  };
+
+  const updateActiveIcon = (theme) => {
+    themeIcons.forEach((icon) => {
+      const isActive = icon.id === theme;
+      icon.classList.toggle("opacity-100", isActive);
+      icon.classList.toggle("opacity-0", !isActive);
+    });
+
+    themeOptions.forEach((option) => {
+      const isActive = option.dataset.theme === theme;
+      if (isActive) {
+        option.classList.remove("text-zinc-500", "dark:text-zinc-400");
+        option.classList.add(
+          "bg-indigo-100",
+          "text-indigo-600",
+          "dark:bg-white/10",
+          "dark:text-yellow-400",
+        );
+      } else {
+        option.classList.add("text-zinc-500", "dark:text-zinc-400");
+        option.classList.remove(
+          "bg-indigo-100",
+          "text-indigo-600",
+          "dark:bg-white/10",
+          "dark:text-yellow-400",
+        );
+      }
+    });
+  };
+
+  const applyTheme = () => {
+    const theme = getSavedTheme();
+    const isDark =
+      theme === "dark" || (theme === "system" && colorScheme.matches);
+
+    document.documentElement.classList.toggle("dark", isDark);
+    updateActiveIcon(theme);
+  };
+
+  const toggleThemeMenu = () => {
+    const isOpen = themeToggle.getAttribute("aria-expanded") === "true";
+
+    if (isOpen) {
+      closeThemeMenu();
+    } else {
+      openThemeMenu();
+    }
+  };
+
+  const openThemeMenu = () => {
+    themeMenu.classList.remove(
+      "opacity-0",
+      "pointer-events-none",
+      "translate-x-8",
+    );
+    themeMenu.classList.add("opacity-100", "translate-x-0");
+    themeToggle.setAttribute("aria-expanded", "true");
+  };
+
+  const closeThemeMenu = () => {
+    themeMenu.classList.remove("opacity-100", "translate-x-0");
+    themeMenu.classList.add(
+      "opacity-0",
+      "pointer-events-none",
+      "translate-x-8",
+    );
+    themeToggle.setAttribute("aria-expanded", "false");
+  };
+
+  const changeTheme = (theme) => {
+    localStorage.setItem("theme", theme);
+    applyTheme();
+    closeThemeMenu();
+  };
+
+  themeToggle.addEventListener("click", (e) => {
+    e.stopPropagation();
+    toggleThemeMenu();
+  });
+
+  document.addEventListener("click", (e) => {
+    if (!themeToggle.contains(e.target) && !themeMenu.contains(e.target)) {
+      closeThemeMenu();
+    }
+  });
+
+  themeOptions.forEach((option) => {
+    option.addEventListener("click", () => {
+      changeTheme(option.dataset.theme);
+    });
+  });
+
+  colorScheme.addEventListener("change", applyTheme);
+  document.addEventListener("astro:after-swap", applyTheme);
+
+  applyTheme();
+</script></div></footer></div></body></html>
