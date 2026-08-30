@@ -24,13 +24,13 @@ const va: Translation = {
   developedBy: "Desenvolupat per",
   heroBadge: "Disponible per a treballar",
   heroDescription:
-    "D'Alcoi, Espanya. <span class='text-indigo-500 dark:text-yellow-200/90'>Desenvolupador Web</span> i <span class='text-indigo-500 dark:text-yellow-200/90'>estudiant de ciberseguretat</span>. M'agrada cuidar cada detall al màxim, crear les millors experiències i que tot siga <span class='text-indigo-500 dark:text-yellow-200/90'>segur</span>.",
+    "D'Alcoi, Espanya. <span class='text-indigo-500 dark:text-yellow-200/90'>Desenvolupador Web</span> i <span class='text-indigo-500 dark:text-yellow-200/90'>especialista en ciberseguretat</span>. M'agrada cuidar cada detall al màxim, crear les millors experiències i que tot siga <span class='text-indigo-500 dark:text-yellow-200/90'>segur</span>.",
   aboutMe: [
     "Em dic Miguel Ángel encara que també em coneixen com a <strong><a href='https://github.com/martinezdom' target='_blank'>martinezdom</a></strong>.",
     "Des de ben menut, m'agradava estar trastejant amb l'ordinador, la qual cosa m'ha portat a formar-me en el <strong>món de la informàtica</strong>.",
-    "Actualment, continue formant-me però aquesta vegada com a <strong>especialista en ciberseguretat</strong>. És diferent del que estava acostumat però la veritat m'agrada bastant i em motiva a seguir aprenent cada dia.",
+    "Compto amb formació especialitzada en <strong>ciberseguretat</strong>, la qual cosa em permet aportar un enfocament centrat en la seguretat, bones pràctiques i protecció en cada desenvolupament que realitze.",
     "Una cosa que em caracteritza és que m'agrada <strong>cuidar cada xicotet detall del que faig</strong>, no m'agrada veure xicolets falles que molesten l'experiència de l'usuari encara que siga mínimament.",
-    "El meu objectiu sempre serà <strong>seguir aprenent lo màxim possible</strong> i poder ajudar als altres.",
+    "El meu objectiu sempre serà <strong>seguir aprenent lo màxim possible</strong> y poder ajudar als altres.",
     "Sóc molt <strong>autodidacte</strong>, m'agrada sempre aprendre coses noves i <strong>aprofundir més</strong> en lo que ja conec.",
     "En l'era de la <strong>IA</strong>, tot i que està en auge, procuro <strong>mantenir-me al dia</strong> i <strong>saber utilitzar-la</strong>, però realment l'use només quan realment m'<strong>estalvia temps</strong>. No sóc gaire partidari de <strong>abusar-ne</strong>, si no ho entenc, consulte la <strong>documentació oficial</strong> o cerque en fòrums per assegurar-me que entenc tot el que escric.",
   ],
