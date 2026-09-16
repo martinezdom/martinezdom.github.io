@@ -12,6 +12,7 @@ import Github from "@/components/icons/Github.astro";
 import Eye from "./icons/eye.astro";
 import SpringBoot from "@/components/icons/SpringBoot.astro";
 import TypeScript from "./icons/TypeScript.astro";
+import Supabase from "@/components/icons/Supabase.astro";
 import Close from "./icons/Close.astro";
 import Thymeleaf from "./icons/Thymeleaf.astro";
 import type { Translation } from "@/i18n/types";
@@ -31,7 +32,7 @@ interface Props {
 const {
   title,
   description,
-  repositories,
+  repositories = [],
   image,
   imageAlt,
   languages,
@@ -96,6 +97,12 @@ const TAGS: Record<
     class: "bg-[#005f0f] text-white",
     icon: Thymeleaf,
   },
+  Supabase: {
+    name: "Supabase",
+    class: "bg-[#249361] text-white",
+    icon: Supabase,
+    iconClass: "size-3.5",
+  },
 };
 
 const tags = languages.map((langName) => {
@@ -110,6 +117,8 @@ const tags = languages.map((langName) => {
   );
 });
 
+const hasRepositories = repositories.length > 0;
+const hasSingleRepo = repositories.length === 1;
 const hasMultipleRepos = repositories.length > 1;
 ---
 
@@ -123,10 +132,20 @@ const hasMultipleRepos = repositories.length > 1;
       >
         <BrowserFrame image={image} alt={imageAlt} url={url} />
       </button>
-    ) : (
+    ) : hasSingleRepo ? (
       <a href={repositories[0].url} target="_blank" rel="noopener noreferrer">
         <BrowserFrame image={image} alt={imageAlt} url={url} />
       </a>
+    ) : url ? (
+      <a
+        href={url.startsWith("http") ? url : `https://${url}`}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <BrowserFrame image={image} alt={imageAlt} url={url} />
+      </a>
+    ) : (
+      <BrowserFrame image={image} alt={imageAlt} url={url} />
     )
   }
 </div>
@@ -134,7 +153,7 @@ const hasMultipleRepos = repositories.length > 1;
   <div>
     <h3 class="mb-3 text-2xl font-semibold">
       {
-        !hasMultipleRepos && (
+        hasSingleRepo && (
           <a
             href={repositories[0].url}
             class="text-indigo-500 transition-colors duration-200 hover:cursor-pointer hover:text-indigo-950 dark:text-yellow-400 dark:hover:text-indigo-500"
@@ -152,6 +171,18 @@ const hasMultipleRepos = repositories.length > 1;
           >
             {title}
           </button>
+        )
+      }
+      {
+        !hasRepositories && url && (
+          <a
+            href={url.startsWith("http") ? url : `https://${url}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-indigo-500 transition-colors duration-200 hover:cursor-pointer hover:text-indigo-950 dark:text-yellow-400 dark:hover:text-indigo-500"
+          >
+            {title}
+          </a>
         )
       }
     </h3>
@@ -179,6 +210,14 @@ const hasMultipleRepos = repositories.length > 1;
           {repo.label}
         </LinkButton>
       ))
+    }
+    {
+      title == "EcoNane" && (
+        <LinkButton href="https://econane.es">
+          <Eye />
+          {language.liveSite}
+        </LinkButton>
+      )
     }
     {
       title == "Dom Books" && (

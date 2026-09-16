@@ -25,6 +25,7 @@ export interface Translation {
   aboutMe: string[];
   code: string;
   demo: string;
+  liveSite: string;
   experience: ExperienceItem[];
   projects: ProjectItem[];
   studies: StudiesItem[];
@@ -71,7 +72,7 @@ export interface ExperienceItem {
 export interface ProjectItem {
   title: string;
   description: string;
-  repositories: { label: string; url: string }[];
+  repositories?: { label: string; url: string }[];
   image: string;
   imageAlt: string;
   languages: string[];

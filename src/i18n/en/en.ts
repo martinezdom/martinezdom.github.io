@@ -35,6 +35,8 @@ const en: Translation = {
     "In the age of <strong>AI</strong>, even though it's booming, I make a point of <strong>staying updated</strong> and <strong>knowing how to use it</strong>, but actually I only use it when it truly <strong>saves me time</strong>. I'm not a fan of <strong>overusing it</strong>, when I don't understand something, I prefer to check the <strong>official documentation</strong> or search forums to make sure I fully understand what I write.",
   ],
   code: "Code",
+  demo: "Demo",
+  liveSite: "Visit Website",
   experience: [
     {
       date: "March 2025 - June 2025",
@@ -52,6 +54,15 @@ const en: Translation = {
     },
   ],
   projects: [
+    {
+      title: "EcoNane",
+      description:
+        "Web platform and management system for the EcoNane 4D/5D emotional ultrasound clinic in Villajoyosa. Developed with Vue 3, TypeScript, and Tailwind CSS, integrating Supabase for cloud database and session storage, and deployed on Cloudflare Pages with Serverless Functions and Resend for bookings and automated email notifications.",
+      image: "/projects/econane.webp",
+      imageAlt: "Screenshot of the EcoNane application",
+      languages: ["Vue", "TypeScript", "TailwindCSS", "Supabase"],
+      url: "https://econane.es",
+    },
     {
       title: "Repair Shop",
       description:
@@ -85,21 +96,6 @@ const en: Translation = {
       imageAlt: "Screenshot of the Download Stats Panel application",
       languages: ["PHP", "MySQL", "JavaScript", "CSS", "Docker"],
       url: "http://localhost/layout/backend/index.php?sec=home",
-    },
-    {
-      title: "Dom Car",
-      description:
-        "Responsive car sharing platform built with Spring Boot, Thymeleaf, and Tailwind. Allows creating trips, searching routes, and booking seats quickly and intuitively.",
-      repositories: [
-        {
-          label: "GitHub",
-          url: "https://github.com/martinezdom/Dom-Car",
-        },
-      ],
-      image: "/projects/dom_car.webp",
-      imageAlt: "Screenshot of the Dom Car application",
-      languages: ["Spring Boot", "Thymeleaf", "TailwindCSS"],
-      url: "http://localhost:8080",
     },
     {
       title: "Dom Books",

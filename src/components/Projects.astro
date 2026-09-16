@@ -14,7 +14,11 @@ const { projects } = language;
   {
     projects.map((projectItem) => (
       <article class="group flex flex-col gap-8 md:flex-row">
-        <ProjectItem {...projectItem} language={language} />
+        <ProjectItem
+          {...projectItem}
+          repositories={projectItem.repositories ?? []}
+          language={language}
+        />
       </article>
     ))
   }
