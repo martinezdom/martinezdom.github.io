@@ -5,10 +5,10 @@ const va: Translation = {
   nav: {
     experience: { title: "Experiència", href: "#experiencia" },
     projects: { title: "Projectes", href: "#projectes" },
+    skills: { title: "Habilitats", href: "#habilitats" },
     studies: { title: "Estudis", href: "#estudis" },
     about: { title: "Sobre mi", href: "#sobre-mi" },
     contact: { title: "Contacte", href: "#contacte" },
-    services: { title: "Serveis", href: "serveis" },
   },
   castilian: "Castellà",
   english: "Anglès",
@@ -20,6 +20,8 @@ const va: Translation = {
     selectorText: "Seleccionar tema",
   },
   curriculum: "Currículum",
+  curriculumDev: "CV Desenvolupament Web",
+  curriculumCyber: "CV Ciberseguretat",
   contactMe: "Contacta'm",
   developedBy: "Desenvolupat per",
   heroBadge: "Disponible per a treballar",
@@ -37,6 +39,153 @@ const va: Translation = {
   code: "Codi",
   demo: "Demo",
   liveSite: "Visitar Web",
+  skillsTitle: "Habilitats Tècniques",
+  skillsSubtitle:
+    "Especialització tècnica en desenvolupament de programari full-stack, infraestructura de sistemes i seguretat ofensiva/defensiva.",
+  skillsFilters: {
+    all: "Totes",
+    cybersecurity: "Ciberseguretat",
+    development: "Desenvolupament Web",
+  },
+  skillsCategories: [
+    {
+      title: "Seguretat Ofensiva & Pentesting",
+      iconName: "offensive",
+      type: "cybersecurity",
+      description:
+        "Auditories de seguretat tècnica sobre aplicacions web i xarxes seguint la metodologia OWASP.",
+      skills: [
+        "Kali Linux",
+        "Burp Suite",
+        "OWASP ZAP",
+        "Nmap",
+        "Wireshark",
+        "Metasploit",
+        "Gobuster / ffuf",
+        "Nikto",
+        "Hydra",
+        "John the Ripper",
+        "Hashcat",
+        "Ettercap",
+        "Aircrack-ng",
+        "OWASP Top 10",
+      ],
+    },
+    {
+      title: "Seguretat Defensiva, NGFW & SIEM",
+      iconName: "defensive",
+      type: "cybersecurity",
+      description:
+        "Monitoratge en temps real, tallafocs de nova generació, detecció d'intrusions i bastió de sistemes.",
+      skills: [
+        "OPNsense (NGFW)",
+        "Wazuh (SIEM)",
+        "Snort (IDS/IPS)",
+        "ModSecurity (WAF)",
+        "iptables / nftables / UFW",
+        "Hardening Linux & Web",
+        "Syslog & Registres",
+        "Gestió d'Incidents",
+      ],
+    },
+    {
+      title: "Informàtica Forense & Criptografia",
+      iconName: "forensics",
+      type: "cybersecurity",
+      description:
+        "Adquisició i anàlisi forense digital (DFIR), anàlisi de memòria RAM i criptografia aplicada.",
+      skills: [
+        "Autopsy (Forense)",
+        "Volatility (RAM)",
+        "FTK Imager",
+        "OpenSSL",
+        "GnuPG (GPG)",
+        "Criptografia (SHA-256 / RSA)",
+        "Certificats X.509",
+      ],
+    },
+    {
+      title: "Sistemes & Xarxes",
+      iconName: "systems",
+      type: "cybersecurity",
+      description:
+        "Administració d'entorns Linux, virtualització amb contenidors i connectivitat de xarxes segura.",
+      skills: [
+        "Linux (Ubuntu, Arch, Debian, Mint)",
+        "Docker",
+        "Nginx & Apache",
+        "TCP/IP, DNS & Subnetting",
+        "SSH & VPN (WireGuard / OpenVPN)",
+        "Control RBAC & JWT",
+      ],
+    },
+    {
+      title: "Frontend & Disseny Web",
+      iconName: "frontend",
+      type: "development",
+      description:
+        "Desenvolupament d'interfícies reactives, modernes i accessibles amb disseny responsive cuidat al detall.",
+      skills: [
+        "Vue.js (Vue 3 / Pinia)",
+        "TypeScript",
+        "JavaScript (ES6+)",
+        "Astro",
+        "Tailwind CSS",
+        "HTML5 / CSS3",
+        "Bootstrap",
+        "Responsive Design",
+      ],
+    },
+    {
+      title: "Backend & Arquitectura",
+      iconName: "backend",
+      type: "development",
+      description:
+        "Construcció d'APIs REST segures, arquitectures MVC escalables i lògica de negoci al servidor.",
+      skills: [
+        "PHP",
+        "Java / Spring Boot",
+        "Spring Security",
+        "Laravel",
+        "REST APIs",
+        "Supabase",
+        "Arquitectura MVC",
+        "Consultes Parametritzades",
+      ],
+    },
+    {
+      title: "Bases de Dades & Persistència",
+      iconName: "databases",
+      type: "development",
+      description:
+        "Modelatge relacional, consultes optimitzades, persistència de dades i prevenció contra SQLi.",
+      skills: [
+        "MySQL",
+        "PostgreSQL",
+        "MariaDB",
+        "Spring Data JPA / Hibernate",
+        "MySQLi",
+        "SQL Segur",
+        "Normalització",
+      ],
+    },
+    {
+      title: "DevOps & Eines",
+      iconName: "devops",
+      type: "development",
+      description:
+        "Contenidorització d'entorns, servidors web, control de versions i utilitats de desenvolupament.",
+      skills: [
+        "Docker & Docker Compose",
+        "Cloudflare Pages",
+        "Git",
+        "GitHub & GitLab",
+        "Postman",
+        "NPM",
+        "Figma",
+      ],
+    },
+  ],
   experience: [
     {
       date: "Març 2025 - Juny 2025",
@@ -57,16 +206,16 @@ const va: Translation = {
     {
       title: "EcoNane",
       description:
-        "Lloc web i plataforma de gestió per al centre d'ecografies emocionals 4D/5D EcoNane a La Vila Joiosa. Desenvolupat amb Vue 3, TypeScript i Tailwind CSS, integrat amb Supabase per a base de dades i emmagatzematge de sessions al núvol, i desplegat en Cloudflare Pages amb Serverless Functions i Resend per a reserves i notificacions per correu.",
+        "Plataforma web en producció amb enfocament AppSec (seguretat en el desenvolupament) per a clínica d'ecografies 5D. Implementa mitigació d'IDOR mitjançant validació PIN de 4 dígits en enllaços de descàrrega, sanitització estricta contra XSS i spam (honeypot), xifratge SHA-256 i capçaleres OWASP en Cloudflare.",
       image: "/projects/econane.webp",
       imageAlt: "Captura de pantalla de l'aplicació EcoNane",
-      languages: ["Vue", "TypeScript", "TailwindCSS", "Supabase"],
+      languages: ["Vue", "TypeScript", "TailwindCSS", "Supabase", "Cloudflare"],
       url: "https://econane.es",
     },
     {
       title: "Repair Shop",
       description:
-        "SPA full stack amb Vue, Spring Boot i MySQL, contenidoritzada amb Docker. Inclou llistes amb CRUD complet, autenticació amb Spring Security i gestió de rols basada en RBAC.",
+        "SPA Full Stack amb Vue, Spring Boot i MySQL, contenidoritzada amb Docker. Incorpora CRUD complet, arquitectura de seguretat stateless amb Spring Security i JWT, control d'accés basat en rols (RBAC), xifratge de contrasenyes amb BCrypt i consultes JPA tipades contra SQLi.",
       repositories: [
         {
           label: "Frontend",
@@ -85,7 +234,7 @@ const va: Translation = {
     {
       title: "Download Stats Panel",
       description:
-        "Plataforma Full Stack (PHP/MySQL) contenidoritzada amb Docker. Dashboard analític amb gràfics interactius, autenticació segura i arquitectura MVC manual.",
+        "Plataforma Full Stack (PHP/MySQL) contenidoritzada amb Docker. Inclou dashboard analític amb gràfics interactius, arquitectura MVC pròpia, control de sessions i autenticació, sanitització de dades i protecció estricta contra injeccions SQL (SQLi) mitjançant sentències preparades amb MySQLi.",
       repositories: [
         {
           label: "GitHub",
@@ -135,56 +284,7 @@ const va: Translation = {
       description:
         "Cicle Formatiu de Grau Mitja en Sistemes Microinformatics i Xarxes. Formacio en instal·lacio, configuracio i manteniment de sistemes informatics, xarxes i serveis associats, aixi com l'ús en entorns Linux i Windows Server.",
     },
-    {
-      date: "2017 - 2021",
-      title: "Educacio Secundaria Obligatoria",
-      institution: "IES Andreu Sempere",
-      description:
-        "Educacio Secundaria Obligatoria (ESO) a l'IES Andreu Sempere d'Alcoi. Formacio general en diverses materies.",
-    },
   ],
-  demo: "Demo",
-  servicesPage: {
-    hero: {
-      title: "El teu negoci a internet, ràpid i segur",
-      subtitle:
-        "Creació de pàgines web professionals, modernes, adaptatives i completament segures, sense tecnicismes.",
-      cta: "Vull la meua web segura",
-    },
-    featuredService: {
-      title: "Web Professional + Kit de Seguretat Bàsic",
-      priceLabel: "Preu únic",
-      price: "500 €",
-      features: [
-        "Disseny modern i adaptatiu.",
-        "Certificat SSL (HTTPS) i configuració segura.",
-        "Protecció de formularis de contacte.",
-        "Informe final de seguretat en llenguatge comprensible.",
-        "Lliurament en 5 dies laborables.",
-        "Suport tècnic durant 15 dies.",
-      ],
-    },
-    additionalServices: {
-      title: "Serveis Addicionals",
-      audit: {
-        title: "Auditoria de Seguretat Web",
-        description:
-          "Analitze la teua web actual amb eines professionals i t'entregue un informe amb solucions.",
-        price: "Des de 200 €",
-      },
-      customDev: {
-        title: "Desenvolupament de Funcionalitats a Mida",
-        description:
-          "Necessites un sistema de reserves, panell de clients o alguna cosa més complexa? T'ho desenvolupament amb les mateixes garanties de seguretat.",
-        price: "Pressupost personalitzat",
-      },
-    },
-    finalCta: {
-      buttonText: "Parla amb mi sense compromís",
-      supportText:
-        "Tens una idea al cap?<br />Escriu-me i veiem com donar-li forma de manera segura.",
-    },
-  },
 };
 
 export default va;

@@ -5,8 +5,26 @@ import LinkedInIcon from "./icons/LinkedIn.astro";
 import MailIcon from "./icons/Mail.astro";
 import DocumentIcon from "./icons/Document.astro";
 import GithubIcon from "./icons/Github.astro";
+import Arrow from "./icons/Arrow.astro";
 import Badge from "./Badge.astro";
-import { config } from "@/config";
+
+const langPrefix = language.prefix || "es";
+const cvFiles: Record<string, { dev: string; cyber: string }> = {
+  es: {
+    dev: "/cv/CV-Desarrollo-ES.pdf",
+    cyber: "/cv/CV-Ciberseguridad-ES.pdf",
+  },
+  en: {
+    dev: "/cv/CV-Development-EN.pdf",
+    cyber: "/cv/CV-Cybersecurity-EN.pdf",
+  },
+  va: {
+    dev: "/cv/CV-Desenvolupament-VA.pdf",
+    cyber: "/cv/CV-Ciberseguretat-VA.pdf",
+  },
+};
+
+const currentCv = cvFiles[langPrefix] || cvFiles.es;
 ---
 
 <div
@@ -34,37 +52,6 @@ import { config } from "@/config";
           {language.heroBadge}
         </Badge>
       </a>
-      {config.showServices && (
-        <a
-          href={language.prefix === "es"
-            ? "/servicios"
-            : `/${language.prefix}/${language.nav.services.href}`}
-          class="flex items-center transition md:justify-center md:hover:scale-105"
-        >
-          <div class="flex items-center">
-            <span
-              class="relative inline-flex overflow-hidden rounded-full p-[1px]"
-            >
-              <span
-                class="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#6366f1_0%,#c7d2fe_50%,#6366f1_100%)] dark:bg-[conic-gradient(from_90deg_at_50%_50%,#fef08a_0%,#0f172a_50%,#fef08a_100%)]"
-              ></span>
-              <div
-                class="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-indigo-500 px-3 py-1 text-sm font-medium text-white backdrop-blur-3xl dark:bg-yellow-200/90 dark:text-slate-900"
-              >
-                <span class="mr-1.5 flex h-2 w-2 items-center justify-center">
-                  <span
-                    class="absolute inline-flex h-2 w-2 animate-ping rounded-full bg-white opacity-75 dark:bg-slate-900/70"
-                  ></span>
-                  <span
-                    class="relative inline-flex h-2 w-2 rounded-full bg-white dark:bg-slate-900"
-                  ></span>
-                </span>
-                {language.nav.services.title}
-              </div>
-            </span>
-          </div>
-        </a>
-      )}
     </div>
     <h1
       class="flex flex-col gap-2 text-4xl font-bold tracking-tight text-gray-800 sm:text-5xl md:block md:gap-0 dark:text-white"
@@ -86,10 +73,51 @@ import { config } from "@/config";
         <GithubIcon class="size-4" />
         GitHub
       </SocialPill>
-      <SocialPill href={`/CV-${language.prefix.toUpperCase()}.pdf`}>
-        <DocumentIcon class="size-4" />
-        {language.curriculum}
-      </SocialPill>
+      
+      <!-- Selector desplegable de CVs -->
+      <div class="relative w-full">
+        <button
+          id="cv-dropdown-btn"
+          type="button"
+          aria-expanded="false"
+          aria-haspopup="menu"
+          class="group inline-flex w-full cursor-pointer items-center justify-center gap-1.5 rounded-full border border-indigo-500/40 bg-slate-100 px-3 py-1 text-slate-700 transition-colors duration-200 hover:border-indigo-500 hover:bg-indigo-500 hover:text-white focus:outline-none dark:border-yellow-200 dark:bg-transparent dark:text-slate-200 dark:hover:border-yellow-200/90 dark:hover:bg-yellow-200/90 dark:hover:text-indigo-950"
+        >
+          <DocumentIcon class="size-4" />
+          <span>{language.curriculum}</span>
+          <Arrow class="h-3 w-3 transition-transform duration-200" id="cv-arrow" />
+        </button>
+
+        <div
+          id="cv-menu"
+          class="absolute left-1/2 z-10 mt-2 hidden w-max -translate-x-1/2"
+          role="menu"
+        >
+          <div
+            class="min-w-[180px] rounded-md border border-indigo-500/40 bg-white py-1 shadow-lg dark:bg-slate-900"
+          >
+            <a
+              href={currentCv.dev}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="block px-4 py-2 text-center text-sm text-slate-900 transition-colors duration-150 hover:bg-indigo-50 hover:text-indigo-600 dark:text-slate-200 dark:hover:bg-slate-800 dark:hover:text-yellow-400"
+              role="menuitem"
+            >
+              {language.curriculumDev}
+            </a>
+            <a
+              href={currentCv.cyber}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="block px-4 py-2 text-center text-sm text-slate-900 transition-colors duration-150 hover:bg-indigo-50 hover:text-indigo-600 dark:text-slate-200 dark:hover:bg-slate-800 dark:hover:text-yellow-400"
+              role="menuitem"
+            >
+              {language.curriculumCyber}
+            </a>
+          </div>
+        </div>
+      </div>
+
       <SocialPill href="mailto:tartanasdev@gmail.com">
         <MailIcon class="size-4" />
         {language.contactMe}
@@ -110,3 +138,46 @@ import { config } from "@/config";
     </a>
   </div>
 </div>
+
+<script is:inline>
+  const initCvDropdown = () => {
+    const cvBtn = document.getElementById("cv-dropdown-btn");
+    const cvMenu = document.getElementById("cv-menu");
+    const cvArrow = document.getElementById("cv-arrow");
+
+    if (!cvBtn || !cvMenu) return;
+
+    const toggleMenu = () => {
+      const isOpen = cvBtn.getAttribute("aria-expanded") === "true";
+      cvMenu.classList.toggle("hidden", isOpen);
+      cvMenu.classList.toggle("flex", !isOpen);
+      cvBtn.setAttribute("aria-expanded", (!isOpen).toString());
+      if (cvArrow) {
+        cvArrow.style.transform = isOpen ? "rotate(0deg)" : "rotate(180deg)";
+      }
+    };
+
+    const closeMenu = () => {
+      cvMenu.classList.add("hidden");
+      cvMenu.classList.remove("flex");
+      cvBtn.setAttribute("aria-expanded", "false");
+      if (cvArrow) {
+        cvArrow.style.transform = "rotate(0deg)";
+      }
+    };
+
+    cvBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      toggleMenu();
+    });
+
+    document.addEventListener("click", (e) => {
+      if (!cvBtn.contains(e.target) && !cvMenu.contains(e.target)) {
+        closeMenu();
+      }
+    });
+  };
+
+  document.addEventListener("DOMContentLoaded", initCvDropdown);
+  document.addEventListener("astro:after-swap", initCvDropdown);
+</script>

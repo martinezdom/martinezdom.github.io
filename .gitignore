@@ -23,3 +23,7 @@ pnpm-debug.log*
 # jetbrains setting folder
 .idea/
 
+# Windows binaries and installers
+*.exe
+*.winmd
+

@@ -15,6 +15,8 @@ import TypeScript from "./icons/TypeScript.astro";
 import Supabase from "@/components/icons/Supabase.astro";
 import Close from "./icons/Close.astro";
 import Thymeleaf from "./icons/Thymeleaf.astro";
+import Shield from "@/components/icons/Shield.astro";
+import Code from "@/components/icons/Code.astro";
 import type { Translation } from "@/i18n/types";
 
 interface Props {
@@ -101,6 +103,78 @@ const TAGS: Record<
     name: "Supabase",
     class: "bg-[#249361] text-white",
     icon: Supabase,
+    iconClass: "size-3.5",
+  },
+  Wazuh: {
+    name: "Wazuh SIEM",
+    class: "bg-[#0052cc] text-white",
+    icon: Shield,
+    iconClass: "size-3.5",
+  },
+  Snort: {
+    name: "Snort IDS",
+    class: "bg-[#c41e3a] text-white",
+    icon: Shield,
+    iconClass: "size-3.5",
+  },
+  "Kali Linux": {
+    name: "Kali Linux",
+    class: "bg-[#1b1c2b] text-[#2c7fff] border border-[#2c7fff]/30",
+    icon: Shield,
+    iconClass: "size-3.5",
+  },
+  "Burp Suite": {
+    name: "Burp Suite",
+    class: "bg-[#e65c00] text-white",
+    icon: Shield,
+    iconClass: "size-3.5",
+  },
+  "OWASP ZAP": {
+    name: "OWASP ZAP",
+    class: "bg-[#005a9c] text-white",
+    icon: Shield,
+    iconClass: "size-3.5",
+  },
+  Nmap: {
+    name: "Nmap",
+    class: "bg-[#1e4d8c] text-white",
+    icon: Shield,
+    iconClass: "size-3.5",
+  },
+  Wireshark: {
+    name: "Wireshark",
+    class: "bg-[#1658b4] text-white",
+    icon: Shield,
+    iconClass: "size-3.5",
+  },
+  Python: {
+    name: "Python",
+    class: "bg-[#3776ab] text-[#ffd43b]",
+    icon: Code,
+    iconClass: "size-3.5",
+  },
+  Bash: {
+    name: "Bash",
+    class: "bg-[#293134] text-[#4eb848]",
+    icon: Code,
+    iconClass: "size-3.5",
+  },
+  Linux: {
+    name: "Linux",
+    class: "bg-[#333333] text-[#f5ba26]",
+    icon: Shield,
+    iconClass: "size-3.5",
+  },
+  Cloudflare: {
+    name: "Cloudflare",
+    class: "bg-[#f38020] text-white",
+    icon: Shield,
+    iconClass: "size-3.5",
+  },
+  Syslog: {
+    name: "Syslog",
+    class: "bg-[#475569] text-white",
+    icon: Shield,
     iconClass: "size-3.5",
   },
 };

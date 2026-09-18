@@ -10,6 +10,8 @@ import Code from "@/components/icons/Code.astro";
 import Book from "@/components/icons/Book.astro";
 import Projects from "@/components/Projects.astro";
 import Studies from "@/components/Studies.astro";
+import Skills from "@/components/Skills.astro";
+import Shield from "@/components/icons/Shield.astro";
 import Profile from "@/components/icons/Profile.astro";
 import AboutMe from "@/components/AboutMe.astro";
 ---
@@ -34,6 +36,13 @@ import AboutMe from "@/components/AboutMe.astro";
         Proyectos
       </TitleSection>
       <Projects language={language} />
+    </SectionContainer>
+    <SectionContainer id="habilidades">
+      <TitleSection>
+        <Shield class="size-8 shrink-0" />
+        {language.skillsTitle}
+      </TitleSection>
+      <Skills language={language} />
     </SectionContainer>
     <SectionContainer id="estudios">
       <TitleSection>

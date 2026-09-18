@@ -5,10 +5,10 @@ const en: Translation = {
   nav: {
     experience: { title: "Experience", href: "#experience" },
     projects: { title: "Projects", href: "#projects" },
+    skills: { title: "Skills", href: "#skills" },
     studies: { title: "Studies", href: "#studies" },
     about: { title: "About me", href: "#about-me" },
     contact: { title: "Contact", href: "#contact" },
-    services: { title: "Services", href: "services" },
   },
   castilian: "Castilian",
   english: "English",
@@ -20,6 +20,8 @@ const en: Translation = {
     selectorText: "Select Theme",
   },
   curriculum: "Curriculum",
+  curriculumDev: "CV Web Development",
+  curriculumCyber: "CV Cybersecurity",
   contactMe: "Contact me",
   developedBy: "Developed by",
   heroBadge: "Available for work",
@@ -37,6 +39,153 @@ const en: Translation = {
   code: "Code",
   demo: "Demo",
   liveSite: "Visit Website",
+  skillsTitle: "Technical Skills",
+  skillsSubtitle:
+    "Technical specialization in full-stack software development, systems infrastructure, and offensive/defensive security.",
+  skillsFilters: {
+    all: "All",
+    cybersecurity: "Cybersecurity",
+    development: "Web Development",
+  },
+  skillsCategories: [
+    {
+      title: "Offensive Security & Pentesting",
+      iconName: "offensive",
+      type: "cybersecurity",
+      description:
+        "Technical security audits on web applications and networks following the OWASP methodology.",
+      skills: [
+        "Kali Linux",
+        "Burp Suite",
+        "OWASP ZAP",
+        "Nmap",
+        "Wireshark",
+        "Metasploit",
+        "Gobuster / ffuf",
+        "Nikto",
+        "Hydra",
+        "John the Ripper",
+        "Hashcat",
+        "Ettercap",
+        "Aircrack-ng",
+        "OWASP Top 10",
+      ],
+    },
+    {
+      title: "Defensive Security, NGFW & SIEM",
+      iconName: "defensive",
+      type: "cybersecurity",
+      description:
+        "Real-time monitoring, Next-Generation Firewalls, intrusion detection, and system hardening.",
+      skills: [
+        "OPNsense (NGFW)",
+        "Wazuh (SIEM)",
+        "Snort (IDS/IPS)",
+        "ModSecurity (WAF)",
+        "iptables / nftables / UFW",
+        "Linux & Web Hardening",
+        "Syslog & Logs",
+        "Incident Response",
+      ],
+    },
+    {
+      title: "Digital Forensics & Cryptography",
+      iconName: "forensics",
+      type: "cybersecurity",
+      description:
+        "Digital forensics acquisition and analysis (DFIR), RAM dump inspection, and applied cryptography.",
+      skills: [
+        "Autopsy (Forensics)",
+        "Volatility (RAM)",
+        "FTK Imager",
+        "OpenSSL",
+        "GnuPG (GPG)",
+        "Cryptography (SHA-256 / RSA)",
+        "X.509 Certificates",
+      ],
+    },
+    {
+      title: "Systems & Networks",
+      iconName: "systems",
+      type: "cybersecurity",
+      description:
+        "Linux environment administration, container virtualization, and secure network connectivity.",
+      skills: [
+        "Linux (Ubuntu, Arch, Debian, Mint)",
+        "Docker",
+        "Nginx & Apache",
+        "TCP/IP, DNS & Subnetting",
+        "SSH & VPN (WireGuard / OpenVPN)",
+        "RBAC & JWT Controls",
+      ],
+    },
+    {
+      title: "Frontend & Web Design",
+      iconName: "frontend",
+      type: "development",
+      description:
+        "Building reactive, modern, accessible user interfaces with detailed responsive design.",
+      skills: [
+        "Vue.js (Vue 3 / Pinia)",
+        "TypeScript",
+        "JavaScript (ES6+)",
+        "Astro",
+        "Tailwind CSS",
+        "HTML5 / CSS3",
+        "Bootstrap",
+        "Responsive Design",
+      ],
+    },
+    {
+      title: "Backend & Architecture",
+      iconName: "backend",
+      type: "development",
+      description:
+        "Developing secure REST APIs, scalable MVC architectures, and robust server-side business logic.",
+      skills: [
+        "PHP",
+        "Java / Spring Boot",
+        "Spring Security",
+        "Laravel",
+        "REST APIs",
+        "Supabase",
+        "MVC Architecture",
+        "Parameterized Queries",
+      ],
+    },
+    {
+      title: "Databases & Persistence",
+      iconName: "databases",
+      type: "development",
+      description:
+        "Relational data modeling, query optimization, structured persistence, and anti-SQLi measures.",
+      skills: [
+        "MySQL",
+        "PostgreSQL",
+        "MariaDB",
+        "Spring Data JPA / Hibernate",
+        "MySQLi",
+        "Secure SQL",
+        "Normalization",
+      ],
+    },
+    {
+      title: "DevOps & Tools",
+      iconName: "devops",
+      type: "development",
+      description:
+        "Environment containerization, web servers, version control workflows, and developer tooling.",
+      skills: [
+        "Docker & Docker Compose",
+        "Cloudflare Pages",
+        "Git",
+        "GitHub & GitLab",
+        "Postman",
+        "NPM",
+        "Figma",
+      ],
+    },
+  ],
   experience: [
     {
       date: "March 2025 - June 2025",
@@ -57,16 +206,16 @@ const en: Translation = {
     {
       title: "EcoNane",
       description:
-        "Web platform and management system for the EcoNane 4D/5D emotional ultrasound clinic in Villajoyosa. Developed with Vue 3, TypeScript, and Tailwind CSS, integrating Supabase for cloud database and session storage, and deployed on Cloudflare Pages with Serverless Functions and Resend for bookings and automated email notifications.",
+        "Production web platform with an AppSec (secure development) focus for a 5D ultrasound clinic. Features IDOR mitigation via 4-digit PIN verification on download links, strict sanitization against XSS and spam (honeypot), SHA-256 hashing, and Cloudflare OWASP security headers.",
       image: "/projects/econane.webp",
       imageAlt: "Screenshot of the EcoNane application",
-      languages: ["Vue", "TypeScript", "TailwindCSS", "Supabase"],
+      languages: ["Vue", "TypeScript", "TailwindCSS", "Supabase", "Cloudflare"],
       url: "https://econane.es",
     },
     {
       title: "Repair Shop",
       description:
-        "Full Stack SPA with Vue, Spring Boot, and MySQL, containerized with Docker. Includes complete CRUD functionality, authentication with Spring Security, and role-based access control.",
+        "Full Stack SPA with Vue, Spring Boot, and MySQL, containerized with Docker. Features complete CRUD operations, stateless security architecture with Spring Security & JWT, Role-Based Access Control (RBAC), BCrypt password hashing, and typed JPA queries against SQLi.",
       repositories: [
         {
           label: "Frontend",
@@ -85,7 +234,7 @@ const en: Translation = {
     {
       title: "Download Stats Panel",
       description:
-        "Full Stack platform (PHP/MySQL) containerized with Docker. Includes an analytical dashboard with interactive charts, secure authentication, and custom MVC architecture.",
+        "Full Stack platform (PHP/MySQL) containerized with Docker. Features an analytical dashboard with interactive charts, custom MVC architecture, user session authentication, input sanitization, and strict SQL Injection (SQLi) prevention using MySQLi prepared statements.",
       repositories: [
         {
           label: "GitHub",
@@ -143,48 +292,6 @@ const en: Translation = {
         "Compulsory Secondary Education (ESO) at IES Andreu Sempere in Alcoy. General training in various subjects.",
     },
   ],
-  demo: "Demo",
-  servicesPage: {
-    hero: {
-      title: "Your business online, fast and secure",
-      subtitle:
-        "Creation of professional, modern, responsive and fully secure websites, without technical jargon.",
-      cta: "I want my secure website",
-    },
-    featuredService: {
-      title: "Professional Website + Basic Security Kit",
-      priceLabel: "One-time price",
-      price: "500 €",
-      features: [
-        "Modern and responsive design.",
-        "SSL Certificate (HTTPS) and secure configuration.",
-        "Contact form protection.",
-        "Final security report in plain language.",
-        "Delivery in 5 working days.",
-        "Technical support for 15 days.",
-      ],
-    },
-    additionalServices: {
-      title: "Additional Services",
-      audit: {
-        title: "Web Security Audit",
-        description:
-          "I analyze your current website with professional tools and provide a report with solutions.",
-        price: "From 200 €",
-      },
-      customDev: {
-        title: "Custom Feature Development",
-        description:
-          "Need a booking system, client panel or something more complex? I develop it with the same security guarantees.",
-        price: "Custom quote",
-      },
-    },
-    finalCta: {
-      buttonText: "Talk to me with no obligation",
-      supportText:
-        "Have an idea in mind?<br />Write to me and let's see how to shape it securely.",
-    },
-  },
 };
 
 export default en;

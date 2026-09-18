@@ -3,10 +3,10 @@ export interface Translation {
   nav: {
     experience: { title: string; href: string };
     projects: { title: string; href: string };
+    skills: { title: string; href: string };
     studies: { title: string; href: string };
     about: { title: string; href: string };
     contact: { title: string; href: string };
-    services: { title: string; href: string };
   };
   castilian: string;
   english: string;
@@ -18,6 +18,8 @@ export interface Translation {
     selectorText: string;
   };
   curriculum: string;
+  curriculumDev: string;
+  curriculumCyber: string;
   contactMe: string;
   developedBy: string;
   heroBadge: string;
@@ -26,40 +28,17 @@ export interface Translation {
   code: string;
   demo: string;
   liveSite: string;
+  skillsTitle: string;
+  skillsSubtitle: string;
+  skillsFilters: {
+    all: string;
+    cybersecurity: string;
+    development: string;
+  };
+  skillsCategories: SkillCategory[];
   experience: ExperienceItem[];
   projects: ProjectItem[];
   studies: StudiesItem[];
-  servicesPage: {
-    hero: {
-      title: string;
-      subtitle: string;
-      cta: string;
-    };
-    featuredService: {
-      title: string;
-      priceLabel: string;
-      price: string;
-      features: string[];
-    };
-    additionalServices: {
-      title: string;
-      audit: {
-        title: string;
-        description: string;
-        price: string;
-      };
-      customDev: {
-        title: string;
-        description: string;
-        price: string;
-      };
-    };
-
-    finalCta: {
-      buttonText: string;
-      supportText: string;
-    };
-  };
 }
 
 export interface ExperienceItem {
@@ -84,4 +63,20 @@ export interface StudiesItem {
   title: string;
   institution: string;
   description: string;
+}
+
+export interface SkillCategory {
+  title: string;
+  iconName:
+    | "offensive"
+    | "defensive"
+    | "forensics"
+    | "systems"
+    | "frontend"
+    | "backend"
+    | "databases"
+    | "devops";
+  type: "cybersecurity" | "development";
+  description: string;
+  skills: string[];
 }
