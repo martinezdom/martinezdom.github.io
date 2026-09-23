@@ -43,7 +43,6 @@ const es: Translation = {
   skillsSubtitle:
     "Especialización técnica en desarrollo de software full-stack, infraestructura de sistemas y seguridad ofensiva/defensiva.",
   skillsFilters: {
-    all: "Todas",
     cybersecurity: "Ciberseguridad",
     development: "Desarrollo Web",
   },

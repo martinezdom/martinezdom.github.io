@@ -43,7 +43,6 @@ const va: Translation = {
   skillsSubtitle:
     "Especialització tècnica en desenvolupament de programari full-stack, infraestructura de sistemes i seguretat ofensiva/defensiva.",
   skillsFilters: {
-    all: "Totes",
     cybersecurity: "Ciberseguretat",
     development: "Desenvolupament Web",
   },

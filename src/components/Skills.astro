@@ -10,43 +10,6 @@ interface Props {
 const { language } = Astro.props;
 const { skillsSubtitle, skillsFilters, skillsCategories } = language;
 
-const CATEGORY_STYLES: Record<
-  string,
-  { iconBg: string; pillHover: string }
-> = {
-  offensive: {
-    iconBg: "bg-rose-500/10 dark:bg-rose-400/10 text-rose-600 dark:text-rose-400 border-rose-500/20",
-    pillHover: "hover:border-rose-400 dark:hover:border-rose-400/60 hover:text-rose-600 dark:hover:text-rose-300",
-  },
-  defensive: {
-    iconBg: "bg-sky-500/10 dark:bg-sky-400/10 text-sky-600 dark:text-sky-400 border-sky-500/20",
-    pillHover: "hover:border-sky-400 dark:hover:border-sky-400/60 hover:text-sky-600 dark:hover:text-sky-300",
-  },
-  forensics: {
-    iconBg: "bg-amber-500/10 dark:bg-amber-400/10 text-amber-600 dark:text-amber-400 border-amber-500/20",
-    pillHover: "hover:border-amber-400 dark:hover:border-amber-400/60 hover:text-amber-600 dark:hover:text-amber-300",
-  },
-  systems: {
-    iconBg: "bg-emerald-500/10 dark:bg-emerald-400/10 text-emerald-600 dark:text-emerald-400 border-emerald-500/20",
-    pillHover: "hover:border-emerald-400 dark:hover:border-emerald-400/60 hover:text-emerald-600 dark:hover:text-emerald-300",
-  },
-  frontend: {
-    iconBg: "bg-purple-500/10 dark:bg-purple-400/10 text-purple-600 dark:text-purple-400 border-purple-500/20",
-    pillHover: "hover:border-purple-400 dark:hover:border-purple-400/60 hover:text-purple-600 dark:hover:text-purple-300",
-  },
-  backend: {
-    iconBg: "bg-indigo-500/10 dark:bg-indigo-400/10 text-indigo-600 dark:text-indigo-400 border-indigo-500/20",
-    pillHover: "hover:border-indigo-400 dark:hover:border-indigo-400/60 hover:text-indigo-600 dark:hover:text-indigo-300",
-  },
-  databases: {
-    iconBg: "bg-teal-500/10 dark:bg-teal-400/10 text-teal-600 dark:text-teal-400 border-teal-500/20",
-    pillHover: "hover:border-teal-400 dark:hover:border-teal-400/60 hover:text-teal-600 dark:hover:text-teal-300",
-  },
-  devops: {
-    iconBg: "bg-blue-500/10 dark:bg-blue-400/10 text-blue-600 dark:text-blue-400 border-blue-500/20",
-    pillHover: "hover:border-blue-400 dark:hover:border-blue-400/60 hover:text-blue-600 dark:hover:text-blue-300",
-  },
-};
 ---
 
 <div class="space-y-8">
@@ -56,62 +19,44 @@ const CATEGORY_STYLES: Record<
     </p>
   )}
 
-  <!-- Selector de filtros con estilo SocialPill -->
-  <div class="flex flex-wrap items-center gap-3">
-    <button
-      type="button"
-      data-filter="all"
-      class="skill-filter-btn group inline-flex cursor-pointer items-center justify-center gap-2 rounded-full border border-indigo-500 bg-indigo-500 px-4 py-1 text-xs md:text-sm font-semibold text-white shadow-xs transition-colors duration-200 hover:border-indigo-500 hover:bg-indigo-500 hover:text-white focus:outline-none dark:border-yellow-200/90 dark:bg-yellow-200/90 dark:text-indigo-950 dark:hover:border-yellow-200/90 dark:hover:bg-yellow-200/90 dark:hover:text-indigo-950"
+  <!-- Selector segmentado de habilidades -->
+  <div class="flex justify-center">
+    <div
+      class="inline-flex items-center rounded-full border border-indigo-500/20 bg-slate-100/90 p-1.5 backdrop-blur-xs dark:border-slate-800 dark:bg-slate-900/90"
     >
-      <svg
-        class="size-4 shrink-0"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+      <button
+        type="button"
+        data-filter="cybersecurity"
+        class="skill-filter-btn inline-flex cursor-pointer items-center justify-center gap-2 rounded-full px-5 py-2 text-sm font-semibold transition-all duration-200 bg-indigo-600 text-white shadow-xs dark:bg-yellow-400 dark:text-slate-950 focus:outline-none"
       >
-        <rect width="7" height="7" x="3" y="3" rx="1"></rect>
-        <rect width="7" height="7" x="14" y="3" rx="1"></rect>
-        <rect width="7" height="7" x="14" y="14" rx="1"></rect>
-        <rect width="7" height="7" x="3" y="14" rx="1"></rect>
-      </svg>
-      {skillsFilters.all}
-    </button>
-    <button
-      type="button"
-      data-filter="cybersecurity"
-      class="skill-filter-btn group inline-flex cursor-pointer items-center justify-center gap-2 rounded-full border border-indigo-500/40 bg-slate-100 px-4 py-1 text-xs md:text-sm font-medium text-slate-700 transition-colors duration-200 hover:border-indigo-500 hover:bg-indigo-500 hover:text-white focus:outline-none dark:border-yellow-200 dark:bg-transparent dark:text-slate-200 dark:hover:border-yellow-200/90 dark:hover:bg-yellow-200/90 dark:hover:text-indigo-950"
-    >
-      <Shield class="size-4 shrink-0" />
-      {skillsFilters.cybersecurity}
-    </button>
-    <button
-      type="button"
-      data-filter="development"
-      class="skill-filter-btn group inline-flex cursor-pointer items-center justify-center gap-2 rounded-full border border-indigo-500/40 bg-slate-100 px-4 py-1 text-xs md:text-sm font-medium text-slate-700 transition-colors duration-200 hover:border-indigo-500 hover:bg-indigo-500 hover:text-white focus:outline-none dark:border-yellow-200 dark:bg-transparent dark:text-slate-200 dark:hover:border-yellow-200/90 dark:hover:bg-yellow-200/90 dark:hover:text-indigo-950"
-    >
-      <Code class="size-4 shrink-0" />
-      {skillsFilters.development}
-    </button>
+        <Shield class="size-4 shrink-0" />
+        {skillsFilters.cybersecurity}
+      </button>
+      <button
+        type="button"
+        data-filter="development"
+        class="skill-filter-btn inline-flex cursor-pointer items-center justify-center gap-2 rounded-full px-5 py-2 text-sm font-medium transition-all duration-200 bg-transparent text-slate-600 hover:text-indigo-600 dark:text-slate-400 dark:hover:text-yellow-400 focus:outline-none"
+      >
+        <Code class="size-4 shrink-0" />
+        {skillsFilters.development}
+      </button>
+    </div>
   </div>
 
   <!-- Grid de tarjetas de habilidades -->
   <div id="skills-grid" class="grid grid-cols-1 gap-6 md:grid-cols-2">
     {
       skillsCategories?.map((category) => {
-        const style =
-          CATEGORY_STYLES[category.iconName] || CATEGORY_STYLES.backend;
+        const isHidden = category.type !== "cybersecurity";
         return (
           <div
             data-type={category.type}
-            class="skill-card group relative flex flex-col justify-between rounded-2xl border border-indigo-500/20 bg-white/60 p-6 shadow-xs backdrop-blur-xs transition-all duration-300 hover:-translate-y-1 hover:border-indigo-500/50 hover:shadow-md dark:border-slate-800 dark:bg-slate-900/60 dark:hover:border-indigo-500/40"
+            class={`skill-card group relative flex flex-col justify-between rounded-2xl border border-indigo-500/20 bg-white/60 p-6 shadow-xs backdrop-blur-xs transition-all duration-300 hover:-translate-y-1 hover:border-indigo-500/50 hover:shadow-md dark:border-slate-800 dark:bg-slate-900/60 dark:hover:border-yellow-400/40 ${isHidden ? "hidden" : ""}`}
           >
             <div>
               <div class="mb-4 flex items-center gap-3">
                 <div
-                  class={`flex size-11 items-center justify-center rounded-xl border ${style.iconBg}`}
+                  class="flex size-11 items-center justify-center rounded-xl border border-indigo-500/20 bg-indigo-500/10 text-indigo-500 dark:border-yellow-400/20 dark:bg-yellow-400/10 dark:text-yellow-400"
                 >
                   {category.iconName === "offensive" && (
                     <svg
@@ -247,7 +192,7 @@ const CATEGORY_STYLES: Record<
               {category.skills.map((skill) => (
                 <li>
                   <span
-                    class={`inline-flex items-center rounded-lg border border-slate-200 bg-white/90 px-2.5 py-1 text-xs font-medium text-slate-700 shadow-2xs transition-all duration-200 hover:scale-105 dark:border-slate-700/80 dark:bg-slate-800/90 dark:text-slate-200 ${style.pillHover}`}
+                    class="inline-flex items-center rounded-lg border border-slate-200 bg-white/90 px-2.5 py-1 text-xs font-medium text-slate-700 shadow-2xs transition-all duration-200 hover:scale-105 hover:border-indigo-500 hover:text-indigo-600 dark:border-slate-700/80 dark:bg-slate-800/90 dark:text-slate-200 dark:hover:border-yellow-400 dark:hover:text-yellow-400"
                   >
                     {skill}
                   </span>
@@ -266,32 +211,31 @@ const CATEGORY_STYLES: Record<
     const filterButtons = document.querySelectorAll(".skill-filter-btn");
     const skillCards = document.querySelectorAll(".skill-card");
 
+    if (!filterButtons.length || !skillCards.length) return;
+
     const activeClasses = [
-      "border-indigo-500",
-      "bg-indigo-500",
+      "bg-indigo-600",
       "text-white",
-      "dark:border-yellow-200/90",
-      "dark:bg-yellow-200/90",
-      "dark:text-indigo-950",
-      "font-semibold",
       "shadow-xs",
+      "dark:bg-yellow-400",
+      "dark:text-slate-950",
+      "font-semibold",
     ];
 
     const inactiveClasses = [
-      "border-indigo-500/40",
-      "bg-slate-100",
-      "text-slate-700",
-      "dark:border-yellow-200",
-      "dark:bg-transparent",
-      "dark:text-slate-200",
+      "bg-transparent",
+      "text-slate-600",
+      "hover:text-indigo-600",
+      "dark:text-slate-400",
+      "dark:hover:text-yellow-400",
       "font-medium",
     ];
 
     filterButtons.forEach((btn) => {
-      btn.addEventListener("click", () => {
+      btn.onclick = () => {
         const filter = btn.getAttribute("data-filter");
 
-        // Actualizar estilos del botón activo
+        // Actualizar estilos del botón activo / inactivo
         filterButtons.forEach((b) => {
           if (b === btn) {
             b.classList.remove(...inactiveClasses);
@@ -305,16 +249,20 @@ const CATEGORY_STYLES: Record<
         // Filtrar tarjetas
         skillCards.forEach((card) => {
           const cardType = card.getAttribute("data-type");
-          if (filter === "all" || cardType === filter) {
+          if (cardType === filter) {
             card.classList.remove("hidden");
           } else {
             card.classList.add("hidden");
           }
         });
-      });
+      };
     });
   };
 
-  document.addEventListener("DOMContentLoaded", initSkillFilters);
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initSkillFilters);
+  } else {
+    initSkillFilters();
+  }
   document.addEventListener("astro:after-swap", initSkillFilters);
 </script>

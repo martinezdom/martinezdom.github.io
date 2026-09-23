@@ -31,7 +31,6 @@ export interface Translation {
   skillsTitle: string;
   skillsSubtitle: string;
   skillsFilters: {
-    all: string;
     cybersecurity: string;
     development: string;
   };
