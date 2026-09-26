@@ -93,6 +93,8 @@ const es: Translation = {
         "Autopsy (Forense)",
         "Volatility (RAM)",
         "FTK Imager",
+        "Análisis de Rootkits (Singularity)",
+        "Detección de Rootkits",
         "OpenSSL",
         "GnuPG (GPG)",
         "Criptografía (SHA-256 / RSA)",
