@@ -28,13 +28,9 @@ const va: Translation = {
   heroDescription:
     "D'Alcoi, Espanya. <span class='text-indigo-500 dark:text-yellow-200/90'>Desenvolupador Web</span> i <span class='text-indigo-500 dark:text-yellow-200/90'>especialista en ciberseguretat</span>. M'agrada cuidar cada detall al màxim, crear les millors experiències i que tot siga <span class='text-indigo-500 dark:text-yellow-200/90'>segur</span>.",
   aboutMe: [
-    "Em dic Miguel Ángel encara que també em coneixen com a <strong><a href='https://github.com/martinezdom' target='_blank'>martinezdom</a></strong>.",
-    "Des de ben menut, m'agradava estar trastejant amb l'ordinador, la qual cosa m'ha portat a formar-me en el <strong>món de la informàtica</strong>.",
-    "Compto amb formació especialitzada en <strong>ciberseguretat</strong>, la qual cosa em permet aportar un enfocament centrat en la seguretat, bones pràctiques i protecció en cada desenvolupament que realitze.",
-    "Una cosa que em caracteritza és que m'agrada <strong>cuidar cada xicotet detall del que faig</strong>, no m'agrada veure xicolets falles que molesten l'experiència de l'usuari encara que siga mínimament.",
-    "El meu objectiu sempre serà <strong>seguir aprenent lo màxim possible</strong> y poder ajudar als altres.",
-    "Sóc molt <strong>autodidacte</strong>, m'agrada sempre aprendre coses noves i <strong>aprofundir més</strong> en lo que ja conec.",
-    "En l'era de la <strong>IA</strong>, tot i que està en auge, procuro <strong>mantenir-me al dia</strong> i <strong>saber utilitzar-la</strong>, però realment l'use només quan realment m'<strong>estalvia temps</strong>. No sóc gaire partidari de <strong>abusar-ne</strong>, si no ho entenc, consulte la <strong>documentació oficial</strong> o cerque en fòrums per assegurar-me que entenc tot el que escric.",
+    "Em dic Miguel Ángel, encara que a la comunitat tècnica també em coneixen com a <strong><a href='https://github.com/martinezdom' target='_blank'>martinezdom</a></strong>. La meua passió per la informàtica va començar des de ben menut trastejant amb ordinadors, la qual cosa em va portar a formar-me sòlidament a través de <strong>Sistemes Microinformàtics i Xarxes (SMR)</strong>, <strong>Desenvolupament d'Aplicacions Web (DAW)</strong> i la posterior <strong>Especialització en Ciberseguretat</strong>.",
+    "Compto amb un perfil versàtil que combina el <strong>desenvolupament de programari</strong> amb la <strong>seguretat tècnica</strong> i l'<strong>administració de sistemes</strong>. Aquesta visió integral em permet abordar projectes prioritzant les bones pràctiques, la prevenció de vulnerabilitats des del disseny i la protecció de la informació.",
+    "Una cosa que em defineix és la <strong>cura meticulosa per cada detall</strong>. Sóc una persona analítica i <strong>autodidacte</strong>, motivada per comprendre a fons com funcionen els sistemes per dins i en aprenentatge constant davant de nous reptes tecnològics.",
   ],
   code: "Codi",
   demo: "Demo",
@@ -258,7 +254,7 @@ const va: Translation = {
       image: "/projects/dom_books.webp",
       imageAlt: "Captura de pantalla de l'aplicació Dom Books",
       languages: ["Vue", "TailwindCSS"],
-      url: "http://localhost:5173",
+      url: "https://dom-books.vercel.app",
     },
   ],
   studies: [
@@ -267,7 +263,11 @@ const va: Translation = {
       title: "Curs d'especialitzacio en Ciberseguretat",
       institution: "CIP FP Batoi",
       description:
-        "Curs d'especialitzacio en Ciberseguretat. Formacio avançada en seguretat informatica, incloent analisi de vulnerabilitats, gestio d'incidents, proteccio de dades i infraestructura.",
+        "Formació avançada en seguretat informàtica, auditories web, anàlisi forense (DFIR) i bastionat de sistemes. Inclou el projecte integral d'infraestructura corporativa multiseu: desplegament de clúster Proxmox VE amb NGFW OPNsense, Active Directory i flux defensiu SOC automatitzat (Wazuh SIEM + n8n SOAR + TheHive 5).",
+      link: {
+        label: "Veure projecte a GitHub",
+        url: "https://github.com/martinezdom/infraestructura-segura-soc",
+      },
     },
     {
       date: "2023 - 2025",

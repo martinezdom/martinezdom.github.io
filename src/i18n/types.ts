@@ -62,6 +62,7 @@ export interface StudiesItem {
   title: string;
   institution: string;
   description: string;
+  link?: { label: string; url: string };
 }
 
 export interface SkillCategory {

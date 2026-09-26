@@ -1,12 +1,16 @@
 ---
+import LinkButton from "@/components/icons/LinkButton.astro";
+import Github from "@/components/icons/Github.astro";
+
 interface Props {
   date: string;
   title: string;
   institution: string;
   description: string;
+  link?: { label: string; url: string };
 }
 
-const { date, title, institution, description } = Astro.props;
+const { date, title, institution, description, link } = Astro.props;
 ---
 
 <div
@@ -26,6 +30,15 @@ const { date, title, institution, description } = Astro.props;
 </h4>
 <p
   class="mb-4 text-base font-normal text-pretty text-gray-500 dark:text-gray-400"
->
-  {description}
-</p>
+  set:html={description}
+/>
+{
+  link && (
+    <div class="mt-2 mb-2">
+      <LinkButton href={link.url}>
+        <Github class="size-4" />
+        {link.label}
+      </LinkButton>
+    </div>
+  )
+}

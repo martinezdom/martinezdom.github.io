@@ -28,13 +28,9 @@ const es: Translation = {
   heroDescription:
     "De Alcoy, España. <span class='text-indigo-500 dark:text-yellow-200/90'>Desarrollador Web</span> y <span class='text-indigo-500 dark:text-yellow-200/90'>especialista en ciberseguridad</span>. Me gusta cuidar cada detalle al máximo, crear las mejores experiencias y que todo sea <span class='text-indigo-500 dark:text-yellow-200/90'>seguro</span>.",
   aboutMe: [
-    "Me llamo Miguel Ángel aunque también me conocen como <strong><a href='https://github.com/martinezdom' target='_blank'>martinezdom</a></strong>.",
-    "Desde bien pequeño, me gustaba estar trasteando con el ordenador, lo que me ha llevado a formarme en el <strong>mundo de la informática</strong>.",
-    "Cuento con formación especializada en <strong>ciberseguridad</strong>, lo que me permite aportar un enfoque centrado en la seguridad, buenas prácticas y protección en cada desarrollo que realizo.",
-    "Algo que me caracteriza es que me gusta <strong>cuidar cada pequeño detalle de lo que hago</strong>, no me gusta ver pequeños fallos que molesten la experiencia del usuario aunque sea mínimamente.",
-    "Mi objetivo siempre será <strong>seguir aprendiendo lo máximo posible</strong> y poder ayudar a los demás.",
-    "Soy muy <strong>autodidacta</strong>, me gusta siempre aprender cosas nuevas y profundizar más en lo que <strong>ya conozco</strong>.",
-    "En la era de la <strong>IA</strong>, aunque esté en auge, procuro <strong>mantenerme al día</strong> y <strong>saber utilizarla</strong>, pero realmente la empleo solo cuando realmente me <strong>ahorra tiempo</strong>. No me gusta <strong>abusar de ella</strong>, si algo no lo entiendo, prefiero consultar la <strong>documentación oficial</strong> o busco en foros para asegurarme de comprender lo que escribo.",
+    "Me llamo Miguel Ángel, aunque en la comunidad técnica también me conocen como <strong><a href='https://github.com/martinezdom' target='_blank'>martinezdom</a></strong>. Mi pasión por la informática empezó desde bien pequeño trasteando con ordenadores, lo que me llevó a formarme sólidamente a través de <strong>Sistemas Microinformáticos y Redes (SMR)</strong>, <strong>Desarrollo de Aplicaciones Web (DAW)</strong> y la posterior <strong>Especialización en Ciberseguridad</strong>.",
+    "Cuento con un perfil versátil que combina el <strong>desarrollo de software</strong> con la <strong>seguridad técnica</strong> y la <strong>administración de sistemas</strong>. Esta visión integral me permite abordar proyectos priorizando las buenas prácticas, la prevención de vulnerabilidades desde el diseño y la protección de la información.",
+    "Algo que me define es el <strong>cuidado meticuloso por cada detalle</strong>. Soy una persona analítica y <strong>autodidacta</strong>, motivada por comprender a fondo cómo funcionan los sistemas por dentro y en constante aprendizaje frente a nuevos retos tecnológicos.",
   ],
   code: "Código",
   demo: "Demo",
@@ -258,7 +254,7 @@ const es: Translation = {
       image: "/projects/dom_books.webp",
       imageAlt: "Captura de pantalla de la aplicación Dom Books",
       languages: ["Vue", "TailwindCSS"],
-      url: "http://localhost:5173",
+      url: "https://dom-books.vercel.app",
     },
   ],
   studies: [
@@ -267,7 +263,11 @@ const es: Translation = {
       title: "Curso de especialización en Ciberseguridad",
       institution: "CIP FP Batoi",
       description:
-        "Curso de especialización en Ciberseguridad. Formación avanzada en seguridad informática, incluyendo análisis de vulnerabilidades, gestión de incidentes, protección de datos e infraestructura.",
+        "Formación avanzada en seguridad informática, auditorías web, análisis forense (DFIR) y bastionado de sistemas. Incluye el proyecto integral de infraestructura corporativa multisitio: despliegue de clúster Proxmox VE con NGFW OPNsense, Active Directory y flujo defensivo SOC automatizado (Wazuh SIEM + n8n SOAR + TheHive 5).",
+      link: {
+        label: "Ver proyecto en GitHub",
+        url: "https://github.com/martinezdom/infraestructura-segura-soc",
+      },
     },
     {
       date: "2023 - 2025",

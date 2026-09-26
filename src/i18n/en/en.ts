@@ -28,13 +28,9 @@ const en: Translation = {
   heroDescription:
     "From Alcoy, Spain. <span class='text-indigo-500 dark:text-yellow-200/90'>Web Developer</span> and <span class='text-indigo-500 dark:text-yellow-200/90'>cybersecurity specialist</span>. I love taking care of every detail to the maximum, creating the best experiences and that everything is <span class='text-indigo-500 dark:text-yellow-200/90'>secure</span>.",
   aboutMe: [
-    "My name is Miguel Ángel, although I'm also known as <strong><a href='https://github.com/martinezdom' target='_blank'>martinezdom</a></strong>.",
-    "Since I was very young, I loved tinkering with computers, which led me to train in the <strong>world of computing</strong>.",
-    "I have specialized training in <strong>cybersecurity</strong>, allowing me to bring a security-focused mindset, best practices, and protection to every project I build.",
-    "Something that characterizes me is that I like to <strong>take care of every small detail of what I do</strong>, I don't like to see small flaws that disrupt the user experience, even minimally.",
-    "My goal will always be to <strong>keep learning as much as possible</strong> and to be able to help others.",
-    "I am very <strong>self-taught</strong>, I like to always learn new things and <strong>deepen my knowledge</strong> of what I already know.",
-    "In the age of <strong>AI</strong>, even though it's booming, I make a point of <strong>staying updated</strong> and <strong>knowing how to use it</strong>, but actually I only use it when it truly <strong>saves me time</strong>. I'm not a fan of <strong>overusing it</strong>, when I don't understand something, I prefer to check the <strong>official documentation</strong> or search forums to make sure I fully understand what I write.",
+    "My name is Miguel Ángel, although in the technical community I'm also known as <strong><a href='https://github.com/martinezdom' target='_blank'>martinezdom</a></strong>. My passion for computing started at a young age tinkering with computers, which led me to build a solid foundation through <strong>Microcomputer Systems and Networks (SMR)</strong>, <strong>Web Application Development (DAW)</strong>, and a postgraduate <strong>Specialization in Cybersecurity</strong>.",
+    "I have a versatile profile combining <strong>software development</strong> with <strong>technical security</strong> and <strong>systems administration</strong>. This comprehensive perspective enables me to approach projects prioritizing best practices, secure-by-design principles, and information protection.",
+    "Something that defines me is my <strong>meticulous attention to detail</strong>. I am an analytical, <strong>self-taught</strong> professional driven to deeply understand how systems work from the inside out, constantly learning to tackle new technological challenges.",
   ],
   code: "Code",
   demo: "Demo",
@@ -258,7 +254,7 @@ const en: Translation = {
       image: "/projects/dom_books.webp",
       imageAlt: "Screenshot of the Dom Books application",
       languages: ["Vue", "TailwindCSS"],
-      url: "http://localhost:5173",
+      url: "https://dom-books.vercel.app",
     },
   ],
   studies: [
@@ -267,7 +263,11 @@ const en: Translation = {
       title: "Cybersecurity Specialization Course",
       institution: "CIP FP Batoi",
       description:
-        "Cybersecurity specialization course. Advanced training in information security, including vulnerability analysis, incident management, data protection, and infrastructure.",
+        "Advanced training in information security, web audits, digital forensics (DFIR), and systems hardening. Includes multi-site corporate infrastructure capstone project: Proxmox VE cluster deployment with OPNsense NGFW, Active Directory, and automated defensive SOC pipeline (Wazuh SIEM + n8n SOAR + TheHive 5).",
+      link: {
+        label: "View project on GitHub",
+        url: "https://github.com/martinezdom/infraestructura-segura-soc",
+      },
     },
     {
       date: "2023 - 2025",
