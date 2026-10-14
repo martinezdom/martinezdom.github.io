@@ -203,7 +203,7 @@ const va: Translation = {
     {
       title: "EcoNane",
       description:
-        "Plataforma web en producció amb enfocament AppSec (seguretat en el desenvolupament) per a clínica d'ecografies 5D. Implementa mitigació d'IDOR mitjançant validació PIN de 4 dígits en enllaços de descàrrega, sanitització estricta contra XSS i spam (honeypot), xifratge SHA-256 i capçaleres OWASP en Cloudflare.",
+        "Plataforma web, motor de reserves online i sistema de facturació/TPV en producció amb enfocament AppSec per a clínica d'ecografies 5D. Integra assistent de reserves amb càlcul dinàmic d'espais lliures, agenda connectada a cobrament en caixa, arqueig diari, exportació comptable a Excel/CSV, tiquets digitals amb tokens criptogràfics anti-IDOR, sanitització estricta (XSS/spam) i capçaleres OWASP en Cloudflare.",
       image: "/projects/econane.webp",
       imageAlt: "Captura de pantalla de l'aplicació EcoNane",
       languages: ["Vue", "TypeScript", "TailwindCSS", "Supabase", "Cloudflare"],
