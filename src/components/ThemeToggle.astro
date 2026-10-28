@@ -1,183 +1,162 @@
 ---
 import SunIcon from "./icons/Sun.astro";
 import MoonIcon from "./icons/Moon.astro";
-import SystemIcon from "./icons/System.astro";
-const { language, position = "top" } = Astro.props;
+import type { Translation } from "@/i18n/types";
 
-const THEMES = [
-  { label: language.themes.light, value: "light", icon: SunIcon },
-  { label: language.themes.dark, value: "dark", icon: MoonIcon },
-  { label: language.themes.system, value: "system", icon: SystemIcon },
-];
+interface Props {
+  language: Translation;
+  variant?: "header" | "side" | "footer";
+  position?: "top" | "bottom";
+}
 
-const buttonClasses =
-  "rounded-full flex items-center justify-center size-10 border-2 border-indigo-500 dark:border-yellow-500 text-indigo-500 dark:text-yellow-400 bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm hover:border-indigo-500 hover:bg-indigo-500 hover:text-white hover:scale-110 dark:hover:bg-yellow-500 dark:hover:border-yellow-500 dark:hover:text-slate-900 cursor-pointer transition-all duration-300 shadow-lg hover:shadow-indigo-500/50 dark:hover:shadow-yellow-500/50 aria-[expanded=true]:bg-indigo-500 aria-[expanded=true]:text-white aria-[expanded=true]:border-indigo-500 aria-[expanded=true]:scale-110 aria-[expanded=true]:shadow-indigo-500/50 aria-[expanded=true]:dark:bg-yellow-500 aria-[expanded=true]:dark:border-yellow-500 aria-[expanded=true]:dark:text-slate-900 aria-[expanded=true]:dark:shadow-yellow-500/50";
+const { language, variant = "footer" } = Astro.props;
 
-const menuPositionClass =
-  position === "bottom" ? "bottom-full mb-1.5" : "top-full mt-1.5";
+const footerButtonClasses =
+  "theme-toggle-btn theme-toggle-glitter glitter relative z-10 flex size-10 cursor-pointer items-center justify-center rounded-full border-2 border-indigo-500 bg-white/80 p-1 text-indigo-500 shadow-lg backdrop-blur-sm transition-all duration-300 hover:scale-110 hover:border-indigo-500 hover:bg-indigo-500 hover:text-white hover:shadow-indigo-500/50 active:scale-95 dark:border-yellow-500 dark:bg-slate-800/80 dark:text-yellow-400 dark:hover:border-yellow-500 dark:hover:bg-yellow-500 dark:hover:text-slate-900 dark:hover:shadow-yellow-500/50";
+
+const headerButtonClasses =
+  "theme-toggle-btn flex size-7 cursor-pointer items-center justify-center rounded-full text-slate-900 transition-all duration-200 hover:scale-110 hover:text-indigo-600 dark:text-white dark:hover:text-yellow-400 active:scale-95";
+
+const sideButtonClasses =
+  "theme-toggle-btn flex size-5 cursor-pointer items-center justify-center text-slate-500 transition-colors duration-200 hover:text-indigo-500 dark:text-slate-400 dark:hover:text-yellow-400 active:scale-95";
 ---
 
-<div
-  class="theme-toggle-container relative z-50 flex items-center justify-center"
->
-  <button
-    id="theme-toggle"
-    aria-expanded="false"
-    class={`${buttonClasses} theme-toggle-glitter relative glitter p-1 z-10`}
-    aria-haspopup="menu"
-  >
-    <span class="sr-only">{language.themes.selectorText}</span>
+{
+  variant === "header" && (
+    <button
+      type="button"
+      aria-label={language.themes.selectorText}
+      title={language.themes.selectorText}
+      class={headerButtonClasses}
+    >
+      <span class="theme-icon-light hidden items-center justify-center">
+        <SunIcon class="size-[20px]" />
+      </span>
+      <span class="theme-icon-dark hidden items-center justify-center">
+        <MoonIcon class="size-[18px]" />
+      </span>
+    </button>
+  )
+}
 
-    <span
-      id="light"
-      class="theme-main-icon absolute inset-0 m-auto flex size-5 items-center justify-center"
-    >
-      <SunIcon />
-    </span>
-    <span
-      id="dark"
-      class="theme-main-icon absolute inset-0 m-auto flex size-5 items-center justify-center"
-    >
-      <MoonIcon />
-    </span>
-    <span
-      id="system"
-      class="theme-main-icon absolute inset-0 m-auto flex size-5 items-center justify-center"
-    >
-      <SystemIcon />
-    </span>
-  </button>
+{
+  variant === "side" && (
+    <div class="group relative flex items-center justify-center p-1 text-xs transition-transform duration-200 hover:scale-125 cursor-pointer">
+      {/* Tooltip hacia la izquierda */}
+      <span
+        class="pointer-events-none absolute right-full mr-3.5 translate-x-2 whitespace-nowrap rounded-lg border border-indigo-500/30 bg-slate-900/90 px-2.5 py-1 text-xs font-semibold text-white opacity-0 shadow-xl backdrop-blur-md transition-all duration-200 group-hover:translate-x-0 group-hover:opacity-100 dark:border-yellow-200/40 dark:bg-slate-100 dark:text-slate-950"
+      >
+        {language.themes.selectorText}
+      </span>
 
-  <div
-    id="theme-menu"
-    class="pointer-events-none absolute top-1/2 right-full mr-2 flex translate-x-8 -translate-y-1/2 flex-row items-center gap-2 rounded-full border border-indigo-500/20 bg-slate-100 px-3 py-1.5 opacity-0 shadow-lg backdrop-blur-md transition-all duration-300 ease-in-out dark:border-white/10 dark:bg-slate-900"
-    role="menu"
-    aria-labelledby="theme-toggle"
-  >
-    {
-      THEMES.map((theme) => (
-        <button
-          class="theme-option flex size-8 cursor-pointer items-center justify-center rounded-full text-zinc-500 transition-colors hover:bg-indigo-100 hover:text-indigo-600 dark:text-zinc-400 dark:hover:bg-white/10 dark:hover:text-yellow-400"
-          data-theme={theme.value}
-          role="menuitem"
-          aria-label={theme.label}
-          title={theme.label}
-        >
-          <span class="sr-only">{theme.label}</span>
-          <span class="flex size-4 items-center justify-center">
-            <theme.icon />
-          </span>
-        </button>
-      ))
-    }
-  </div>
-</div>
+      <button
+        type="button"
+        aria-label={language.themes.selectorText}
+        title={language.themes.selectorText}
+        class={sideButtonClasses}
+      >
+        <span class="theme-icon-light hidden items-center justify-center">
+          <SunIcon class="size-[19px]" />
+        </span>
+        <span class="theme-icon-dark hidden items-center justify-center">
+          <MoonIcon class="size-[17px]" />
+        </span>
+      </button>
+    </div>
+  )
+}
+
+{
+  variant === "footer" && (
+    <button
+      type="button"
+      aria-label={language.themes.selectorText}
+      title={language.themes.selectorText}
+      class={footerButtonClasses}
+    >
+      <span class="theme-icon-light hidden items-center justify-center">
+        <SunIcon class="size-[22px]" />
+      </span>
+      <span class="theme-icon-dark hidden items-center justify-center">
+        <MoonIcon class="size-5" />
+      </span>
+    </button>
+  )
+}
 
 <script is:inline>
-  const themeToggle = document.getElementById("theme-toggle");
-  const themeMenu = document.getElementById("theme-menu");
-  const themeIcons = document.querySelectorAll(".theme-main-icon");
-  const themeOptions = document.querySelectorAll(".theme-option");
-  const colorScheme = window.matchMedia("(prefers-color-scheme: dark)");
+  const initThemeToggles = () => {
+    const isDark = () => document.documentElement.classList.contains("dark");
 
-  const getSavedTheme = () => {
-    const saved = localStorage.getItem("theme");
-    return ["light", "dark", "system"].includes(saved) ? saved : "system";
-  };
+    const updateAllIcons = () => {
+      const dark = isDark();
+      document.querySelectorAll(".theme-toggle-btn").forEach((btn) => {
+        const lightIcon = btn.querySelector(".theme-icon-light");
+        const darkIcon = btn.querySelector(".theme-icon-dark");
 
-  const updateActiveIcon = (theme) => {
-    themeIcons.forEach((icon) => {
-      const isActive = icon.id === theme;
-      icon.classList.toggle("opacity-100", isActive);
-      icon.classList.toggle("opacity-0", !isActive);
+        if (lightIcon && darkIcon) {
+          if (dark) {
+            lightIcon.classList.add("hidden");
+            lightIcon.classList.remove("flex");
+            darkIcon.classList.remove("hidden");
+            darkIcon.classList.add("flex");
+          } else {
+            darkIcon.classList.add("hidden");
+            darkIcon.classList.remove("flex");
+            lightIcon.classList.remove("hidden");
+            lightIcon.classList.add("flex");
+          }
+        }
+      });
+    };
+
+    const toggleTheme = () => {
+      const currentDark = isDark();
+      const nextDark = !currentDark;
+      const nextTheme = nextDark ? "dark" : "light";
+
+      document.documentElement.classList.toggle("dark", nextDark);
+      localStorage.setItem("theme", nextTheme);
+      updateAllIcons();
+    };
+
+    document.querySelectorAll(".theme-toggle-btn").forEach((btn) => {
+      if (btn.dataset.themeBound) return;
+      btn.dataset.themeBound = "true";
+      btn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        toggleTheme();
+      });
     });
 
-    themeOptions.forEach((option) => {
-      const isActive = option.dataset.theme === theme;
-      if (isActive) {
-        option.classList.remove("text-zinc-500", "dark:text-zinc-400");
-        option.classList.add(
-          "bg-indigo-100",
-          "text-indigo-600",
-          "dark:bg-white/10",
-          "dark:text-yellow-400",
-        );
-      } else {
-        option.classList.add("text-zinc-500", "dark:text-zinc-400");
-        option.classList.remove(
-          "bg-indigo-100",
-          "text-indigo-600",
-          "dark:bg-white/10",
-          "dark:text-yellow-400",
-        );
+    updateAllIcons();
+  };
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initThemeToggles);
+  } else {
+    initThemeToggles();
+  }
+  document.addEventListener("astro:after-swap", initThemeToggles);
+
+  // Sincronizar en caso de cambio de tema del sistema operativo
+  if (!window.__themeMediaListenerAdded) {
+    window.__themeMediaListenerAdded = true;
+    window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", (e) => {
+      if (!localStorage.getItem("theme")) {
+        document.documentElement.classList.toggle("dark", e.matches);
+        const isDark = e.matches;
+        document.querySelectorAll(".theme-toggle-btn").forEach((btn) => {
+          const lightIcon = btn.querySelector(".theme-icon-light");
+          const darkIcon = btn.querySelector(".theme-icon-dark");
+          if (lightIcon && darkIcon) {
+            lightIcon.classList.toggle("hidden", isDark);
+            lightIcon.classList.toggle("flex", !isDark);
+            darkIcon.classList.toggle("hidden", !isDark);
+            darkIcon.classList.toggle("flex", isDark);
+          }
+        });
       }
     });
-  };
-
-  const applyTheme = () => {
-    const theme = getSavedTheme();
-    const isDark =
-      theme === "dark" || (theme === "system" && colorScheme.matches);
-
-    document.documentElement.classList.toggle("dark", isDark);
-    updateActiveIcon(theme);
-  };
-
-  const toggleThemeMenu = () => {
-    const isOpen = themeToggle.getAttribute("aria-expanded") === "true";
-
-    if (isOpen) {
-      closeThemeMenu();
-    } else {
-      openThemeMenu();
-    }
-  };
-
-  const openThemeMenu = () => {
-    themeMenu.classList.remove(
-      "opacity-0",
-      "pointer-events-none",
-      "translate-x-8",
-    );
-    themeMenu.classList.add("opacity-100", "translate-x-0");
-    themeToggle.setAttribute("aria-expanded", "true");
-  };
-
-  const closeThemeMenu = () => {
-    themeMenu.classList.remove("opacity-100", "translate-x-0");
-    themeMenu.classList.add(
-      "opacity-0",
-      "pointer-events-none",
-      "translate-x-8",
-    );
-    themeToggle.setAttribute("aria-expanded", "false");
-  };
-
-  const changeTheme = (theme) => {
-    localStorage.setItem("theme", theme);
-    applyTheme();
-    closeThemeMenu();
-  };
-
-  themeToggle.addEventListener("click", (e) => {
-    e.stopPropagation();
-    toggleThemeMenu();
-  });
-
-  document.addEventListener("click", (e) => {
-    if (!themeToggle.contains(e.target) && !themeMenu.contains(e.target)) {
-      closeThemeMenu();
-    }
-  });
-
-  themeOptions.forEach((option) => {
-    option.addEventListener("click", () => {
-      changeTheme(option.dataset.theme);
-    });
-  });
-
-  colorScheme.addEventListener("change", applyTheme);
-  document.addEventListener("astro:after-swap", applyTheme);
-
-  applyTheme();
+  }
 </script>

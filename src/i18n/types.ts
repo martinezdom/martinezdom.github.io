@@ -1,6 +1,7 @@
 export interface Translation {
   prefix?: "es" | "en" | "va";
   nav: {
+    home: { title: string; href: string };
     experience: { title: string; href: string };
     projects: { title: string; href: string };
     skills: { title: string; href: string };

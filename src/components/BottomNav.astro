@@ -1,0 +1,214 @@
+---
+import type { Translation } from "@/i18n/types";
+import Home from "./icons/Home.astro";
+import Briefcase from "./icons/Briefcase.astro";
+import Code from "./icons/Code.astro";
+import Profile from "./icons/Profile.astro";
+import Shield from "./icons/Shield.astro";
+import Book from "./icons/Book.astro";
+import Mail from "./icons/Mail.astro";
+
+interface Props {
+  language: Translation;
+}
+
+const { language } = Astro.props;
+
+const moreLabel =
+  language.prefix === "en"
+    ? "More"
+    : language.prefix === "va"
+      ? "Més"
+      : "Más";
+---
+
+<nav
+  id="bottom-nav"
+  aria-label="Navegación móvil inferior"
+  class="glitter fixed bottom-4 inset-x-4 z-40 mx-auto flex max-w-sm items-center justify-around rounded-full border border-indigo-500/40 bg-white/90 px-3 py-1.5 shadow-2xl backdrop-blur-xl md:hidden dark:border-white/10 dark:bg-slate-900/90"
+>
+  <!-- 1. Inicio -->
+  <a
+    href="#hero"
+    data-bottom-target="hero"
+    class="bottom-nav-item flex flex-col items-center gap-0.5 px-2.5 py-1 text-slate-500 transition-colors hover:text-indigo-600 dark:text-slate-400 dark:hover:text-yellow-400 cursor-pointer"
+    aria-label={language.nav.home.title}
+  >
+    <Home class="size-5" />
+    <span class="text-[10px] leading-none font-medium">{language.nav.home.title}</span>
+  </a>
+
+  <!-- 2. Experiencia -->
+  <a
+    href="#experiencia"
+    data-bottom-target="experiencia"
+    class="bottom-nav-item flex flex-col items-center gap-0.5 px-2.5 py-1 text-slate-500 transition-colors hover:text-indigo-600 dark:text-slate-400 dark:hover:text-yellow-400 cursor-pointer"
+    aria-label={language.nav.experience.title}
+  >
+    <Briefcase class="size-5" />
+    <span class="text-[10px] leading-none font-medium">{language.nav.experience.title}</span>
+  </a>
+
+  <!-- 3. Proyectos -->
+  <a
+    href="#proyectos"
+    data-bottom-target="proyectos"
+    class="bottom-nav-item flex flex-col items-center gap-0.5 px-2.5 py-1 text-slate-500 transition-colors hover:text-indigo-600 dark:text-slate-400 dark:hover:text-yellow-400 cursor-pointer"
+    aria-label={language.nav.projects.title}
+  >
+    <Code class="size-5" />
+    <span class="text-[10px] leading-none font-medium">{language.nav.projects.title}</span>
+  </a>
+
+  <!-- 4. Sobre mí -->
+  <a
+    href="#sobre-mi"
+    data-bottom-target="sobre-mi"
+    class="bottom-nav-item flex flex-col items-center gap-0.5 px-2.5 py-1 text-slate-500 transition-colors hover:text-indigo-600 dark:text-slate-400 dark:hover:text-yellow-400 cursor-pointer"
+    aria-label={language.nav.about.title}
+  >
+    <Profile class="size-5" />
+    <span class="text-[10px] leading-none font-medium">{language.nav.about.title}</span>
+  </a>
+
+  <!-- 5. Menú Más (con popover superior) -->
+  <div class="relative flex items-center">
+    <button
+      id="bottom-nav-more-btn"
+      data-bottom-target="more"
+      type="button"
+      class="bottom-nav-item flex flex-col items-center gap-0.5 px-2.5 py-1 text-slate-500 transition-colors hover:text-indigo-600 dark:text-slate-400 dark:hover:text-yellow-400 cursor-pointer"
+      aria-expanded="false"
+      aria-label="Más secciones"
+    >
+      <svg class="size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+      </svg>
+      <span class="text-[10px] leading-none font-medium">{moreLabel}</span>
+    </button>
+
+    <!-- Menú desplegable hacia arriba -->
+    <div
+      id="bottom-more-menu"
+      class="hidden absolute bottom-full mb-3 right-0 w-48 rounded-2xl border border-indigo-500/30 bg-white/95 p-1.5 shadow-2xl backdrop-blur-xl transition-all duration-200 dark:border-white/10 dark:bg-slate-900/95"
+    >
+      <a
+        href="#habilidades"
+        class="flex items-center gap-2.5 px-3 py-2 text-xs font-medium text-slate-700 hover:text-indigo-600 hover:bg-indigo-50/80 rounded-xl transition-colors dark:text-slate-200 dark:hover:text-yellow-400 dark:hover:bg-slate-800"
+      >
+        <Shield class="size-4 shrink-0" />
+        <span>{language.nav.skills.title}</span>
+      </a>
+      <a
+        href="#estudios"
+        class="flex items-center gap-2.5 px-3 py-2 text-xs font-medium text-slate-700 hover:text-indigo-600 hover:bg-indigo-50/80 rounded-xl transition-colors dark:text-slate-200 dark:hover:text-yellow-400 dark:hover:bg-slate-800"
+      >
+        <Book class="size-4 shrink-0" />
+        <span>{language.nav.studies.title}</span>
+      </a>
+      <div class="my-1 border-t border-indigo-500/20 dark:border-white/10"></div>
+      <a
+        href="mailto:miguelangelmardom8@gmail.com"
+        class="flex items-center gap-2.5 px-3 py-2 text-xs font-semibold text-indigo-600 hover:bg-indigo-50/80 rounded-xl transition-colors dark:text-yellow-400 dark:hover:bg-slate-800"
+      >
+        <Mail class="size-4 shrink-0" />
+        <span>{language.nav.contact.title}</span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<script is:inline>
+  const initBottomNav = () => {
+    const moreBtn = document.getElementById("bottom-nav-more-btn");
+    const moreMenu = document.getElementById("bottom-more-menu");
+    const bottomLinks = Array.from(document.querySelectorAll("[data-bottom-target]"));
+
+    if (moreBtn && moreMenu) {
+      moreBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        const isHidden = moreMenu.classList.contains("hidden");
+        moreMenu.classList.toggle("hidden");
+        moreBtn.setAttribute("aria-expanded", isHidden ? "true" : "false");
+      });
+
+      document.addEventListener("click", (e) => {
+        if (!moreMenu.contains(e.target) && !moreBtn.contains(e.target)) {
+          moreMenu.classList.add("hidden");
+          moreBtn.setAttribute("aria-expanded", "false");
+        }
+      });
+    }
+
+    // Scrollspy para resaltar el icono activo en el dock inferior
+    const updateActiveBottomItem = () => {
+      const scrollY = window.scrollY;
+      const windowHeight = window.innerHeight;
+      const docHeight = Math.max(
+        document.body.scrollHeight,
+        document.documentElement.scrollHeight
+      );
+
+      let currentTarget = "hero";
+
+      if (scrollY < 200) {
+        currentTarget = "hero";
+      } else if (scrollY + windowHeight >= docHeight - 120) {
+        currentTarget = "sobre-mi";
+      } else {
+        const sectionsConfig = [
+          { id: "hero", target: "hero" },
+          { id: "experiencia", target: "experiencia" },
+          { id: "proyectos", target: "proyectos" },
+          { id: "habilidades", target: "more" },
+          { id: "estudios", target: "more" },
+          { id: "sobre-mi", target: "sobre-mi" },
+        ];
+
+        const sections = sectionsConfig
+          .map((cfg) => ({ el: document.getElementById(cfg.id), target: cfg.target }))
+          .filter((item) => item.el !== null);
+
+        const midPoint = scrollY + windowHeight * 0.45;
+        for (let i = sections.length - 1; i >= 0; i--) {
+          if (sections[i].el.offsetTop <= midPoint) {
+            currentTarget = sections[i].target;
+            break;
+          }
+        }
+      }
+
+      bottomLinks.forEach((link) => {
+        const target = link.getAttribute("data-bottom-target");
+        const isActive = target === currentTarget;
+        if (isActive) {
+          link.classList.add("text-indigo-600", "dark:text-yellow-400", "font-bold");
+          link.classList.remove("text-slate-500", "dark:text-slate-400");
+        } else {
+          link.classList.remove("text-indigo-600", "dark:text-yellow-400", "font-bold");
+          link.classList.add("text-slate-500", "dark:text-slate-400");
+        }
+      });
+    };
+
+    window.addEventListener("scroll", updateActiveBottomItem, { passive: true });
+    updateActiveBottomItem();
+
+    // Cerrar el popover al pulsar en cualquier enlace del menú
+    document.querySelectorAll("#bottom-more-menu a").forEach((a) => {
+      a.addEventListener("click", () => {
+        if (moreMenu) {
+          moreMenu.classList.add("hidden");
+          if (moreBtn) moreBtn.setAttribute("aria-expanded", "false");
+        }
+      });
+    });
+  };
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initBottomNav);
+  } else {
+    initBottomNav();
+  }
+  document.addEventListener("astro:after-swap", initBottomNav);
+</script>

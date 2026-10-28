@@ -28,7 +28,7 @@ const currentCv = cvFiles[langPrefix] || cvFiles.es;
 ---
 
 <div
-  class="grid grid-cols-1 items-center gap-8 pb-8 md:grid-cols-3 md:items-start"
+  class="grid grid-cols-1 items-center gap-8 pb-8 md:grid-cols-3 md:items-start xl:gap-14 2xl:gap-20"
 >
   <div
     class="flex flex-col items-center gap-5 text-center md:col-span-2 md:items-start md:text-left"
@@ -54,12 +54,12 @@ const currentCv = cvFiles[langPrefix] || cvFiles.es;
       </a>
     </div>
     <h1
-      class="flex flex-col gap-2 text-4xl font-bold tracking-tight text-gray-800 sm:text-5xl md:block md:gap-0 dark:text-white"
+      class="flex flex-col gap-2 text-4xl font-bold tracking-tight text-gray-800 sm:text-5xl md:block md:gap-0 xl:text-6xl min-[1800px]:text-7xl dark:text-white"
     >
       Miguel Ángel Martínez
     </h1>
     <p
-      class="text-base leading-relaxed text-slate-700 md:text-xl dark:text-slate-300"
+      class="text-base leading-relaxed text-slate-700 md:text-xl xl:text-2xl xl:leading-relaxed min-[1800px]:text-3xl min-[1800px]:leading-relaxed dark:text-slate-300"
       set:html={language.heroDescription}
     />
     <nav
@@ -131,7 +131,7 @@ const currentCv = cvFiles[langPrefix] || cvFiles.es;
       rel="noopener noreferrer"
     >
       <img
-        class="glitter size-40 rounded-full object-cover transition duration-500 hover:scale-105 md:h-auto md:w-48 md:rounded-2xl lg:w-56"
+        class="glitter size-40 rounded-full object-cover transition duration-500 hover:scale-105 md:size-auto md:w-48 md:rounded-2xl lg:w-56 xl:w-64 2xl:w-80 min-[1800px]:w-96"
         src="/hero_picture.webp"
         alt="Miguel Ángel"
       />

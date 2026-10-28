@@ -2,6 +2,9 @@
 import MainHead from "@/components/MainHead.astro";
 import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
+import SectionNav from "@/components/SectionNav.astro";
+import BottomNav from "@/components/BottomNav.astro";
+import ScrollToTop from "@/components/ScrollToTop.astro";
 import "../styles/global.css";
 const { language } = Astro.props;
 ---
@@ -20,7 +23,10 @@ const { language } = Astro.props;
     >
     </div>
     <Header language={language} />
+    <SectionNav language={language} />
     <slot />
+    <BottomNav language={language} />
+    <ScrollToTop />
     <Footer language={language} />
   </body>
 </html>

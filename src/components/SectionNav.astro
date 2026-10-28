@@ -1,0 +1,192 @@
+---
+import type { Translation } from "@/i18n/types";
+import ThemeToggle from "./ThemeToggle.astro";
+
+interface Props {
+  language: Translation;
+}
+
+const { language } = Astro.props;
+
+const navDots = [
+  {
+    id: language.nav.home.href.replace(/^#/, ""),
+    title: language.nav.home.title,
+    href: language.nav.home.href,
+  },
+  {
+    id: language.nav.experience.href.replace(/^#/, ""),
+    title: language.nav.experience.title,
+    href: language.nav.experience.href,
+  },
+  {
+    id: language.nav.projects.href.replace(/^#/, ""),
+    title: language.nav.projects.title,
+    href: language.nav.projects.href,
+  },
+  {
+    id: language.nav.skills.href.replace(/^#/, ""),
+    title: language.nav.skills.title,
+    href: language.nav.skills.href,
+  },
+  {
+    id: language.nav.studies.href.replace(/^#/, ""),
+    title: language.nav.studies.title,
+    href: language.nav.studies.href,
+  },
+  {
+    id: language.nav.about.href.replace(/^#/, ""),
+    title: language.nav.about.title,
+    href: language.nav.about.href,
+  },
+];
+---
+
+<aside
+  id="section-nav"
+  aria-label="Navegación lateral de secciones"
+  class="fixed right-5 top-1/2 z-40 hidden -translate-y-1/2 flex-col items-center gap-3.5 xl:flex 2xl:right-8"
+>
+  {
+    navDots.map((dot, index) => (
+      <a
+        href={dot.href}
+        data-section-target={dot.id}
+        class="group relative flex items-center justify-center p-1.5 text-xs transition-transform duration-200 hover:scale-125 cursor-pointer"
+        aria-label={`Ir a la sección ${dot.title}`}
+      >
+        {/* Tooltip hacia la izquierda */}
+        <span
+          class="pointer-events-none absolute right-full mr-3.5 translate-x-2 whitespace-nowrap rounded-lg border border-indigo-500/30 bg-slate-900/90 px-2.5 py-1 text-xs font-semibold text-white opacity-0 shadow-xl backdrop-blur-md transition-all duration-200 group-hover:translate-x-0 group-hover:opacity-100 dark:border-yellow-200/40 dark:bg-slate-100 dark:text-slate-950"
+        >
+          {dot.title}
+        </span>
+
+        {/* Dot indicador estilo puntos sueltos */}
+        <span
+          class={`section-dot block size-3 rounded-full border-2 border-slate-400/70 bg-transparent transition-all duration-300 group-hover:border-indigo-500 dark:border-slate-400/70 dark:group-hover:border-yellow-400 ${
+            index === 0 ? "is-active" : ""
+          }`}
+        />
+      </a>
+    ))
+  }
+
+  {/* Separador sutil */}
+  <div class="h-px w-3 bg-slate-400/40 dark:bg-slate-600/60 my-0.5"></div>
+
+  {/* Botón de tema en barra lateral */}
+  <ThemeToggle language={language} variant="side" />
+</aside>
+
+<style>
+  .section-dot.is-active {
+    transform: scale(1.25);
+    background-color: #6366f1; /* indigo-500 */
+    border-color: transparent !important;
+  }
+
+  :global(.dark) .section-dot.is-active {
+    background-color: #facc15; /* yellow-400 */
+    border-color: transparent !important;
+  }
+</style>
+
+<script is:inline>
+  const initSectionNav = () => {
+    const navLinks = Array.from(document.querySelectorAll("[data-section-target]"));
+    if (!navLinks.length) return;
+
+    const sections = navLinks
+      .map((link) => {
+        const targetId = link.getAttribute("data-section-target");
+        return document.getElementById(targetId);
+      })
+      .filter(Boolean);
+
+    if (!sections.length) return;
+
+    const setActiveDot = (id) => {
+      navLinks.forEach((link) => {
+        const dot = link.querySelector(".section-dot");
+        if (!dot) return;
+        const isCurrent = id !== null && link.getAttribute("data-section-target") === id;
+        dot.classList.toggle("is-active", isCurrent);
+      });
+    };
+
+    const updateActiveSection = () => {
+      const scrollY = window.scrollY;
+      const windowHeight = window.innerHeight;
+      const docHeight = Math.max(
+        document.body.scrollHeight,
+        document.documentElement.scrollHeight
+      );
+
+      // 1. Si estamos arriba del todo (Hero/Inicio), activar el dot de Hero
+      if (scrollY < 200) {
+        const firstTarget = navLinks[0]?.getAttribute("data-section-target");
+        if (firstTarget) {
+          setActiveDot(firstTarget);
+          return;
+        }
+      }
+
+      // 2. Si el usuario ha llegado al fondo o la última sección ya es la dominante en la vista
+      const lastSection = sections[sections.length - 1];
+      const isAtBottom = scrollY + windowHeight >= docHeight - 120;
+      const isLastSectionDominant =
+        lastSection && lastSection.getBoundingClientRect().top <= windowHeight * 0.65;
+
+      if (isAtBottom || isLastSectionDominant) {
+        const lastTarget = navLinks[navLinks.length - 1]?.getAttribute("data-section-target");
+        if (lastTarget) {
+          setActiveDot(lastTarget);
+          return;
+        }
+      }
+
+      // 3. Evaluar la sección actual basada en la posición de scroll
+      const midPoint = scrollY + windowHeight * 0.45;
+      let activeSectionId = null;
+
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const sec = sections[i];
+        if (sec.offsetTop <= midPoint) {
+          activeSectionId = sec.id;
+          break;
+        }
+      }
+
+      if (activeSectionId) {
+        setActiveDot(activeSectionId);
+      }
+    };
+
+    window.addEventListener("scroll", updateActiveSection, { passive: true });
+    window.addEventListener("resize", updateActiveSection, { passive: true });
+    updateActiveSection();
+
+    // Smooth scroll al hacer click
+    navLinks.forEach((link) => {
+      link.addEventListener("click", (e) => {
+        const href = link.getAttribute("href");
+        if (href && href.startsWith("#")) {
+          e.preventDefault();
+          const target = document.querySelector(href);
+          if (target) {
+            target.scrollIntoView({ behavior: "smooth" });
+            history.pushState(null, "", href);
+          }
+        }
+      });
+    });
+  };
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initSectionNav);
+  } else {
+    initSectionNav();
+  }
+  document.addEventListener("astro:after-swap", initSectionNav);
+</script>

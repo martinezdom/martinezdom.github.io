@@ -46,3 +46,11 @@
     0 0 10px rgba(250, 204, 21, 0.4),
     0 0 15px rgba(250, 204, 21, 0.4);
 }
+
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}

@@ -3,6 +3,7 @@ import type { Translation } from "../types.ts";
 const en: Translation = {
   prefix: "en",
   nav: {
+    home: { title: "Home", href: "#hero" },
     experience: { title: "Experience", href: "#experience" },
     projects: { title: "Projects", href: "#projects" },
     skills: { title: "Skills", href: "#skills" },
